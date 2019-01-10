@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+    <form method="post" th:action="@{/j_spring_security_login}">
+        <input type="text" name="username"> <br>
+        <input type="password" name="password"> <br>
+        <input type="checkbox" name="remember-me"> <br>
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+        <input type="submit" value="login">
+    </form>
+</body>
+</html>
