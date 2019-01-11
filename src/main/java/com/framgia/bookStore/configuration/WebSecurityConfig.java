@@ -15,6 +15,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
@@ -105,5 +106,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         serializer.setUseSecureCookie(useSecureCookie);
         serializer.setUseBase64Encoding(true);
         return serializer;
+    }
+
+    @Bean
+    public PasswordEncoder customPasswordEncoder() {
+        return new PasswordEncoder() {
+            @Override
+            public String encode(CharSequence rawPassword) {
+                return BCrypt.hashpw(rawPassword.toString(), BCrypt.gensalt(4));
+            }
+            @Override
+            public boolean matches(CharSequence rawPassword, String encodedPassword) {
+                return BCrypt.checkpw(rawPassword.toString(), encodedPassword);
+            }
+        };
     }
 }

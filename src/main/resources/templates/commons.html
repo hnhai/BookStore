@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <th:block th:fragment="meta-tags">
+        <meta charset="utf-8"/>
+        <meta http-equiv="content-language" content="ja"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta id="_csrf_token" name="_csrf_token" th:content="${_csrf.token}"/>
+        <meta id="_csrf_header" name="_csrf_header" th:content="${_csrf.headerName}"/>
+    </th:block>
+
+    <th:block th:fragment="core-styles">
+        <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
+    </th:block>
+
+</head>
+<body>
+
+<th:block th:fragment="core-js">
+    <!-- Core plugin JavaScript -->
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        var WebContext = {};
+        WebContext.contextPath = /*[[@{/}]]*/'';
+        /*]]>*/
+    </script>
+</th:block>
+
+<th:block th:fragment="validate">
+    <link th:href="@{/css/parsley.css}" rel="stylesheet" type="text/css"/>
+    <script th:src="@{/js/parsley.min.js}"></script>
+</th:block>
+
+</body>
+</html>
