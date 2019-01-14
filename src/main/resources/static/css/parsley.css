@@ -32,3 +32,8 @@ textarea.parsley-error {
     opacity: 1;
     color: #ff0000;;
 }
+
+.message-parsley-errors{
+    opacity: 1;
+    color: #ff0000;;
+}

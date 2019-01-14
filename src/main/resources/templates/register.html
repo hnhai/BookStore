@@ -27,18 +27,20 @@
                             <div th:if="${param.success != null}" th:text="#{register.success}" class="text-center alert-success margin-bottom-20"></div>
                             <div class="form-row">
                                 <div class="form-group col-md-12 form-group__height">
-                                    <input class="form-control form-group__input" th:name="username"
+                                    <input id="username" class="form-control form-group__input" th:name="username"
                                            th:placeholder="#{login.username}"
                                            data-parsley-required data-parsley-trigger="keyup">
+                                    <span id="username-error" class="message-parsley-errors"></span>
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group col-md-12 form-group__height">
-                                    <input class="form-control form-group__input" th:name="email"
+                                    <input id="email" class="form-control form-group__input" th:name="email"
                                            th:placeholder="#{login.email}"
                                            type="email"
                                            data-parsley-required data-parsley-trigger="keyup">
+                                    <span id="email-error" class="message-parsley-errors"></span>
                                 </div>
                             </div>
 

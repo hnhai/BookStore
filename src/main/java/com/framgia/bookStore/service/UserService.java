@@ -8,5 +8,9 @@ public interface UserService {
 
     UserEntity findByEmail(String email);
 
-    Boolean saveUser(RegisterForm form);
+    UserEntity saveUser(RegisterForm form);
+
+    Boolean duplicateEmail(String email);
+
+    Boolean duplicateUsername(String username);
 }

@@ -11,8 +11,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service("customUserDetailsService")
 @Transactional(readOnly = true)
@@ -35,7 +35,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     }
 
     private CustomUserDetail createUserDetails(UserEntity user) {
-        Set<GrantedAuthority> authorities = new HashSet<>();
+        List<GrantedAuthority> authorities = new ArrayList<>();
         user.getUserRoleEntities().forEach(e -> authorities.add(new SimpleGrantedAuthority(e.getRoleEntity().getRoleType().toString())));
         return new CustomUserDetail(user, authorities);
     }
