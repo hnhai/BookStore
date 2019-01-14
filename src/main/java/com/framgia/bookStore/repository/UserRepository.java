@@ -7,5 +7,9 @@ import org.springframework.stereotype.Repository;
 public interface UserRepository extends CustomJpaRepository<UserEntity, Long> {
     UserEntity findByUsernameAndDeleted(String userName, Boolean deleted);
 
+    UserEntity findByUsername(String userName);
+
     UserEntity findByEmailAndDeleted(String email, Boolean deleted);
+
+    UserEntity findByEmail(String email);
 }
