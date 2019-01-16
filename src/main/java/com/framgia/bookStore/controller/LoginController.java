@@ -1,5 +1,7 @@
 package com.framgia.bookStore.controller;
 
+import com.framgia.bookStore.activemq.Email;
+import com.framgia.bookStore.activemq.Sender;
 import com.framgia.bookStore.auth.CustomUserDetail;
 import com.framgia.bookStore.dto.user.RegisterForm;
 import com.framgia.bookStore.entity.UserEntity;
@@ -70,6 +72,17 @@ public class LoginController extends BaseController {
             return "redirect:/";
         }
         return "/home";
+    }
+
+    @PostMapping("/reset-password/{usernameOrPassword}")
+    public ResponseEntity resetPassword(@PathVariable("usernameOrPassword") String usernameOrPassword){
+        Email mail = new Email();
+        mail.setTo("a");
+        mail.setFrom("b");
+        mail.setContent("reset-password");
+        mail.setTemplate("reset-password.html");
+        sender.send(mail);
+        return new ResponseEntity<>(userService.resetPassword(usernameOrPassword), HttpStatus.OK);
     }
 
     @GetMapping("api-check-email/{email}")

@@ -10,6 +10,7 @@ import com.framgia.bookStore.repository.RoleRepository;
 import com.framgia.bookStore.repository.UserRepository;
 import com.framgia.bookStore.repository.UserRoleRopository;
 import com.framgia.bookStore.service.UserService;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -32,8 +33,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserEntity findByUsername(String username) {
-        UserEntity userEntity = userRepository.findByUsernameAndDeleted(username, false);
-        userEntity.getPassword();
         return userRepository.findByUsernameAndDeleted(username, false);
     }
 
@@ -76,5 +75,20 @@ public class UserServiceImpl implements UserService {
             return Boolean.TRUE;
         }
         return Boolean.FALSE;
+    }
+
+    @Override
+    public Boolean resetPassword(String usernameOrEmail) {
+        UserEntity user = userRepository.findByUsernameAndDeleted(usernameOrEmail, false);
+        if(user == null){
+            user = userRepository.findByEmailAndDeleted(usernameOrEmail, false);
+        }
+        if (user != null){
+            String token = RandomStringUtils.random(45, true, false);
+            user.setToken(token);
+            userRepository.save(user);
+            return true;
+        }
+        return false;
     }
 }

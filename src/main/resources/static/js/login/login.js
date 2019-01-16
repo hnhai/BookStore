@@ -4,6 +4,14 @@ var VALID_USERNAME = true;
 var VALID_EMAIL = true;
 
 $( document ).ready(function() {
+    var token = $('#_csrf_token').attr('content');
+    var header = $('#_csrf_header').attr('content');
+
+    $.ajaxSetup({
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader(header, token);
+        }
+    });
 
     //Validate AgreeTerm
     $(document).on("change","#agree-terms",function() {
@@ -78,7 +86,32 @@ $( document ).ready(function() {
             });
         }
     });
+    // End validate Register Page
 
+    // On click reset-password
+    $(document).on("click","#reset-password",function() {
+        if($('#username-login').val() == ''){
+            $('#username-error').html('Please input username or email !');
+        }else{
+            $('#username-error').html('');
+            $.ajax({
+                type: "POST",
+                url: WebContext.contextPath + "reset-password/" + $('#username-login').val(),
+                success: function (data) {
+                    if(data == true){
+                        $('#reset-password-message').removeClass('message-parsley-errors');
+                        $('#reset-password-message').addClass('message-parsley-success');
+                        $('#reset-password-message').html('Please check your email to complete reset password !')
+                    }else{
+                        $('#reset-password-message').removeClass('message-parsley-success');
+                        $('#reset-password-message').addClass('message-parsley-errors');
+                        $('#reset-password-message').html('username or email not existed !')
+                    }
+                },
+                error: function (jqHR, textStatus, errorThrown) {
+                    console.log(textStatus, errorThrown);
+                }
+            });
+        }
+    });
 });
-
-// End validate Register Page

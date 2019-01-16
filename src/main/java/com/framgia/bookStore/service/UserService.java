@@ -13,4 +13,6 @@ public interface UserService {
     Boolean duplicateEmail(String email);
 
     Boolean duplicateUsername(String username);
+
+    Boolean resetPassword(String usernameOrEmail);
 }

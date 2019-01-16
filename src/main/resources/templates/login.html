@@ -22,11 +22,13 @@
                     <div class="auto-form-wrapper">
                         <form method="POST" th:action="@{/j_spring_security_login}" data-parsley-validate>
                             <div th:if="${param.error != null}" th:text="#{login.error}" class="text-center alert-danger margin-bottom-20"></div>
+                            <div id="reset-password-message" class="text-center margin-bottom-20"></div>
                             <div class="form-row">
                                 <div class="form-group col-md-12 form-group__height">
-                                    <input class="form-control form-group__input" th:name="username"
+                                    <input id="username-login" class="form-control form-group__input" th:name="username"
                                            th:placeholder="#{login.username}"
                                            data-parsley-required data-parsley-trigger="keyup">
+                                    <span id="username-error" class="message-parsley-errors"></span>
                                 </div>
                             </div>
                             <div class="form-row">
@@ -46,7 +48,7 @@
                                         <input type="checkbox" name="remember-me" class="form-check-input" checked th:text="#{login.keep-me-signed-in}">
                                     </label>
                                 </div>
-                                <a href="#" class="text-small forgot-password text-black" th:text="#{login.forgot-password}"></a>
+                                <a id="reset-password" class="text-small forgot-password text-black" th:text="#{login.forgot-password}"></a>
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-block g-login">
@@ -76,6 +78,7 @@
     <script th:src="@{/vendors/js/vendor.bundle.addons.js}"></script>
     <script th:src="@{/js/off-canvas.js}"></script>
     <script th:src="@{/js/misc.js}"></script>
+    <script th:src="@{/js/login/login.js}"></script>
 </th:block>
 <!-- endinject -->
 <th:block th:replace="commons :: core-js"/>
