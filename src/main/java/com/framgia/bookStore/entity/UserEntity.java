@@ -46,11 +46,11 @@ public class UserEntity extends AbstractEntity{
     @Column(name = "ENABLED", nullable = false)
     private Boolean enabled;
 
-    @Column(name = "SYSTEM_USER")
-    private Boolean systemUser;
-
     @Column(name = "STATUS")
     private Boolean status;
+
+    @Column(name = "TOKEN")
+    private String token;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "userEntity")
     @Where(clause = "DELETED = 0")
@@ -113,14 +113,6 @@ public class UserEntity extends AbstractEntity{
         this.enabled = enabled;
     }
 
-    public Boolean getSystemUser() {
-        return systemUser;
-    }
-
-    public void setSystemUser(Boolean systemUser) {
-        this.systemUser = systemUser;
-    }
-
     public Boolean getStatus() {
         return status;
     }
@@ -135,5 +127,13 @@ public class UserEntity extends AbstractEntity{
 
     public void setUserRoleEntities(Set<UserRoleEntity> userRoleEntities) {
         this.userRoleEntities = userRoleEntities;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

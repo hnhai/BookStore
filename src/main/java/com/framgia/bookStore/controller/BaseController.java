@@ -1,5 +1,6 @@
 package com.framgia.bookStore.controller;
 
+import com.framgia.bookStore.activemq.Sender;
 import com.framgia.bookStore.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -16,6 +17,5 @@ public class BaseController {
     protected UserService userService;
 
     @Autowired
-    @Qualifier("customUserDetailsService")
-    protected UserDetailsService userDetailsService;
+    protected Sender sender;
 }
