@@ -1,7 +1,5 @@
 package com.framgia.bookStore.controller;
 
-import com.framgia.bookStore.activemq.Email;
-import com.framgia.bookStore.activemq.Sender;
 import com.framgia.bookStore.auth.CustomUserDetail;
 import com.framgia.bookStore.dto.user.RegisterForm;
 import com.framgia.bookStore.entity.UserEntity;
@@ -12,9 +10,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -75,14 +72,9 @@ public class LoginController extends BaseController {
     }
 
     @PostMapping("/reset-password/{usernameOrPassword}")
-    public ResponseEntity resetPassword(@PathVariable("usernameOrPassword") String usernameOrPassword){
-        Email mail = new Email();
-        mail.setTo("a");
-        mail.setFrom("b");
-        mail.setContent("reset-password");
-        mail.setTemplate("reset-password.html");
-        sender.send(mail);
-        return new ResponseEntity<>(userService.resetPassword(usernameOrPassword), HttpStatus.OK);
+    public ResponseEntity resetPassword(@PathVariable("usernameOrPassword") String usernameOrPassword, HttpServletRequest request){
+
+        return new ResponseEntity<>(userService.resetPassword(usernameOrPassword, request), HttpStatus.OK);
     }
 
     @GetMapping("api-check-email/{email}")
@@ -93,6 +85,16 @@ public class LoginController extends BaseController {
     @GetMapping("api-check-username/{username}")
     public ResponseEntity checkDuplicateUsername(@PathVariable("username") String username) {
         return new ResponseEntity<>(userService.duplicateUsername(username), HttpStatus.OK);
+    }
+
+    @GetMapping("/update-password/{username}/{token}")
+    public String updatePasswordByToken(@PathVariable("username") String username, @PathVariable("token") String token, Model model){
+        UserEntity user = userService.findByUsernameAndToken(username, token);
+        if(user != null){
+            model.addAttribute("userId", user.getId());
+            return "/page/update-password";
+        }
+        return "redirect:/404";
     }
 
     private CustomUserDetail buildUser(UserEntity user) {
