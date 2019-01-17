@@ -1,5 +1,6 @@
 package com.framgia.bookStore.service.impl;
 
+import com.framgia.bookStore.activemq.Email;
 import com.framgia.bookStore.constants.RoleType;
 import com.framgia.bookStore.dto.user.RegisterForm;
 import com.framgia.bookStore.entity.RoleEntity;
@@ -9,12 +10,16 @@ import com.framgia.bookStore.entity.UserRoleId;
 import com.framgia.bookStore.repository.RoleRepository;
 import com.framgia.bookStore.repository.UserRepository;
 import com.framgia.bookStore.repository.UserRoleRopository;
+import com.framgia.bookStore.service.SendMailService;
 import com.framgia.bookStore.service.UserService;
+import com.framgia.bookStore.util.WebUtil;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -30,6 +35,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRoleRopository userRoleRopository;
+
+    @Autowired
+    private SendMailService sendMailService;
 
     @Override
     public UserEntity findByUsername(String username) {
@@ -78,7 +86,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Boolean resetPassword(String usernameOrEmail) {
+    @Transactional
+    public Boolean resetPassword(String usernameOrEmail, HttpServletRequest request) {
         UserEntity user = userRepository.findByUsernameAndDeleted(usernameOrEmail, false);
         if(user == null){
             user = userRepository.findByEmailAndDeleted(usernameOrEmail, false);
@@ -86,6 +95,15 @@ public class UserServiceImpl implements UserService {
         if (user != null){
             String token = RandomStringUtils.random(45, true, false);
             user.setToken(token);
+            Email email = new Email();
+            email.setFrom("teststackjava@gmail.com");
+            email.setSubject("Reset Password");
+            email.setTo(user.getEmail());
+            email.setTemplate("/page/reset-password");
+            email.getVars().put("url", "abc-resetpass.com");
+            String linkReset = WebUtil.getBaseUrl(request) + "/update-password/" + user.getUsername() + "/" + user.getToken();
+            email.getVars().put("username", user.getUsername());
+            sendMailService.send(email);
             userRepository.save(user);
             return true;
         }
