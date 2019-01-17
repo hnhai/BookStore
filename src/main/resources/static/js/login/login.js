@@ -114,4 +114,25 @@ $( document ).ready(function() {
             });
         }
     });
+
+    $('#form-update-password').submit(function (e) {
+        e.preventDefault();
+        var form = $(this);
+        $.ajax({
+            type: form.attr('method'),
+            url: form.attr('action'),
+            data: form.serialize(),
+            success: function (msg) {
+                if(msg == true){
+                    window.location.href = WebContext.contextPath;
+                }else{
+                    $('#update-password-message').html('Update Fail!');
+                }
+            },
+            error: function (e) {
+               console.log(e);
+            }
+        });
+    });
+
 });
