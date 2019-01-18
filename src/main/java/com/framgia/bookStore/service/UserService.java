@@ -19,4 +19,6 @@ public interface UserService {
     Boolean duplicateUsername(String username);
 
     Boolean resetPassword(String usernameOrEmail, HttpServletRequest request);
+
+    UserEntity updatePassword(Long userId, String password);
 }

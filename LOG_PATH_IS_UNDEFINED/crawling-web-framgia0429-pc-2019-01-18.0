@@ -1,0 +1,1138 @@
+2019-01-18 09:52:46.291 INFO  9887 --- [main] com.framgia.bookStore.BookStoreApplication : 50: Starting BookStoreApplication on framgia0429-pc with PID 9887 (/home/hoang.ngoc.hai/Downloads/BookStore/target/classes started by FRAMGIA\hoang.ngoc.hai in /home/hoang.ngoc.hai/Downloads/BookStore)
+2019-01-18 09:52:46.293 INFO  9887 --- [main] com.framgia.bookStore.BookStoreApplication : 675: No active profile set, falling back to default profiles: default
+2019-01-18 09:52:46.694 INFO  9887 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 09:52:46.694 INFO  9887 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 09:52:46.738 INFO  9887 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 39ms. Found 3 repository interfaces.
+2019-01-18 09:52:46.841 INFO  9887 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 09:52:46.841 INFO  9887 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 09:52:46.858 INFO  9887 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.RoleRepository.
+2019-01-18 09:52:46.859 INFO  9887 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRepository.
+2019-01-18 09:52:46.859 INFO  9887 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRoleRopository.
+2019-01-18 09:52:46.859 INFO  9887 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 12ms. Found 0 repository interfaces.
+2019-01-18 09:52:47.236 INFO  9887 --- [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : 330: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b6fa5045] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-18 09:52:47.474 INFO  9887 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 90: Tomcat initialized with port(s): 8082 (http)
+2019-01-18 09:52:47.488 INFO  9887 --- [main] org.apache.catalina.core.StandardService : 173: Starting service [Tomcat]
+2019-01-18 09:52:47.488 INFO  9887 --- [main] org.apache.catalina.core.StandardEngine : 173: Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-18 09:52:47.493 INFO  9887 --- [main] org.apache.catalina.core.AprLifecycleListener : 173: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-18 09:52:47.604 INFO  9887 --- [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring embedded WebApplicationContext
+2019-01-18 09:52:47.604 INFO  9887 --- [main] org.springframework.web.context.ContextLoader : 296: Root WebApplicationContext: initialization completed in 1280 ms
+2019-01-18 09:52:47.794 INFO  9887 --- [main] com.zaxxer.hikari.HikariDataSource : 110: HikariPool-1 - Starting...
+2019-01-18 09:52:47.874 INFO  9887 --- [main] com.zaxxer.hikari.HikariDataSource : 123: HikariPool-1 - Start completed.
+2019-01-18 09:52:47.902 INFO  9887 --- [main] org.hibernate.jpa.internal.util.LogHelper : 31: HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-18 09:52:47.941 INFO  9887 --- [main] org.hibernate.Version : 46: HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-18 09:52:47.943 INFO  9887 --- [main] org.hibernate.cfg.Environment : 213: HHH000206: hibernate.properties not found
+2019-01-18 09:52:48.036 INFO  9887 --- [main] org.hibernate.annotations.common.Version : 49: HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-18 09:52:48.136 INFO  9887 --- [main] org.hibernate.dialect.Dialect : 157: HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-18 09:52:48.642 INFO  9887 --- [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 415: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 09:52:49.300 INFO  9887 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/vendors/**'], []
+2019-01-18 09:52:49.301 INFO  9887 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/css/**'], []
+2019-01-18 09:52:49.301 INFO  9887 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/js/**'], []
+2019-01-18 09:52:49.301 INFO  9887 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/img/**'], []
+2019-01-18 09:52:49.301 INFO  9887 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/images/**'], []
+2019-01-18 09:52:49.301 INFO  9887 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/static/**'], []
+2019-01-18 09:52:49.301 INFO  9887 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/**/favicon.ico'], []
+2019-01-18 09:52:49.324 INFO  9887 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@347c5721, org.springframework.security.web.context.SecurityContextPersistenceFilter@36f438f1, org.springframework.security.web.header.HeaderWriterFilter@568fd3de, org.springframework.security.web.csrf.CsrfFilter@148f94dc, org.springframework.security.web.authentication.logout.LogoutFilter@43255f91, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6fa2d0b2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@45b2b0ed, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a1c14a6, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@43de88f3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4d22265c, org.springframework.security.web.session.SessionManagementFilter@3cc5408c, org.springframework.security.web.access.ExceptionTranslationFilter@71c91121, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@57df93c1]
+2019-01-18 09:52:49.436 INFO  9887 --- [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 171: Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-18 09:52:49.462 WARN  9887 --- [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration : 234: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-18 09:52:49.695 INFO  9887 --- [main] io.lettuce.core.EpollProvider : 68: Starting without optional epoll library
+2019-01-18 09:52:49.696 INFO  9887 --- [main] io.lettuce.core.KqueueProvider : 70: Starting without optional kqueue library
+2019-01-18 09:52:49.749 WARN  9887 --- [main] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext : 554: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'enableRedisKeyspaceNotificationsInitializer' defined in class path resource [org/springframework/boot/autoconfigure/session/RedisSessionConfiguration$SpringBootRedisHttpSessionConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+2019-01-18 09:52:49.750 INFO  9887 --- [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 208: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-18 09:52:50.872 INFO  9887 --- [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 597: Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 09:52:50.876 INFO  9887 --- [main] com.zaxxer.hikari.HikariDataSource : 350: HikariPool-1 - Shutdown initiated...
+2019-01-18 09:52:50.878 INFO  9887 --- [main] com.zaxxer.hikari.HikariDataSource : 352: HikariPool-1 - Shutdown completed.
+2019-01-18 09:52:50.879 INFO  9887 --- [main] org.apache.catalina.core.StandardService : 173: Stopping service [Tomcat]
+2019-01-18 09:52:50.889 INFO  9887 --- [main] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener : 142: 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-01-18 09:52:50.896 ERROR 9887 --- [main] org.springframework.boot.SpringApplication : 858: Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'enableRedisKeyspaceNotificationsInitializer' defined in class path resource [org/springframework/boot/autoconfigure/session/RedisSessionConfiguration$SpringBootRedisHttpSessionConfiguration.class]: Invocation of init method failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1745)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:576)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:846)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:863)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.framgia.bookStore.BookStoreApplication.main(BookStoreApplication.java:19)
+Caused by: org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1092)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getConnection(LettuceConnectionFactory.java:1065)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getSharedConnection(LettuceConnectionFactory.java:865)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:340)
+	at org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration$EnableRedisKeyspaceNotificationsInitializer.afterPropertiesSet(RedisHttpSessionConfiguration.java:302)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1741)
+	... 16 common frames omitted
+Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78)
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56)
+	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:234)
+	at io.lettuce.core.RedisClient.connect(RedisClient.java:204)
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.lambda$getConnection$1(StandaloneConnectionProvider.java:113)
+	at java.util.Optional.orElseGet(Optional.java:267)
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.getConnection(StandaloneConnectionProvider.java:113)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1085)
+	... 22 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:6379
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:327)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:636)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused
+	... 11 common frames omitted
+
+2019-01-18 09:53:28.503 INFO  10032 --- [main] com.framgia.bookStore.BookStoreApplication : 50: Starting BookStoreApplication on framgia0429-pc with PID 10032 (/home/hoang.ngoc.hai/Downloads/BookStore/target/classes started by FRAMGIA\hoang.ngoc.hai in /home/hoang.ngoc.hai/Downloads/BookStore)
+2019-01-18 09:53:28.511 INFO  10032 --- [main] com.framgia.bookStore.BookStoreApplication : 675: No active profile set, falling back to default profiles: default
+2019-01-18 09:53:28.958 INFO  10032 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 09:53:28.959 INFO  10032 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 09:53:29.003 INFO  10032 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 39ms. Found 3 repository interfaces.
+2019-01-18 09:53:29.110 INFO  10032 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 09:53:29.110 INFO  10032 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 09:53:29.126 INFO  10032 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.RoleRepository.
+2019-01-18 09:53:29.126 INFO  10032 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRepository.
+2019-01-18 09:53:29.127 INFO  10032 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRoleRopository.
+2019-01-18 09:53:29.127 INFO  10032 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 12ms. Found 0 repository interfaces.
+2019-01-18 09:53:29.388 INFO  10032 --- [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : 330: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a785e017] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-18 09:53:29.588 INFO  10032 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 90: Tomcat initialized with port(s): 8082 (http)
+2019-01-18 09:53:29.603 INFO  10032 --- [main] org.apache.catalina.core.StandardService : 173: Starting service [Tomcat]
+2019-01-18 09:53:29.604 INFO  10032 --- [main] org.apache.catalina.core.StandardEngine : 173: Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-18 09:53:29.608 INFO  10032 --- [main] org.apache.catalina.core.AprLifecycleListener : 173: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-18 09:53:29.717 INFO  10032 --- [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring embedded WebApplicationContext
+2019-01-18 09:53:29.717 INFO  10032 --- [main] org.springframework.web.context.ContextLoader : 296: Root WebApplicationContext: initialization completed in 1115 ms
+2019-01-18 09:53:29.893 INFO  10032 --- [main] com.zaxxer.hikari.HikariDataSource : 110: HikariPool-1 - Starting...
+2019-01-18 09:53:29.956 INFO  10032 --- [main] com.zaxxer.hikari.HikariDataSource : 123: HikariPool-1 - Start completed.
+2019-01-18 09:53:29.981 INFO  10032 --- [main] org.hibernate.jpa.internal.util.LogHelper : 31: HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-18 09:53:30.015 INFO  10032 --- [main] org.hibernate.Version : 46: HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-18 09:53:30.016 INFO  10032 --- [main] org.hibernate.cfg.Environment : 213: HHH000206: hibernate.properties not found
+2019-01-18 09:53:30.084 INFO  10032 --- [main] org.hibernate.annotations.common.Version : 49: HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-18 09:53:30.180 INFO  10032 --- [main] org.hibernate.dialect.Dialect : 157: HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-18 09:53:30.627 INFO  10032 --- [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 415: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 09:53:31.246 INFO  10032 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/vendors/**'], []
+2019-01-18 09:53:31.246 INFO  10032 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/css/**'], []
+2019-01-18 09:53:31.249 INFO  10032 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/js/**'], []
+2019-01-18 09:53:31.249 INFO  10032 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/img/**'], []
+2019-01-18 09:53:31.249 INFO  10032 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/images/**'], []
+2019-01-18 09:53:31.249 INFO  10032 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/static/**'], []
+2019-01-18 09:53:31.249 INFO  10032 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/**/favicon.ico'], []
+2019-01-18 09:53:31.271 INFO  10032 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2e488e45, org.springframework.security.web.context.SecurityContextPersistenceFilter@1784a296, org.springframework.security.web.header.HeaderWriterFilter@6f12b637, org.springframework.security.web.csrf.CsrfFilter@1bed61d2, org.springframework.security.web.authentication.logout.LogoutFilter@7699e60a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7fba492e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4af6839c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3fe11091, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@17635531, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@396519b, org.springframework.security.web.session.SessionManagementFilter@5feb8e9a, org.springframework.security.web.access.ExceptionTranslationFilter@65b69ccb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@46c19350]
+2019-01-18 09:53:31.380 INFO  10032 --- [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 171: Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-18 09:53:31.406 WARN  10032 --- [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration : 234: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-18 09:53:31.636 INFO  10032 --- [main] io.lettuce.core.EpollProvider : 68: Starting without optional epoll library
+2019-01-18 09:53:31.637 INFO  10032 --- [main] io.lettuce.core.KqueueProvider : 70: Starting without optional kqueue library
+2019-01-18 09:53:32.441 INFO  10032 --- [main] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor : 295: No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-01-18 09:53:32.459 INFO  10032 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 204: Tomcat started on port(s): 8082 (http) with context path ''
+2019-01-18 09:53:32.461 INFO  10032 --- [main] com.framgia.bookStore.BookStoreApplication : 59: Started BookStoreApplication in 4.255 seconds (JVM running for 4.658)
+2019-01-18 09:53:36.882 ERROR 10032 --- [DefaultMessageListenerContainer-1] org.springframework.jms.listener.DefaultMessageListenerContainer : 962: Could not refresh JMS Connection for destination 'mail.q' - retrying using FixedBackOff{interval=5000, currentAttempts=0, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused (Connection refused)
+2019-01-18 09:53:41.883 ERROR 10032 --- [DefaultMessageListenerContainer-1] org.springframework.jms.listener.DefaultMessageListenerContainer : 962: Could not refresh JMS Connection for destination 'mail.q' - retrying using FixedBackOff{interval=5000, currentAttempts=1, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused (Connection refused)
+2019-01-18 09:53:46.884 ERROR 10032 --- [DefaultMessageListenerContainer-1] org.springframework.jms.listener.DefaultMessageListenerContainer : 962: Could not refresh JMS Connection for destination 'mail.q' - retrying using FixedBackOff{interval=5000, currentAttempts=2, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused (Connection refused)
+2019-01-18 09:53:51.887 ERROR 10032 --- [DefaultMessageListenerContainer-1] org.springframework.jms.listener.DefaultMessageListenerContainer : 962: Could not refresh JMS Connection for destination 'mail.q' - retrying using FixedBackOff{interval=5000, currentAttempts=3, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused (Connection refused)
+2019-01-18 09:53:56.890 ERROR 10032 --- [DefaultMessageListenerContainer-1] org.springframework.jms.listener.DefaultMessageListenerContainer : 962: Could not refresh JMS Connection for destination 'mail.q' - retrying using FixedBackOff{interval=5000, currentAttempts=4, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused (Connection refused)
+2019-01-18 09:54:00.007 INFO  10032 --- [Thread-12] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 208: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-18 09:54:01.139 INFO  10032 --- [Thread-12] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 597: Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 09:54:01.143 INFO  10032 --- [Thread-12] com.zaxxer.hikari.HikariDataSource : 350: HikariPool-1 - Shutdown initiated...
+2019-01-18 09:54:01.145 INFO  10032 --- [Thread-12] com.zaxxer.hikari.HikariDataSource : 352: HikariPool-1 - Shutdown completed.
+2019-01-18 09:54:05.147 INFO  10196 --- [main] com.framgia.bookStore.BookStoreApplication : 50: Starting BookStoreApplication on framgia0429-pc with PID 10196 (/home/hoang.ngoc.hai/Downloads/BookStore/target/classes started by FRAMGIA\hoang.ngoc.hai in /home/hoang.ngoc.hai/Downloads/BookStore)
+2019-01-18 09:54:05.150 INFO  10196 --- [main] com.framgia.bookStore.BookStoreApplication : 675: No active profile set, falling back to default profiles: default
+2019-01-18 09:54:05.574 INFO  10196 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 09:54:05.575 INFO  10196 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 09:54:05.617 INFO  10196 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 39ms. Found 3 repository interfaces.
+2019-01-18 09:54:05.708 INFO  10196 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 09:54:05.709 INFO  10196 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 09:54:05.723 INFO  10196 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.RoleRepository.
+2019-01-18 09:54:05.724 INFO  10196 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRepository.
+2019-01-18 09:54:05.724 INFO  10196 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRoleRopository.
+2019-01-18 09:54:05.724 INFO  10196 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 10ms. Found 0 repository interfaces.
+2019-01-18 09:54:05.988 INFO  10196 --- [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : 330: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$39a0ad68] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-18 09:54:06.196 INFO  10196 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 90: Tomcat initialized with port(s): 8082 (http)
+2019-01-18 09:54:06.209 INFO  10196 --- [main] org.apache.catalina.core.StandardService : 173: Starting service [Tomcat]
+2019-01-18 09:54:06.209 INFO  10196 --- [main] org.apache.catalina.core.StandardEngine : 173: Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-18 09:54:06.213 INFO  10196 --- [main] org.apache.catalina.core.AprLifecycleListener : 173: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-18 09:54:06.264 INFO  10196 --- [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring embedded WebApplicationContext
+2019-01-18 09:54:06.265 INFO  10196 --- [main] org.springframework.web.context.ContextLoader : 296: Root WebApplicationContext: initialization completed in 1072 ms
+2019-01-18 09:54:06.478 INFO  10196 --- [main] com.zaxxer.hikari.HikariDataSource : 110: HikariPool-1 - Starting...
+2019-01-18 09:54:06.542 INFO  10196 --- [main] com.zaxxer.hikari.HikariDataSource : 123: HikariPool-1 - Start completed.
+2019-01-18 09:54:06.566 INFO  10196 --- [main] org.hibernate.jpa.internal.util.LogHelper : 31: HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-18 09:54:06.601 INFO  10196 --- [main] org.hibernate.Version : 46: HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-18 09:54:06.602 INFO  10196 --- [main] org.hibernate.cfg.Environment : 213: HHH000206: hibernate.properties not found
+2019-01-18 09:54:06.671 INFO  10196 --- [main] org.hibernate.annotations.common.Version : 49: HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-18 09:54:06.766 INFO  10196 --- [main] org.hibernate.dialect.Dialect : 157: HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-18 09:54:07.218 INFO  10196 --- [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 415: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 09:54:07.733 INFO  10196 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/vendors/**'], []
+2019-01-18 09:54:07.734 INFO  10196 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/css/**'], []
+2019-01-18 09:54:07.734 INFO  10196 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/js/**'], []
+2019-01-18 09:54:07.734 INFO  10196 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/img/**'], []
+2019-01-18 09:54:07.734 INFO  10196 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/images/**'], []
+2019-01-18 09:54:07.734 INFO  10196 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/static/**'], []
+2019-01-18 09:54:07.734 INFO  10196 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/**/favicon.ico'], []
+2019-01-18 09:54:07.758 INFO  10196 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@13e5b262, org.springframework.security.web.context.SecurityContextPersistenceFilter@513bec8c, org.springframework.security.web.header.HeaderWriterFilter@b859355, org.springframework.security.web.csrf.CsrfFilter@5b2fc2c0, org.springframework.security.web.authentication.logout.LogoutFilter@78141c58, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3889c343, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4fc8163, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a65c40, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@136cad3e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6500e886, org.springframework.security.web.session.SessionManagementFilter@7c3223aa, org.springframework.security.web.access.ExceptionTranslationFilter@7f839ec5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@66f223fa]
+2019-01-18 09:54:07.959 INFO  10196 --- [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 171: Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-18 09:54:07.989 WARN  10196 --- [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration : 234: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-18 09:54:08.210 INFO  10196 --- [main] io.lettuce.core.EpollProvider : 68: Starting without optional epoll library
+2019-01-18 09:54:08.211 INFO  10196 --- [main] io.lettuce.core.KqueueProvider : 70: Starting without optional kqueue library
+2019-01-18 09:54:08.350 INFO  10196 --- [main] org.apache.activemq.broker.BrokerService : 683: Using Persistence Adapter: MemoryPersistenceAdapter
+2019-01-18 09:54:08.351 INFO  10196 --- [JMX connector] org.apache.activemq.broker.jmx.ManagementContext : 156: JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+2019-01-18 09:54:08.490 INFO  10196 --- [main] org.apache.activemq.broker.BrokerService : 746: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-38405-1547780048354-0:1) is starting
+2019-01-18 09:54:08.494 INFO  10196 --- [main] org.apache.activemq.broker.BrokerService : 773: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-38405-1547780048354-0:1) started
+2019-01-18 09:54:08.494 INFO  10196 --- [main] org.apache.activemq.broker.BrokerService : 774: For help or more information please see: http://activemq.apache.org
+2019-01-18 09:54:08.513 INFO  10196 --- [main] org.apache.activemq.broker.TransportConnector : 263: Connector vm://localhost started
+2019-01-18 09:54:09.077 INFO  10196 --- [main] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor : 295: No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-01-18 09:54:09.117 INFO  10196 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 204: Tomcat started on port(s): 8082 (http) with context path ''
+2019-01-18 09:54:09.119 INFO  10196 --- [main] com.framgia.bookStore.BookStoreApplication : 59: Started BookStoreApplication in 4.256 seconds (JVM running for 4.646)
+2019-01-18 09:56:27.578 INFO  10196 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 836: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-38405-1547780048354-0:1) is shutting down
+2019-01-18 09:56:27.584 INFO  10196 --- [Thread-13] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 208: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-18 09:56:27.584 INFO  10196 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.TransportConnector : 294: Connector vm://localhost stopped
+2019-01-18 09:56:27.590 INFO  10196 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 896: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-38405-1547780048354-0:1) uptime 2 minutes
+2019-01-18 09:56:27.590 INFO  10196 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 898: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-38405-1547780048354-0:1) is shutdown
+2019-01-18 09:56:28.705 INFO  10196 --- [Thread-13] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 597: Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 09:56:28.708 INFO  10196 --- [Thread-13] com.zaxxer.hikari.HikariDataSource : 350: HikariPool-1 - Shutdown initiated...
+2019-01-18 09:56:28.711 INFO  10196 --- [Thread-13] com.zaxxer.hikari.HikariDataSource : 352: HikariPool-1 - Shutdown completed.
+2019-01-18 09:56:31.402 INFO  10427 --- [main] com.framgia.bookStore.BookStoreApplication : 50: Starting BookStoreApplication on framgia0429-pc with PID 10427 (/home/hoang.ngoc.hai/Downloads/BookStore/target/classes started by FRAMGIA\hoang.ngoc.hai in /home/hoang.ngoc.hai/Downloads/BookStore)
+2019-01-18 09:56:31.405 INFO  10427 --- [main] com.framgia.bookStore.BookStoreApplication : 675: No active profile set, falling back to default profiles: default
+2019-01-18 09:56:31.813 INFO  10427 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 09:56:31.813 INFO  10427 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 09:56:31.858 INFO  10427 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 41ms. Found 3 repository interfaces.
+2019-01-18 09:56:31.953 INFO  10427 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 09:56:31.954 INFO  10427 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 09:56:31.968 INFO  10427 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.RoleRepository.
+2019-01-18 09:56:31.969 INFO  10427 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRepository.
+2019-01-18 09:56:31.969 INFO  10427 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRoleRopository.
+2019-01-18 09:56:31.969 INFO  10427 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 11ms. Found 0 repository interfaces.
+2019-01-18 09:56:32.224 INFO  10427 --- [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : 330: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e2ce4b76] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-18 09:56:32.429 INFO  10427 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 90: Tomcat initialized with port(s): 8082 (http)
+2019-01-18 09:56:32.443 INFO  10427 --- [main] org.apache.catalina.core.StandardService : 173: Starting service [Tomcat]
+2019-01-18 09:56:32.443 INFO  10427 --- [main] org.apache.catalina.core.StandardEngine : 173: Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-18 09:56:32.447 INFO  10427 --- [main] org.apache.catalina.core.AprLifecycleListener : 173: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-18 09:56:32.545 INFO  10427 --- [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring embedded WebApplicationContext
+2019-01-18 09:56:32.545 INFO  10427 --- [main] org.springframework.web.context.ContextLoader : 296: Root WebApplicationContext: initialization completed in 1106 ms
+2019-01-18 09:56:32.718 INFO  10427 --- [main] com.zaxxer.hikari.HikariDataSource : 110: HikariPool-1 - Starting...
+2019-01-18 09:56:32.780 INFO  10427 --- [main] com.zaxxer.hikari.HikariDataSource : 123: HikariPool-1 - Start completed.
+2019-01-18 09:56:32.806 INFO  10427 --- [main] org.hibernate.jpa.internal.util.LogHelper : 31: HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-18 09:56:32.839 INFO  10427 --- [main] org.hibernate.Version : 46: HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-18 09:56:32.840 INFO  10427 --- [main] org.hibernate.cfg.Environment : 213: HHH000206: hibernate.properties not found
+2019-01-18 09:56:32.909 INFO  10427 --- [main] org.hibernate.annotations.common.Version : 49: HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-18 09:56:33.005 INFO  10427 --- [main] org.hibernate.dialect.Dialect : 157: HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-18 09:56:33.474 INFO  10427 --- [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 415: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 09:56:34.050 INFO  10427 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/vendors/**'], []
+2019-01-18 09:56:34.050 INFO  10427 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/css/**'], []
+2019-01-18 09:56:34.050 INFO  10427 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/js/**'], []
+2019-01-18 09:56:34.050 INFO  10427 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/img/**'], []
+2019-01-18 09:56:34.050 INFO  10427 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/images/**'], []
+2019-01-18 09:56:34.050 INFO  10427 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/static/**'], []
+2019-01-18 09:56:34.050 INFO  10427 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/**/favicon.ico'], []
+2019-01-18 09:56:34.073 INFO  10427 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3555d804, org.springframework.security.web.context.SecurityContextPersistenceFilter@7fb46c10, org.springframework.security.web.header.HeaderWriterFilter@112a50a1, org.springframework.security.web.csrf.CsrfFilter@13e5b262, org.springframework.security.web.authentication.logout.LogoutFilter@739be7ec, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3872867d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@694c0ed1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@13087c75, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@2e4d252, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@19b8f1bd, org.springframework.security.web.session.SessionManagementFilter@3f31892e, org.springframework.security.web.access.ExceptionTranslationFilter@44f338ec, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@11896af6]
+2019-01-18 09:56:34.180 INFO  10427 --- [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 171: Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-18 09:56:34.207 WARN  10427 --- [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration : 234: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-18 09:56:34.424 INFO  10427 --- [main] io.lettuce.core.EpollProvider : 68: Starting without optional epoll library
+2019-01-18 09:56:34.425 INFO  10427 --- [main] io.lettuce.core.KqueueProvider : 70: Starting without optional kqueue library
+2019-01-18 09:56:34.554 INFO  10427 --- [main] org.apache.activemq.broker.BrokerService : 683: Using Persistence Adapter: MemoryPersistenceAdapter
+2019-01-18 09:56:34.554 INFO  10427 --- [JMX connector] org.apache.activemq.broker.jmx.ManagementContext : 156: JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+2019-01-18 09:56:34.699 INFO  10427 --- [main] org.apache.activemq.broker.BrokerService : 746: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-45127-1547780194557-0:1) is starting
+2019-01-18 09:56:34.704 INFO  10427 --- [main] org.apache.activemq.broker.BrokerService : 773: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-45127-1547780194557-0:1) started
+2019-01-18 09:56:34.704 INFO  10427 --- [main] org.apache.activemq.broker.BrokerService : 774: For help or more information please see: http://activemq.apache.org
+2019-01-18 09:56:34.723 INFO  10427 --- [main] org.apache.activemq.broker.TransportConnector : 263: Connector vm://localhost started
+2019-01-18 09:56:35.283 INFO  10427 --- [main] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor : 295: No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-01-18 09:56:35.299 INFO  10427 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 204: Tomcat started on port(s): 8082 (http) with context path ''
+2019-01-18 09:56:35.301 INFO  10427 --- [main] com.framgia.bookStore.BookStoreApplication : 59: Started BookStoreApplication in 4.214 seconds (JVM running for 4.621)
+2019-01-18 09:57:17.944 INFO  10427 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 836: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-45127-1547780194557-0:1) is shutting down
+2019-01-18 09:57:17.950 INFO  10427 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.TransportConnector : 294: Connector vm://localhost stopped
+2019-01-18 09:57:17.951 WARN  10427 --- [DefaultMessageListenerContainer-1] org.springframework.jms.listener.DefaultMessageListenerContainer : 895: Setup of JMS message listener invoker failed for destination 'mail.q' - trying to recover. Cause: peer (vm://localhost#1) stopped.
+2019-01-18 09:57:17.953 INFO  10427 --- [Thread-13] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 208: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-18 09:57:17.955 INFO  10427 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 896: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-45127-1547780194557-0:1) uptime 43.410 seconds
+2019-01-18 09:57:17.955 INFO  10427 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 898: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-45127-1547780194557-0:1) is shutdown
+2019-01-18 09:57:19.074 INFO  10427 --- [Thread-13] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 597: Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 09:57:19.077 INFO  10427 --- [Thread-13] com.zaxxer.hikari.HikariDataSource : 350: HikariPool-1 - Shutdown initiated...
+2019-01-18 09:57:19.079 INFO  10427 --- [Thread-13] com.zaxxer.hikari.HikariDataSource : 352: HikariPool-1 - Shutdown completed.
+2019-01-18 09:57:21.475 INFO  10601 --- [main] com.framgia.bookStore.BookStoreApplication : 50: Starting BookStoreApplication on framgia0429-pc with PID 10601 (/home/hoang.ngoc.hai/Downloads/BookStore/target/classes started by FRAMGIA\hoang.ngoc.hai in /home/hoang.ngoc.hai/Downloads/BookStore)
+2019-01-18 09:57:21.479 INFO  10601 --- [main] com.framgia.bookStore.BookStoreApplication : 675: No active profile set, falling back to default profiles: default
+2019-01-18 09:57:22.067 INFO  10601 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 09:57:22.067 INFO  10601 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 09:57:22.134 INFO  10601 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 61ms. Found 3 repository interfaces.
+2019-01-18 09:57:22.295 INFO  10601 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 09:57:22.296 INFO  10601 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 09:57:22.314 INFO  10601 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.RoleRepository.
+2019-01-18 09:57:22.314 INFO  10601 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRepository.
+2019-01-18 09:57:22.315 INFO  10601 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRoleRopository.
+2019-01-18 09:57:22.315 INFO  10601 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 14ms. Found 0 repository interfaces.
+2019-01-18 09:57:22.612 INFO  10601 --- [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : 330: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f7f992ea] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-18 09:57:22.844 INFO  10601 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 90: Tomcat initialized with port(s): 8082 (http)
+2019-01-18 09:57:22.860 INFO  10601 --- [main] org.apache.catalina.core.StandardService : 173: Starting service [Tomcat]
+2019-01-18 09:57:22.860 INFO  10601 --- [main] org.apache.catalina.core.StandardEngine : 173: Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-18 09:57:22.864 INFO  10601 --- [main] org.apache.catalina.core.AprLifecycleListener : 173: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-18 09:57:22.999 INFO  10601 --- [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring embedded WebApplicationContext
+2019-01-18 09:57:22.999 INFO  10601 --- [main] org.springframework.web.context.ContextLoader : 296: Root WebApplicationContext: initialization completed in 1463 ms
+2019-01-18 09:57:23.215 INFO  10601 --- [main] com.zaxxer.hikari.HikariDataSource : 110: HikariPool-1 - Starting...
+2019-01-18 09:57:23.285 INFO  10601 --- [main] com.zaxxer.hikari.HikariDataSource : 123: HikariPool-1 - Start completed.
+2019-01-18 09:57:23.318 INFO  10601 --- [main] org.hibernate.jpa.internal.util.LogHelper : 31: HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-18 09:57:23.355 INFO  10601 --- [main] org.hibernate.Version : 46: HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-18 09:57:23.356 INFO  10601 --- [main] org.hibernate.cfg.Environment : 213: HHH000206: hibernate.properties not found
+2019-01-18 09:57:23.437 INFO  10601 --- [main] org.hibernate.annotations.common.Version : 49: HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-18 09:57:23.544 INFO  10601 --- [main] org.hibernate.dialect.Dialect : 157: HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-18 09:57:24.062 INFO  10601 --- [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 415: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 09:57:24.781 INFO  10601 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/vendors/**'], []
+2019-01-18 09:57:24.782 INFO  10601 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/css/**'], []
+2019-01-18 09:57:24.782 INFO  10601 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/js/**'], []
+2019-01-18 09:57:24.782 INFO  10601 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/img/**'], []
+2019-01-18 09:57:24.782 INFO  10601 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/images/**'], []
+2019-01-18 09:57:24.782 INFO  10601 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/static/**'], []
+2019-01-18 09:57:24.782 INFO  10601 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/**/favicon.ico'], []
+2019-01-18 09:57:24.809 INFO  10601 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4281a26f, org.springframework.security.web.context.SecurityContextPersistenceFilter@25890ce3, org.springframework.security.web.header.HeaderWriterFilter@1248f83, org.springframework.security.web.csrf.CsrfFilter@76c85485, org.springframework.security.web.authentication.logout.LogoutFilter@1cc42abe, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@72b6fa98, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@25da1dc9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1aea759d, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@6693818c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@726e29d, org.springframework.security.web.session.SessionManagementFilter@19b0a9f2, org.springframework.security.web.access.ExceptionTranslationFilter@4be1c797, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6eae3730]
+2019-01-18 09:57:24.933 INFO  10601 --- [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 171: Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-18 09:57:24.968 WARN  10601 --- [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration : 234: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-18 09:57:25.246 INFO  10601 --- [main] io.lettuce.core.EpollProvider : 68: Starting without optional epoll library
+2019-01-18 09:57:25.247 INFO  10601 --- [main] io.lettuce.core.KqueueProvider : 70: Starting without optional kqueue library
+2019-01-18 09:57:25.436 INFO  10601 --- [main] org.apache.activemq.broker.BrokerService : 683: Using Persistence Adapter: MemoryPersistenceAdapter
+2019-01-18 09:57:25.439 INFO  10601 --- [JMX connector] org.apache.activemq.broker.jmx.ManagementContext : 156: JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+2019-01-18 09:57:25.588 INFO  10601 --- [main] org.apache.activemq.broker.BrokerService : 746: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-39783-1547780245445-0:1) is starting
+2019-01-18 09:57:25.595 INFO  10601 --- [main] org.apache.activemq.broker.BrokerService : 773: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-39783-1547780245445-0:1) started
+2019-01-18 09:57:25.595 INFO  10601 --- [main] org.apache.activemq.broker.BrokerService : 774: For help or more information please see: http://activemq.apache.org
+2019-01-18 09:57:25.618 INFO  10601 --- [main] org.apache.activemq.broker.TransportConnector : 263: Connector vm://localhost started
+2019-01-18 09:57:26.225 INFO  10601 --- [main] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor : 295: No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-01-18 09:57:26.251 INFO  10601 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 204: Tomcat started on port(s): 8082 (http) with context path ''
+2019-01-18 09:57:26.253 INFO  10601 --- [main] com.framgia.bookStore.BookStoreApplication : 59: Started BookStoreApplication in 5.388 seconds (JVM running for 5.87)
+2019-01-18 09:58:38.293 INFO  10601 --- [http-nio-8082-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-18 09:58:38.293 INFO  10601 --- [http-nio-8082-exec-1] org.springframework.web.servlet.DispatcherServlet : 524: Initializing Servlet 'dispatcherServlet'
+2019-01-18 09:58:38.299 INFO  10601 --- [http-nio-8082-exec-1] org.springframework.web.servlet.DispatcherServlet : 546: Completed initialization in 6 ms
+2019-01-18 09:58:49.533 INFO  10601 --- [http-nio-8082-exec-8] org.hibernate.hql.internal.QueryTranslatorFactoryInitiator : 47: HHH000397: Using ASTQueryTranslatorFactory
+2019-01-18 10:00:38.561 INFO  10601 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 836: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-39783-1547780245445-0:1) is shutting down
+2019-01-18 10:00:38.566 INFO  10601 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.TransportConnector : 294: Connector vm://localhost stopped
+2019-01-18 10:00:38.568 WARN  10601 --- [DefaultMessageListenerContainer-1] org.springframework.jms.listener.DefaultMessageListenerContainer : 895: Setup of JMS message listener invoker failed for destination 'mail.q' - trying to recover. Cause: peer (vm://localhost#1) stopped.
+2019-01-18 10:00:38.572 INFO  10601 --- [Thread-16] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 208: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-18 10:00:38.573 INFO  10601 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 896: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-39783-1547780245445-0:1) uptime 3 minutes
+2019-01-18 10:00:38.573 INFO  10601 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 898: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-39783-1547780245445-0:1) is shutdown
+2019-01-18 10:00:39.694 INFO  10601 --- [Thread-16] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 597: Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 10:00:39.698 INFO  10601 --- [Thread-16] com.zaxxer.hikari.HikariDataSource : 350: HikariPool-1 - Shutdown initiated...
+2019-01-18 10:00:39.704 INFO  10601 --- [Thread-16] com.zaxxer.hikari.HikariDataSource : 352: HikariPool-1 - Shutdown completed.
+2019-01-18 10:00:42.360 INFO  11150 --- [main] com.framgia.bookStore.BookStoreApplication : 50: Starting BookStoreApplication on framgia0429-pc with PID 11150 (/home/hoang.ngoc.hai/Downloads/BookStore/target/classes started by FRAMGIA\hoang.ngoc.hai in /home/hoang.ngoc.hai/Downloads/BookStore)
+2019-01-18 10:00:42.363 INFO  11150 --- [main] com.framgia.bookStore.BookStoreApplication : 675: No active profile set, falling back to default profiles: default
+2019-01-18 10:00:42.791 INFO  11150 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 10:00:42.791 INFO  11150 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 10:00:42.833 INFO  11150 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 38ms. Found 3 repository interfaces.
+2019-01-18 10:00:42.925 INFO  11150 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 10:00:42.925 INFO  11150 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 10:00:42.939 INFO  11150 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.RoleRepository.
+2019-01-18 10:00:42.940 INFO  11150 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRepository.
+2019-01-18 10:00:42.940 INFO  11150 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRoleRopository.
+2019-01-18 10:00:42.941 INFO  11150 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 11ms. Found 0 repository interfaces.
+2019-01-18 10:00:43.206 INFO  11150 --- [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : 330: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$79bc034f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-18 10:00:43.414 INFO  11150 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 90: Tomcat initialized with port(s): 8082 (http)
+2019-01-18 10:00:43.426 INFO  11150 --- [main] org.apache.catalina.core.StandardService : 173: Starting service [Tomcat]
+2019-01-18 10:00:43.427 INFO  11150 --- [main] org.apache.catalina.core.StandardEngine : 173: Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-18 10:00:43.431 INFO  11150 --- [main] org.apache.catalina.core.AprLifecycleListener : 173: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-18 10:00:43.529 INFO  11150 --- [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring embedded WebApplicationContext
+2019-01-18 10:00:43.529 INFO  11150 --- [main] org.springframework.web.context.ContextLoader : 296: Root WebApplicationContext: initialization completed in 1106 ms
+2019-01-18 10:00:43.708 INFO  11150 --- [main] com.zaxxer.hikari.HikariDataSource : 110: HikariPool-1 - Starting...
+2019-01-18 10:00:43.775 INFO  11150 --- [main] com.zaxxer.hikari.HikariDataSource : 123: HikariPool-1 - Start completed.
+2019-01-18 10:00:43.800 INFO  11150 --- [main] org.hibernate.jpa.internal.util.LogHelper : 31: HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-18 10:00:43.832 INFO  11150 --- [main] org.hibernate.Version : 46: HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-18 10:00:43.833 INFO  11150 --- [main] org.hibernate.cfg.Environment : 213: HHH000206: hibernate.properties not found
+2019-01-18 10:00:43.901 INFO  11150 --- [main] org.hibernate.annotations.common.Version : 49: HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-18 10:00:43.995 INFO  11150 --- [main] org.hibernate.dialect.Dialect : 157: HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-18 10:00:44.463 INFO  11150 --- [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 415: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 10:00:45.051 INFO  11150 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/vendors/**'], []
+2019-01-18 10:00:45.052 INFO  11150 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/css/**'], []
+2019-01-18 10:00:45.052 INFO  11150 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/js/**'], []
+2019-01-18 10:00:45.052 INFO  11150 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/img/**'], []
+2019-01-18 10:00:45.052 INFO  11150 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/images/**'], []
+2019-01-18 10:00:45.052 INFO  11150 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/static/**'], []
+2019-01-18 10:00:45.052 INFO  11150 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/**/favicon.ico'], []
+2019-01-18 10:00:45.075 INFO  11150 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@553d828a, org.springframework.security.web.context.SecurityContextPersistenceFilter@7e1953f7, org.springframework.security.web.header.HeaderWriterFilter@60256d1b, org.springframework.security.web.csrf.CsrfFilter@7d432bc0, org.springframework.security.web.authentication.logout.LogoutFilter@2178d296, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@20a3321a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2b55ea4d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@28551755, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@7f5a25e2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6cb759d5, org.springframework.security.web.session.SessionManagementFilter@5d8a1456, org.springframework.security.web.access.ExceptionTranslationFilter@4932d580, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@38d895e8]
+2019-01-18 10:00:45.184 INFO  11150 --- [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 171: Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-18 10:00:45.210 WARN  11150 --- [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration : 234: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-18 10:00:45.438 INFO  11150 --- [main] io.lettuce.core.EpollProvider : 68: Starting without optional epoll library
+2019-01-18 10:00:45.439 INFO  11150 --- [main] io.lettuce.core.KqueueProvider : 70: Starting without optional kqueue library
+2019-01-18 10:00:45.572 INFO  11150 --- [JMX connector] org.apache.activemq.broker.jmx.ManagementContext : 156: JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+2019-01-18 10:00:45.572 INFO  11150 --- [main] org.apache.activemq.broker.BrokerService : 683: Using Persistence Adapter: MemoryPersistenceAdapter
+2019-01-18 10:00:45.722 INFO  11150 --- [main] org.apache.activemq.broker.BrokerService : 746: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-36763-1547780445575-0:1) is starting
+2019-01-18 10:00:45.726 INFO  11150 --- [main] org.apache.activemq.broker.BrokerService : 773: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-36763-1547780445575-0:1) started
+2019-01-18 10:00:45.726 INFO  11150 --- [main] org.apache.activemq.broker.BrokerService : 774: For help or more information please see: http://activemq.apache.org
+2019-01-18 10:00:45.747 INFO  11150 --- [main] org.apache.activemq.broker.TransportConnector : 263: Connector vm://localhost started
+2019-01-18 10:00:46.310 INFO  11150 --- [main] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor : 295: No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-01-18 10:00:46.327 INFO  11150 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 204: Tomcat started on port(s): 8082 (http) with context path ''
+2019-01-18 10:00:46.328 INFO  11150 --- [main] com.framgia.bookStore.BookStoreApplication : 59: Started BookStoreApplication in 4.35 seconds (JVM running for 4.729)
+2019-01-18 10:00:56.909 INFO  11150 --- [http-nio-8082-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-18 10:00:56.910 INFO  11150 --- [http-nio-8082-exec-1] org.springframework.web.servlet.DispatcherServlet : 524: Initializing Servlet 'dispatcherServlet'
+2019-01-18 10:00:56.917 INFO  11150 --- [http-nio-8082-exec-1] org.springframework.web.servlet.DispatcherServlet : 546: Completed initialization in 7 ms
+2019-01-18 10:01:02.217 INFO  11150 --- [http-nio-8082-exec-3] org.hibernate.hql.internal.QueryTranslatorFactoryInitiator : 47: HHH000397: Using ASTQueryTranslatorFactory
+2019-01-18 10:03:13.957 INFO  11150 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 836: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-36763-1547780445575-0:1) is shutting down
+2019-01-18 10:03:13.960 INFO  11150 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.TransportConnector : 294: Connector vm://localhost stopped
+2019-01-18 10:03:13.961 WARN  11150 --- [DefaultMessageListenerContainer-1] org.springframework.jms.listener.DefaultMessageListenerContainer : 895: Setup of JMS message listener invoker failed for destination 'mail.q' - trying to recover. Cause: peer (vm://localhost#1) stopped.
+2019-01-18 10:03:13.964 INFO  11150 --- [Thread-14] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 208: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-18 10:03:13.965 INFO  11150 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 896: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-36763-1547780445575-0:1) uptime 2 minutes
+2019-01-18 10:03:13.965 INFO  11150 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 898: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-36763-1547780445575-0:1) is shutdown
+2019-01-18 10:03:15.085 INFO  11150 --- [Thread-14] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 597: Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 10:03:15.089 INFO  11150 --- [Thread-14] com.zaxxer.hikari.HikariDataSource : 350: HikariPool-1 - Shutdown initiated...
+2019-01-18 10:03:15.091 INFO  11150 --- [Thread-14] com.zaxxer.hikari.HikariDataSource : 352: HikariPool-1 - Shutdown completed.
+2019-01-18 10:03:17.076 INFO  11492 --- [main] com.framgia.bookStore.BookStoreApplication : 50: Starting BookStoreApplication on framgia0429-pc with PID 11492 (/home/hoang.ngoc.hai/Downloads/BookStore/target/classes started by FRAMGIA\hoang.ngoc.hai in /home/hoang.ngoc.hai/Downloads/BookStore)
+2019-01-18 10:03:17.079 INFO  11492 --- [main] com.framgia.bookStore.BookStoreApplication : 675: No active profile set, falling back to default profiles: default
+2019-01-18 10:03:17.488 INFO  11492 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 10:03:17.489 INFO  11492 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 10:03:17.530 INFO  11492 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 37ms. Found 3 repository interfaces.
+2019-01-18 10:03:17.621 INFO  11492 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 10:03:17.622 INFO  11492 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 10:03:17.636 INFO  11492 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.RoleRepository.
+2019-01-18 10:03:17.637 INFO  11492 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRepository.
+2019-01-18 10:03:17.637 INFO  11492 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRoleRopository.
+2019-01-18 10:03:17.637 INFO  11492 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 10ms. Found 0 repository interfaces.
+2019-01-18 10:03:17.891 INFO  11492 --- [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : 330: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$be0d7ecd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-18 10:03:18.096 INFO  11492 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 90: Tomcat initialized with port(s): 8082 (http)
+2019-01-18 10:03:18.110 INFO  11492 --- [main] org.apache.catalina.core.StandardService : 173: Starting service [Tomcat]
+2019-01-18 10:03:18.110 INFO  11492 --- [main] org.apache.catalina.core.StandardEngine : 173: Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-18 10:03:18.115 INFO  11492 --- [main] org.apache.catalina.core.AprLifecycleListener : 173: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-18 10:03:18.211 INFO  11492 --- [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring embedded WebApplicationContext
+2019-01-18 10:03:18.211 INFO  11492 --- [main] org.springframework.web.context.ContextLoader : 296: Root WebApplicationContext: initialization completed in 1095 ms
+2019-01-18 10:03:18.386 INFO  11492 --- [main] com.zaxxer.hikari.HikariDataSource : 110: HikariPool-1 - Starting...
+2019-01-18 10:03:18.448 INFO  11492 --- [main] com.zaxxer.hikari.HikariDataSource : 123: HikariPool-1 - Start completed.
+2019-01-18 10:03:18.473 INFO  11492 --- [main] org.hibernate.jpa.internal.util.LogHelper : 31: HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-18 10:03:18.506 INFO  11492 --- [main] org.hibernate.Version : 46: HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-18 10:03:18.508 INFO  11492 --- [main] org.hibernate.cfg.Environment : 213: HHH000206: hibernate.properties not found
+2019-01-18 10:03:18.575 INFO  11492 --- [main] org.hibernate.annotations.common.Version : 49: HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-18 10:03:18.670 INFO  11492 --- [main] org.hibernate.dialect.Dialect : 157: HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-18 10:03:19.130 INFO  11492 --- [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 415: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 10:03:19.708 INFO  11492 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/vendors/**'], []
+2019-01-18 10:03:19.708 INFO  11492 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/css/**'], []
+2019-01-18 10:03:19.709 INFO  11492 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/js/**'], []
+2019-01-18 10:03:19.709 INFO  11492 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/img/**'], []
+2019-01-18 10:03:19.709 INFO  11492 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/images/**'], []
+2019-01-18 10:03:19.709 INFO  11492 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/static/**'], []
+2019-01-18 10:03:19.709 INFO  11492 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/**/favicon.ico'], []
+2019-01-18 10:03:19.731 INFO  11492 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5ca10d0e, org.springframework.security.web.context.SecurityContextPersistenceFilter@10abd94f, org.springframework.security.web.header.HeaderWriterFilter@514b247b, org.springframework.security.web.csrf.CsrfFilter@8f8717b, org.springframework.security.web.authentication.logout.LogoutFilter@2fbb098f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@148f94dc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@628f0936, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4bc4ec43, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@d1973e8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@34604b32, org.springframework.security.web.session.SessionManagementFilter@5440a3a, org.springframework.security.web.access.ExceptionTranslationFilter@145ef9e8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@65b7678a]
+2019-01-18 10:03:19.839 INFO  11492 --- [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 171: Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-18 10:03:19.865 WARN  11492 --- [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration : 234: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-18 10:03:20.084 INFO  11492 --- [main] io.lettuce.core.EpollProvider : 68: Starting without optional epoll library
+2019-01-18 10:03:20.085 INFO  11492 --- [main] io.lettuce.core.KqueueProvider : 70: Starting without optional kqueue library
+2019-01-18 10:03:20.216 INFO  11492 --- [JMX connector] org.apache.activemq.broker.jmx.ManagementContext : 156: JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+2019-01-18 10:03:20.216 INFO  11492 --- [main] org.apache.activemq.broker.BrokerService : 683: Using Persistence Adapter: MemoryPersistenceAdapter
+2019-01-18 10:03:20.338 INFO  11492 --- [main] org.apache.activemq.broker.BrokerService : 746: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-33187-1547780600219-0:1) is starting
+2019-01-18 10:03:20.340 INFO  11492 --- [main] org.apache.activemq.broker.BrokerService : 773: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-33187-1547780600219-0:1) started
+2019-01-18 10:03:20.340 INFO  11492 --- [main] org.apache.activemq.broker.BrokerService : 774: For help or more information please see: http://activemq.apache.org
+2019-01-18 10:03:20.361 INFO  11492 --- [main] org.apache.activemq.broker.TransportConnector : 263: Connector vm://localhost started
+2019-01-18 10:03:20.966 INFO  11492 --- [main] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor : 295: No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-01-18 10:03:21.010 INFO  11492 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 204: Tomcat started on port(s): 8082 (http) with context path ''
+2019-01-18 10:03:21.012 INFO  11492 --- [main] com.framgia.bookStore.BookStoreApplication : 59: Started BookStoreApplication in 4.241 seconds (JVM running for 4.667)
+2019-01-18 10:03:28.279 INFO  11492 --- [http-nio-8082-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-18 10:03:28.279 INFO  11492 --- [http-nio-8082-exec-1] org.springframework.web.servlet.DispatcherServlet : 524: Initializing Servlet 'dispatcherServlet'
+2019-01-18 10:03:28.287 INFO  11492 --- [http-nio-8082-exec-1] org.springframework.web.servlet.DispatcherServlet : 546: Completed initialization in 8 ms
+2019-01-18 10:03:33.756 INFO  11492 --- [http-nio-8082-exec-8] org.hibernate.hql.internal.QueryTranslatorFactoryInitiator : 47: HHH000397: Using ASTQueryTranslatorFactory
+2019-01-18 10:25:31.331 INFO  11492 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 836: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-33187-1547780600219-0:1) is shutting down
+2019-01-18 10:25:31.337 INFO  11492 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.TransportConnector : 294: Connector vm://localhost stopped
+2019-01-18 10:25:31.338 WARN  11492 --- [DefaultMessageListenerContainer-1] org.springframework.jms.listener.DefaultMessageListenerContainer : 895: Setup of JMS message listener invoker failed for destination 'mail.q' - trying to recover. Cause: peer (vm://localhost#1) stopped.
+2019-01-18 10:25:31.341 INFO  11492 --- [Thread-13] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 208: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-18 10:25:31.344 INFO  11492 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 896: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-33187-1547780600219-0:1) uptime 22 minutes
+2019-01-18 10:25:31.344 INFO  11492 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 898: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-33187-1547780600219-0:1) is shutdown
+2019-01-18 10:25:32.461 INFO  11492 --- [Thread-13] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 597: Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 10:25:32.464 INFO  11492 --- [Thread-13] com.zaxxer.hikari.HikariDataSource : 350: HikariPool-1 - Shutdown initiated...
+2019-01-18 10:25:32.466 INFO  11492 --- [Thread-13] com.zaxxer.hikari.HikariDataSource : 352: HikariPool-1 - Shutdown completed.
+2019-01-18 10:25:34.373 INFO  12711 --- [main] com.framgia.bookStore.BookStoreApplication : 50: Starting BookStoreApplication on framgia0429-pc with PID 12711 (/home/hoang.ngoc.hai/Downloads/BookStore/target/classes started by FRAMGIA\hoang.ngoc.hai in /home/hoang.ngoc.hai/Downloads/BookStore)
+2019-01-18 10:25:34.377 INFO  12711 --- [main] com.framgia.bookStore.BookStoreApplication : 675: No active profile set, falling back to default profiles: default
+2019-01-18 10:25:34.844 INFO  12711 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 10:25:34.844 INFO  12711 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 10:25:34.896 INFO  12711 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 48ms. Found 3 repository interfaces.
+2019-01-18 10:25:35.009 INFO  12711 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 10:25:35.010 INFO  12711 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 10:25:35.024 INFO  12711 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.RoleRepository.
+2019-01-18 10:25:35.025 INFO  12711 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRepository.
+2019-01-18 10:25:35.025 INFO  12711 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRoleRopository.
+2019-01-18 10:25:35.025 INFO  12711 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 11ms. Found 0 repository interfaces.
+2019-01-18 10:25:35.294 INFO  12711 --- [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : 330: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7bfd313f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-18 10:25:35.500 INFO  12711 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 90: Tomcat initialized with port(s): 8082 (http)
+2019-01-18 10:25:35.515 INFO  12711 --- [main] org.apache.catalina.core.StandardService : 173: Starting service [Tomcat]
+2019-01-18 10:25:35.515 INFO  12711 --- [main] org.apache.catalina.core.StandardEngine : 173: Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-18 10:25:35.520 INFO  12711 --- [main] org.apache.catalina.core.AprLifecycleListener : 173: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-18 10:25:35.628 INFO  12711 --- [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring embedded WebApplicationContext
+2019-01-18 10:25:35.628 INFO  12711 --- [main] org.springframework.web.context.ContextLoader : 296: Root WebApplicationContext: initialization completed in 1217 ms
+2019-01-18 10:25:35.803 INFO  12711 --- [main] com.zaxxer.hikari.HikariDataSource : 110: HikariPool-1 - Starting...
+2019-01-18 10:25:35.865 INFO  12711 --- [main] com.zaxxer.hikari.HikariDataSource : 123: HikariPool-1 - Start completed.
+2019-01-18 10:25:35.889 INFO  12711 --- [main] org.hibernate.jpa.internal.util.LogHelper : 31: HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-18 10:25:35.922 INFO  12711 --- [main] org.hibernate.Version : 46: HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-18 10:25:35.923 INFO  12711 --- [main] org.hibernate.cfg.Environment : 213: HHH000206: hibernate.properties not found
+2019-01-18 10:25:35.990 INFO  12711 --- [main] org.hibernate.annotations.common.Version : 49: HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-18 10:25:36.083 INFO  12711 --- [main] org.hibernate.dialect.Dialect : 157: HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-18 10:25:36.528 INFO  12711 --- [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 415: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 10:25:37.146 INFO  12711 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/vendors/**'], []
+2019-01-18 10:25:37.146 INFO  12711 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/css/**'], []
+2019-01-18 10:25:37.147 INFO  12711 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/js/**'], []
+2019-01-18 10:25:37.147 INFO  12711 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/img/**'], []
+2019-01-18 10:25:37.147 INFO  12711 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/images/**'], []
+2019-01-18 10:25:37.147 INFO  12711 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/static/**'], []
+2019-01-18 10:25:37.147 INFO  12711 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/**/favicon.ico'], []
+2019-01-18 10:25:37.169 INFO  12711 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1ecf784f, org.springframework.security.web.context.SecurityContextPersistenceFilter@7a6e0f3c, org.springframework.security.web.header.HeaderWriterFilter@63ede2a0, org.springframework.security.web.csrf.CsrfFilter@ab2e887, org.springframework.security.web.authentication.logout.LogoutFilter@620f7a39, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3c62c81f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6fa2d0b2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7a7bb083, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@a36ff0b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@344769b9, org.springframework.security.web.session.SessionManagementFilter@72998021, org.springframework.security.web.access.ExceptionTranslationFilter@26f07261, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7f5a25e2]
+2019-01-18 10:25:37.280 INFO  12711 --- [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 171: Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-18 10:25:37.307 WARN  12711 --- [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration : 234: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-18 10:25:37.532 INFO  12711 --- [main] io.lettuce.core.EpollProvider : 68: Starting without optional epoll library
+2019-01-18 10:25:37.533 INFO  12711 --- [main] io.lettuce.core.KqueueProvider : 70: Starting without optional kqueue library
+2019-01-18 10:25:37.664 INFO  12711 --- [main] org.apache.activemq.broker.BrokerService : 683: Using Persistence Adapter: MemoryPersistenceAdapter
+2019-01-18 10:25:37.665 INFO  12711 --- [JMX connector] org.apache.activemq.broker.jmx.ManagementContext : 156: JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+2019-01-18 10:25:37.784 INFO  12711 --- [main] org.apache.activemq.broker.BrokerService : 746: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-41677-1547781937667-0:1) is starting
+2019-01-18 10:25:37.787 INFO  12711 --- [main] org.apache.activemq.broker.BrokerService : 773: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-41677-1547781937667-0:1) started
+2019-01-18 10:25:37.787 INFO  12711 --- [main] org.apache.activemq.broker.BrokerService : 774: For help or more information please see: http://activemq.apache.org
+2019-01-18 10:25:37.808 INFO  12711 --- [main] org.apache.activemq.broker.TransportConnector : 263: Connector vm://localhost started
+2019-01-18 10:25:38.370 INFO  12711 --- [main] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor : 295: No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-01-18 10:25:38.405 INFO  12711 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 204: Tomcat started on port(s): 8082 (http) with context path ''
+2019-01-18 10:25:38.406 INFO  12711 --- [main] com.framgia.bookStore.BookStoreApplication : 59: Started BookStoreApplication in 4.336 seconds (JVM running for 4.726)
+2019-01-18 10:25:41.088 INFO  12711 --- [http-nio-8082-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-18 10:25:41.089 INFO  12711 --- [http-nio-8082-exec-1] org.springframework.web.servlet.DispatcherServlet : 524: Initializing Servlet 'dispatcherServlet'
+2019-01-18 10:25:41.097 INFO  12711 --- [http-nio-8082-exec-1] org.springframework.web.servlet.DispatcherServlet : 546: Completed initialization in 8 ms
+2019-01-18 10:25:41.167 INFO  12711 --- [http-nio-8082-exec-1] org.hibernate.hql.internal.QueryTranslatorFactoryInitiator : 47: HHH000397: Using ASTQueryTranslatorFactory
+2019-01-18 10:51:52.885 INFO  12711 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 836: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-41677-1547781937667-0:1) is shutting down
+2019-01-18 10:51:52.891 INFO  12711 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.TransportConnector : 294: Connector vm://localhost stopped
+2019-01-18 10:51:52.893 WARN  12711 --- [DefaultMessageListenerContainer-1] org.springframework.jms.listener.DefaultMessageListenerContainer : 895: Setup of JMS message listener invoker failed for destination 'mail.q' - trying to recover. Cause: peer (vm://localhost#1) stopped.
+2019-01-18 10:51:52.896 INFO  12711 --- [Thread-13] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 208: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-18 10:51:52.901 INFO  12711 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 896: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-41677-1547781937667-0:1) uptime 26 minutes
+2019-01-18 10:51:52.901 INFO  12711 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 898: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-41677-1547781937667-0:1) is shutdown
+2019-01-18 10:51:54.024 INFO  12711 --- [Thread-13] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 597: Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 10:51:54.029 INFO  12711 --- [Thread-13] com.zaxxer.hikari.HikariDataSource : 350: HikariPool-1 - Shutdown initiated...
+2019-01-18 10:51:54.036 INFO  12711 --- [Thread-13] com.zaxxer.hikari.HikariDataSource : 352: HikariPool-1 - Shutdown completed.
+2019-01-18 10:51:56.895 INFO  14011 --- [main] com.framgia.bookStore.BookStoreApplication : 50: Starting BookStoreApplication on framgia0429-pc with PID 14011 (/home/hoang.ngoc.hai/Downloads/BookStore/target/classes started by FRAMGIA\hoang.ngoc.hai in /home/hoang.ngoc.hai/Downloads/BookStore)
+2019-01-18 10:51:56.898 INFO  14011 --- [main] com.framgia.bookStore.BookStoreApplication : 675: No active profile set, falling back to default profiles: default
+2019-01-18 10:51:57.332 INFO  14011 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 10:51:57.333 INFO  14011 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 10:51:57.377 INFO  14011 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 40ms. Found 3 repository interfaces.
+2019-01-18 10:51:57.481 INFO  14011 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 10:51:57.482 INFO  14011 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 10:51:57.505 INFO  14011 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.RoleRepository.
+2019-01-18 10:51:57.506 INFO  14011 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRepository.
+2019-01-18 10:51:57.506 INFO  14011 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRoleRopository.
+2019-01-18 10:51:57.506 INFO  14011 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 18ms. Found 0 repository interfaces.
+2019-01-18 10:51:57.768 INFO  14011 --- [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : 330: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$140e4164] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-18 10:51:57.995 INFO  14011 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 90: Tomcat initialized with port(s): 8082 (http)
+2019-01-18 10:51:58.015 INFO  14011 --- [main] org.apache.catalina.core.StandardService : 173: Starting service [Tomcat]
+2019-01-18 10:51:58.016 INFO  14011 --- [main] org.apache.catalina.core.StandardEngine : 173: Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-18 10:51:58.021 INFO  14011 --- [main] org.apache.catalina.core.AprLifecycleListener : 173: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-18 10:51:58.168 INFO  14011 --- [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring embedded WebApplicationContext
+2019-01-18 10:51:58.168 INFO  14011 --- [main] org.springframework.web.context.ContextLoader : 296: Root WebApplicationContext: initialization completed in 1233 ms
+2019-01-18 10:51:58.369 INFO  14011 --- [main] com.zaxxer.hikari.HikariDataSource : 110: HikariPool-1 - Starting...
+2019-01-18 10:51:58.437 INFO  14011 --- [main] com.zaxxer.hikari.HikariDataSource : 123: HikariPool-1 - Start completed.
+2019-01-18 10:51:58.465 INFO  14011 --- [main] org.hibernate.jpa.internal.util.LogHelper : 31: HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-18 10:51:58.507 INFO  14011 --- [main] org.hibernate.Version : 46: HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-18 10:51:58.509 INFO  14011 --- [main] org.hibernate.cfg.Environment : 213: HHH000206: hibernate.properties not found
+2019-01-18 10:51:58.605 INFO  14011 --- [main] org.hibernate.annotations.common.Version : 49: HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-18 10:51:58.715 INFO  14011 --- [main] org.hibernate.dialect.Dialect : 157: HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-18 10:51:59.193 INFO  14011 --- [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 415: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 10:51:59.849 INFO  14011 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/vendors/**'], []
+2019-01-18 10:51:59.850 INFO  14011 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/css/**'], []
+2019-01-18 10:51:59.850 INFO  14011 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/js/**'], []
+2019-01-18 10:51:59.851 INFO  14011 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/img/**'], []
+2019-01-18 10:51:59.851 INFO  14011 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/images/**'], []
+2019-01-18 10:51:59.851 INFO  14011 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/static/**'], []
+2019-01-18 10:51:59.851 INFO  14011 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/**/favicon.ico'], []
+2019-01-18 10:51:59.873 INFO  14011 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7f3a92fd, org.springframework.security.web.context.SecurityContextPersistenceFilter@7d1cfe97, org.springframework.security.web.header.HeaderWriterFilter@1784a296, org.springframework.security.web.csrf.CsrfFilter@2b85edc7, org.springframework.security.web.authentication.logout.LogoutFilter@148f94dc, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@396519b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1822a61b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7bbd0006, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@15ea0ca3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e111e08, org.springframework.security.web.session.SessionManagementFilter@4af6839c, org.springframework.security.web.access.ExceptionTranslationFilter@5feb8e9a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7f08c343]
+2019-01-18 10:51:59.983 INFO  14011 --- [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 171: Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-18 10:52:00.009 WARN  14011 --- [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration : 234: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-18 10:52:00.235 INFO  14011 --- [main] io.lettuce.core.EpollProvider : 68: Starting without optional epoll library
+2019-01-18 10:52:00.236 INFO  14011 --- [main] io.lettuce.core.KqueueProvider : 70: Starting without optional kqueue library
+2019-01-18 10:52:00.384 INFO  14011 --- [main] org.apache.activemq.broker.BrokerService : 683: Using Persistence Adapter: MemoryPersistenceAdapter
+2019-01-18 10:52:00.384 INFO  14011 --- [JMX connector] org.apache.activemq.broker.jmx.ManagementContext : 156: JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+2019-01-18 10:52:00.554 INFO  14011 --- [main] org.apache.activemq.broker.BrokerService : 746: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-39919-1547783520387-0:1) is starting
+2019-01-18 10:52:00.559 INFO  14011 --- [main] org.apache.activemq.broker.BrokerService : 773: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-39919-1547783520387-0:1) started
+2019-01-18 10:52:00.559 INFO  14011 --- [main] org.apache.activemq.broker.BrokerService : 774: For help or more information please see: http://activemq.apache.org
+2019-01-18 10:52:00.581 INFO  14011 --- [main] org.apache.activemq.broker.TransportConnector : 263: Connector vm://localhost started
+2019-01-18 10:52:01.147 INFO  14011 --- [main] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor : 295: No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-01-18 10:52:01.163 INFO  14011 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 204: Tomcat started on port(s): 8082 (http) with context path ''
+2019-01-18 10:52:01.165 INFO  14011 --- [main] com.framgia.bookStore.BookStoreApplication : 59: Started BookStoreApplication in 4.626 seconds (JVM running for 5.06)
+2019-01-18 10:52:03.001 INFO  14011 --- [http-nio-8082-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-18 10:52:03.001 INFO  14011 --- [http-nio-8082-exec-1] org.springframework.web.servlet.DispatcherServlet : 524: Initializing Servlet 'dispatcherServlet'
+2019-01-18 10:52:03.006 INFO  14011 --- [http-nio-8082-exec-1] org.springframework.web.servlet.DispatcherServlet : 546: Completed initialization in 5 ms
+2019-01-18 10:52:03.085 INFO  14011 --- [http-nio-8082-exec-1] org.hibernate.hql.internal.QueryTranslatorFactoryInitiator : 47: HHH000397: Using ASTQueryTranslatorFactory
+2019-01-18 10:59:21.462 WARN  14011 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool : 766: HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m46s427ms621µs146ns).
+2019-01-18 11:01:05.379 WARN  14011 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool : 766: HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m43s917ms606µs207ns).
+2019-01-18 11:01:05.402 ERROR 14011 --- [http-nio-8082-exec-7] org.thymeleaf.TemplateEngine : 1136: [THYMELEAF][http-nio-8082-exec-7] Exception processing template "update-password": Error resolving template [update-password], template might not exist or might not be accessible by any of the configured Template Resolvers
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [update-password], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:150)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:124)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:151)
+	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:81)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:791)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2019-01-18 11:01:05.423 ERROR 14011 --- [http-nio-8082-exec-7] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] : 175: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template [update-password], template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [update-password], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:150)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:124)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:151)
+	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:81)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:791)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2019-01-18 11:01:05.430 INFO  14011 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 836: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-39919-1547783520387-0:1) is shutting down
+2019-01-18 11:01:05.441 INFO  14011 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.TransportConnector : 294: Connector vm://localhost stopped
+2019-01-18 11:01:05.446 WARN  14011 --- [DefaultMessageListenerContainer-1] org.springframework.jms.listener.DefaultMessageListenerContainer : 895: Setup of JMS message listener invoker failed for destination 'mail.q' - trying to recover. Cause: peer (vm://localhost#1) stopped.
+2019-01-18 11:01:05.450 INFO  14011 --- [Thread-14] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 208: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-18 11:01:05.455 INFO  14011 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 896: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-39919-1547783520387-0:1) uptime 9 minutes
+2019-01-18 11:01:05.455 INFO  14011 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 898: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-39919-1547783520387-0:1) is shutdown
+2019-01-18 11:01:06.594 INFO  14011 --- [Thread-14] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 597: Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 11:01:06.598 INFO  14011 --- [Thread-14] com.zaxxer.hikari.HikariDataSource : 350: HikariPool-1 - Shutdown initiated...
+2019-01-18 11:01:06.603 INFO  14011 --- [Thread-14] com.zaxxer.hikari.HikariDataSource : 352: HikariPool-1 - Shutdown completed.
+2019-01-18 11:01:09.939 INFO  14646 --- [main] com.framgia.bookStore.BookStoreApplication : 50: Starting BookStoreApplication on framgia0429-pc with PID 14646 (/home/hoang.ngoc.hai/Downloads/BookStore/target/classes started by FRAMGIA\hoang.ngoc.hai in /home/hoang.ngoc.hai/Downloads/BookStore)
+2019-01-18 11:01:09.942 INFO  14646 --- [main] com.framgia.bookStore.BookStoreApplication : 675: No active profile set, falling back to default profiles: default
+2019-01-18 11:01:10.443 INFO  14646 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 11:01:10.443 INFO  14646 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 11:01:10.494 INFO  14646 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 45ms. Found 3 repository interfaces.
+2019-01-18 11:01:10.607 INFO  14646 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 11:01:10.608 INFO  14646 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 11:01:10.625 INFO  14646 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.RoleRepository.
+2019-01-18 11:01:10.626 INFO  14646 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRepository.
+2019-01-18 11:01:10.626 INFO  14646 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRoleRopository.
+2019-01-18 11:01:10.626 INFO  14646 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 11ms. Found 0 repository interfaces.
+2019-01-18 11:01:10.927 INFO  14646 --- [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : 330: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2e12061e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-18 11:01:11.165 INFO  14646 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 90: Tomcat initialized with port(s): 8082 (http)
+2019-01-18 11:01:11.178 INFO  14646 --- [main] org.apache.catalina.core.StandardService : 173: Starting service [Tomcat]
+2019-01-18 11:01:11.178 INFO  14646 --- [main] org.apache.catalina.core.StandardEngine : 173: Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-18 11:01:11.186 INFO  14646 --- [main] org.apache.catalina.core.AprLifecycleListener : 173: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-18 11:01:11.301 INFO  14646 --- [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring embedded WebApplicationContext
+2019-01-18 11:01:11.302 INFO  14646 --- [main] org.springframework.web.context.ContextLoader : 296: Root WebApplicationContext: initialization completed in 1312 ms
+2019-01-18 11:01:11.504 INFO  14646 --- [main] com.zaxxer.hikari.HikariDataSource : 110: HikariPool-1 - Starting...
+2019-01-18 11:01:11.575 INFO  14646 --- [main] com.zaxxer.hikari.HikariDataSource : 123: HikariPool-1 - Start completed.
+2019-01-18 11:01:11.606 INFO  14646 --- [main] org.hibernate.jpa.internal.util.LogHelper : 31: HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-18 11:01:11.643 INFO  14646 --- [main] org.hibernate.Version : 46: HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-18 11:01:11.644 INFO  14646 --- [main] org.hibernate.cfg.Environment : 213: HHH000206: hibernate.properties not found
+2019-01-18 11:01:11.718 INFO  14646 --- [main] org.hibernate.annotations.common.Version : 49: HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-18 11:01:11.823 INFO  14646 --- [main] org.hibernate.dialect.Dialect : 157: HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-18 11:01:12.347 INFO  14646 --- [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 415: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 11:01:13.037 INFO  14646 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/vendors/**'], []
+2019-01-18 11:01:13.038 INFO  14646 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/css/**'], []
+2019-01-18 11:01:13.038 INFO  14646 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/js/**'], []
+2019-01-18 11:01:13.038 INFO  14646 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/img/**'], []
+2019-01-18 11:01:13.038 INFO  14646 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/images/**'], []
+2019-01-18 11:01:13.038 INFO  14646 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/static/**'], []
+2019-01-18 11:01:13.038 INFO  14646 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/**/favicon.ico'], []
+2019-01-18 11:01:13.066 INFO  14646 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@170f0fd6, org.springframework.security.web.context.SecurityContextPersistenceFilter@567baa55, org.springframework.security.web.header.HeaderWriterFilter@e638553, org.springframework.security.web.csrf.CsrfFilter@40696fc6, org.springframework.security.web.authentication.logout.LogoutFilter@7095b688, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6c167296, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@105cdf61, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6464f017, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@5a464be7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@48d24d63, org.springframework.security.web.session.SessionManagementFilter@75d0cac6, org.springframework.security.web.access.ExceptionTranslationFilter@733345f5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@59700156]
+2019-01-18 11:01:13.190 INFO  14646 --- [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 171: Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-18 11:01:13.224 WARN  14646 --- [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration : 234: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-18 11:01:13.482 INFO  14646 --- [main] io.lettuce.core.EpollProvider : 68: Starting without optional epoll library
+2019-01-18 11:01:13.484 INFO  14646 --- [main] io.lettuce.core.KqueueProvider : 70: Starting without optional kqueue library
+2019-01-18 11:01:13.647 INFO  14646 --- [main] org.apache.activemq.broker.BrokerService : 683: Using Persistence Adapter: MemoryPersistenceAdapter
+2019-01-18 11:01:13.648 INFO  14646 --- [JMX connector] org.apache.activemq.broker.jmx.ManagementContext : 156: JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+2019-01-18 11:01:13.790 INFO  14646 --- [main] org.apache.activemq.broker.BrokerService : 746: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-32977-1547784073651-0:1) is starting
+2019-01-18 11:01:13.794 INFO  14646 --- [main] org.apache.activemq.broker.BrokerService : 773: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-32977-1547784073651-0:1) started
+2019-01-18 11:01:13.795 INFO  14646 --- [main] org.apache.activemq.broker.BrokerService : 774: For help or more information please see: http://activemq.apache.org
+2019-01-18 11:01:13.820 INFO  14646 --- [main] org.apache.activemq.broker.TransportConnector : 263: Connector vm://localhost started
+2019-01-18 11:01:14.420 INFO  14646 --- [main] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor : 295: No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-01-18 11:01:14.442 INFO  14646 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 204: Tomcat started on port(s): 8082 (http) with context path ''
+2019-01-18 11:01:14.444 INFO  14646 --- [main] com.framgia.bookStore.BookStoreApplication : 59: Started BookStoreApplication in 4.871 seconds (JVM running for 5.355)
+2019-01-18 11:01:34.527 INFO  14646 --- [http-nio-8082-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-18 11:01:34.528 INFO  14646 --- [http-nio-8082-exec-1] org.springframework.web.servlet.DispatcherServlet : 524: Initializing Servlet 'dispatcherServlet'
+2019-01-18 11:01:34.535 INFO  14646 --- [http-nio-8082-exec-1] org.springframework.web.servlet.DispatcherServlet : 546: Completed initialization in 7 ms
+2019-01-18 11:01:34.598 INFO  14646 --- [http-nio-8082-exec-1] org.hibernate.hql.internal.QueryTranslatorFactoryInitiator : 47: HHH000397: Using ASTQueryTranslatorFactory
+2019-01-18 11:16:08.728 WARN  14646 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool : 766: HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14m27s51ms846µs264ns).
+2019-01-18 11:16:08.750 INFO  14646 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 836: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-32977-1547784073651-0:1) is shutting down
+2019-01-18 11:16:08.781 INFO  14646 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.TransportConnector : 294: Connector vm://localhost stopped
+2019-01-18 11:16:08.782 WARN  14646 --- [DefaultMessageListenerContainer-1] org.springframework.jms.listener.DefaultMessageListenerContainer : 895: Setup of JMS message listener invoker failed for destination 'mail.q' - trying to recover. Cause: peer (vm://localhost#1) stopped.
+2019-01-18 11:16:08.784 INFO  14646 --- [Thread-15] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 208: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-18 11:16:08.790 INFO  14646 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 896: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-32977-1547784073651-0:1) uptime 14 minutes
+2019-01-18 11:16:08.790 INFO  14646 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 898: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-32977-1547784073651-0:1) is shutdown
+2019-01-18 11:16:09.912 INFO  14646 --- [Thread-15] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 597: Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 11:16:09.916 INFO  14646 --- [Thread-15] com.zaxxer.hikari.HikariDataSource : 350: HikariPool-1 - Shutdown initiated...
+2019-01-18 11:16:09.921 INFO  14646 --- [Thread-15] com.zaxxer.hikari.HikariDataSource : 352: HikariPool-1 - Shutdown completed.
+2019-01-18 11:16:13.054 INFO  15462 --- [main] com.framgia.bookStore.BookStoreApplication : 50: Starting BookStoreApplication on framgia0429-pc with PID 15462 (/home/hoang.ngoc.hai/Downloads/BookStore/target/classes started by FRAMGIA\hoang.ngoc.hai in /home/hoang.ngoc.hai/Downloads/BookStore)
+2019-01-18 11:16:13.056 INFO  15462 --- [main] com.framgia.bookStore.BookStoreApplication : 675: No active profile set, falling back to default profiles: default
+2019-01-18 11:16:13.517 INFO  15462 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 11:16:13.517 INFO  15462 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 11:16:13.562 INFO  15462 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 40ms. Found 3 repository interfaces.
+2019-01-18 11:16:13.656 INFO  15462 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 11:16:13.657 INFO  15462 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 11:16:13.671 INFO  15462 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.RoleRepository.
+2019-01-18 11:16:13.672 INFO  15462 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRepository.
+2019-01-18 11:16:13.672 INFO  15462 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRoleRopository.
+2019-01-18 11:16:13.672 INFO  15462 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 10ms. Found 0 repository interfaces.
+2019-01-18 11:16:13.935 INFO  15462 --- [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : 330: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6525d852] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-18 11:16:14.142 INFO  15462 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 90: Tomcat initialized with port(s): 8082 (http)
+2019-01-18 11:16:14.155 INFO  15462 --- [main] org.apache.catalina.core.StandardService : 173: Starting service [Tomcat]
+2019-01-18 11:16:14.155 INFO  15462 --- [main] org.apache.catalina.core.StandardEngine : 173: Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-18 11:16:14.159 INFO  15462 --- [main] org.apache.catalina.core.AprLifecycleListener : 173: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-18 11:16:14.211 INFO  15462 --- [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring embedded WebApplicationContext
+2019-01-18 11:16:14.211 INFO  15462 --- [main] org.springframework.web.context.ContextLoader : 296: Root WebApplicationContext: initialization completed in 1084 ms
+2019-01-18 11:16:14.428 INFO  15462 --- [main] com.zaxxer.hikari.HikariDataSource : 110: HikariPool-1 - Starting...
+2019-01-18 11:16:14.490 INFO  15462 --- [main] com.zaxxer.hikari.HikariDataSource : 123: HikariPool-1 - Start completed.
+2019-01-18 11:16:14.515 INFO  15462 --- [main] org.hibernate.jpa.internal.util.LogHelper : 31: HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-18 11:16:14.548 INFO  15462 --- [main] org.hibernate.Version : 46: HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-18 11:16:14.549 INFO  15462 --- [main] org.hibernate.cfg.Environment : 213: HHH000206: hibernate.properties not found
+2019-01-18 11:16:14.617 INFO  15462 --- [main] org.hibernate.annotations.common.Version : 49: HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-18 11:16:14.712 INFO  15462 --- [main] org.hibernate.dialect.Dialect : 157: HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-18 11:16:15.158 INFO  15462 --- [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 415: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 11:16:15.680 INFO  15462 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/vendors/**'], []
+2019-01-18 11:16:15.681 INFO  15462 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/css/**'], []
+2019-01-18 11:16:15.681 INFO  15462 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/js/**'], []
+2019-01-18 11:16:15.681 INFO  15462 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/img/**'], []
+2019-01-18 11:16:15.681 INFO  15462 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/images/**'], []
+2019-01-18 11:16:15.681 INFO  15462 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/static/**'], []
+2019-01-18 11:16:15.681 INFO  15462 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/**/favicon.ico'], []
+2019-01-18 11:16:15.704 INFO  15462 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6f071d0c, org.springframework.security.web.context.SecurityContextPersistenceFilter@317fa5dd, org.springframework.security.web.header.HeaderWriterFilter@5c04ec8, org.springframework.security.web.csrf.CsrfFilter@48ba37dc, org.springframework.security.web.authentication.logout.LogoutFilter@4b518645, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2bbaf983, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@65234a9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@67aaf882, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@1cc42abe, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@138d978e, org.springframework.security.web.session.SessionManagementFilter@5a88849, org.springframework.security.web.access.ExceptionTranslationFilter@6e7cb01a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2eb03908]
+2019-01-18 11:16:15.900 INFO  15462 --- [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 171: Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-18 11:16:15.929 WARN  15462 --- [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration : 234: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-18 11:16:16.146 INFO  15462 --- [main] io.lettuce.core.EpollProvider : 68: Starting without optional epoll library
+2019-01-18 11:16:16.147 INFO  15462 --- [main] io.lettuce.core.KqueueProvider : 70: Starting without optional kqueue library
+2019-01-18 11:16:16.276 INFO  15462 --- [JMX connector] org.apache.activemq.broker.jmx.ManagementContext : 156: JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+2019-01-18 11:16:16.276 INFO  15462 --- [main] org.apache.activemq.broker.BrokerService : 683: Using Persistence Adapter: MemoryPersistenceAdapter
+2019-01-18 11:16:16.421 INFO  15462 --- [main] org.apache.activemq.broker.BrokerService : 746: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-37115-1547784976279-0:1) is starting
+2019-01-18 11:16:16.425 INFO  15462 --- [main] org.apache.activemq.broker.BrokerService : 773: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-37115-1547784976279-0:1) started
+2019-01-18 11:16:16.425 INFO  15462 --- [main] org.apache.activemq.broker.BrokerService : 774: For help or more information please see: http://activemq.apache.org
+2019-01-18 11:16:16.444 INFO  15462 --- [main] org.apache.activemq.broker.TransportConnector : 263: Connector vm://localhost started
+2019-01-18 11:16:17.009 INFO  15462 --- [main] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor : 295: No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-01-18 11:16:17.025 INFO  15462 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 204: Tomcat started on port(s): 8082 (http) with context path ''
+2019-01-18 11:16:17.027 INFO  15462 --- [main] com.framgia.bookStore.BookStoreApplication : 59: Started BookStoreApplication in 4.304 seconds (JVM running for 4.702)
+2019-01-18 11:16:23.216 INFO  15462 --- [http-nio-8082-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-18 11:16:23.216 INFO  15462 --- [http-nio-8082-exec-1] org.springframework.web.servlet.DispatcherServlet : 524: Initializing Servlet 'dispatcherServlet'
+2019-01-18 11:16:23.221 INFO  15462 --- [http-nio-8082-exec-1] org.springframework.web.servlet.DispatcherServlet : 546: Completed initialization in 5 ms
+2019-01-18 11:16:23.289 INFO  15462 --- [http-nio-8082-exec-1] org.hibernate.hql.internal.QueryTranslatorFactoryInitiator : 47: HHH000397: Using ASTQueryTranslatorFactory
+2019-01-18 11:17:24.891 INFO  15462 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 836: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-37115-1547784976279-0:1) is shutting down
+2019-01-18 11:17:24.904 INFO  15462 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.TransportConnector : 294: Connector vm://localhost stopped
+2019-01-18 11:17:24.906 WARN  15462 --- [DefaultMessageListenerContainer-1] org.springframework.jms.listener.DefaultMessageListenerContainer : 895: Setup of JMS message listener invoker failed for destination 'mail.q' - trying to recover. Cause: peer (vm://localhost#1) stopped.
+2019-01-18 11:17:24.909 INFO  15462 --- [Thread-13] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 208: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-18 11:17:24.912 INFO  15462 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 896: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-37115-1547784976279-0:1) uptime 1 minute
+2019-01-18 11:17:24.912 INFO  15462 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 898: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-37115-1547784976279-0:1) is shutdown
+2019-01-18 11:17:26.034 INFO  15462 --- [Thread-13] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 597: Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 11:17:26.038 INFO  15462 --- [Thread-13] com.zaxxer.hikari.HikariDataSource : 350: HikariPool-1 - Shutdown initiated...
+2019-01-18 11:17:26.044 INFO  15462 --- [Thread-13] com.zaxxer.hikari.HikariDataSource : 352: HikariPool-1 - Shutdown completed.
+2019-01-18 11:17:28.339 INFO  15700 --- [main] com.framgia.bookStore.BookStoreApplication : 50: Starting BookStoreApplication on framgia0429-pc with PID 15700 (/home/hoang.ngoc.hai/Downloads/BookStore/target/classes started by FRAMGIA\hoang.ngoc.hai in /home/hoang.ngoc.hai/Downloads/BookStore)
+2019-01-18 11:17:28.343 INFO  15700 --- [main] com.framgia.bookStore.BookStoreApplication : 675: No active profile set, falling back to default profiles: default
+2019-01-18 11:17:28.901 INFO  15700 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 11:17:28.901 INFO  15700 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 11:17:28.950 INFO  15700 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 43ms. Found 3 repository interfaces.
+2019-01-18 11:17:29.059 INFO  15700 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 11:17:29.060 INFO  15700 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 11:17:29.077 INFO  15700 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.RoleRepository.
+2019-01-18 11:17:29.078 INFO  15700 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRepository.
+2019-01-18 11:17:29.078 INFO  15700 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRoleRopository.
+2019-01-18 11:17:29.078 INFO  15700 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 12ms. Found 0 repository interfaces.
+2019-01-18 11:17:29.352 INFO  15700 --- [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : 330: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$29cf970b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-18 11:17:29.565 INFO  15700 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 90: Tomcat initialized with port(s): 8082 (http)
+2019-01-18 11:17:29.579 INFO  15700 --- [main] org.apache.catalina.core.StandardService : 173: Starting service [Tomcat]
+2019-01-18 11:17:29.579 INFO  15700 --- [main] org.apache.catalina.core.StandardEngine : 173: Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-18 11:17:29.584 INFO  15700 --- [main] org.apache.catalina.core.AprLifecycleListener : 173: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-18 11:17:29.700 INFO  15700 --- [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring embedded WebApplicationContext
+2019-01-18 11:17:29.700 INFO  15700 --- [main] org.springframework.web.context.ContextLoader : 296: Root WebApplicationContext: initialization completed in 1313 ms
+2019-01-18 11:17:29.881 INFO  15700 --- [main] com.zaxxer.hikari.HikariDataSource : 110: HikariPool-1 - Starting...
+2019-01-18 11:17:29.973 INFO  15700 --- [main] com.zaxxer.hikari.HikariDataSource : 123: HikariPool-1 - Start completed.
+2019-01-18 11:17:30.008 INFO  15700 --- [main] org.hibernate.jpa.internal.util.LogHelper : 31: HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-18 11:17:30.053 INFO  15700 --- [main] org.hibernate.Version : 46: HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-18 11:17:30.055 INFO  15700 --- [main] org.hibernate.cfg.Environment : 213: HHH000206: hibernate.properties not found
+2019-01-18 11:17:30.158 INFO  15700 --- [main] org.hibernate.annotations.common.Version : 49: HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-18 11:17:30.278 INFO  15700 --- [main] org.hibernate.dialect.Dialect : 157: HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-18 11:17:30.763 INFO  15700 --- [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 415: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 11:17:31.421 INFO  15700 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/vendors/**'], []
+2019-01-18 11:17:31.421 INFO  15700 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/css/**'], []
+2019-01-18 11:17:31.421 INFO  15700 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/js/**'], []
+2019-01-18 11:17:31.422 INFO  15700 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/img/**'], []
+2019-01-18 11:17:31.422 INFO  15700 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/images/**'], []
+2019-01-18 11:17:31.422 INFO  15700 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/static/**'], []
+2019-01-18 11:17:31.422 INFO  15700 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/**/favicon.ico'], []
+2019-01-18 11:17:31.445 INFO  15700 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@21202507, org.springframework.security.web.context.SecurityContextPersistenceFilter@1f5f4d48, org.springframework.security.web.header.HeaderWriterFilter@38a61c81, org.springframework.security.web.csrf.CsrfFilter@43de88f3, org.springframework.security.web.authentication.logout.LogoutFilter@72115c48, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6464f017, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c8e096, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3ccc4ca0, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@5862ab28, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@62878d7c, org.springframework.security.web.session.SessionManagementFilter@1a06ec24, org.springframework.security.web.access.ExceptionTranslationFilter@3891b430, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@67683210]
+2019-01-18 11:17:31.553 INFO  15700 --- [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 171: Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-18 11:17:31.579 WARN  15700 --- [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration : 234: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-18 11:17:31.806 INFO  15700 --- [main] io.lettuce.core.EpollProvider : 68: Starting without optional epoll library
+2019-01-18 11:17:31.807 INFO  15700 --- [main] io.lettuce.core.KqueueProvider : 70: Starting without optional kqueue library
+2019-01-18 11:17:31.954 INFO  15700 --- [main] org.apache.activemq.broker.BrokerService : 683: Using Persistence Adapter: MemoryPersistenceAdapter
+2019-01-18 11:17:31.956 INFO  15700 --- [JMX connector] org.apache.activemq.broker.jmx.ManagementContext : 156: JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+2019-01-18 11:17:32.105 INFO  15700 --- [main] org.apache.activemq.broker.BrokerService : 746: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-37633-1547785051958-0:1) is starting
+2019-01-18 11:17:32.109 INFO  15700 --- [main] org.apache.activemq.broker.BrokerService : 773: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-37633-1547785051958-0:1) started
+2019-01-18 11:17:32.110 INFO  15700 --- [main] org.apache.activemq.broker.BrokerService : 774: For help or more information please see: http://activemq.apache.org
+2019-01-18 11:17:32.130 INFO  15700 --- [main] org.apache.activemq.broker.TransportConnector : 263: Connector vm://localhost started
+2019-01-18 11:17:32.698 INFO  15700 --- [main] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor : 295: No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-01-18 11:17:32.713 INFO  15700 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 204: Tomcat started on port(s): 8082 (http) with context path ''
+2019-01-18 11:17:32.714 INFO  15700 --- [main] com.framgia.bookStore.BookStoreApplication : 59: Started BookStoreApplication in 4.712 seconds (JVM running for 5.26)
+2019-01-18 11:17:37.006 INFO  15700 --- [http-nio-8082-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-18 11:17:37.007 INFO  15700 --- [http-nio-8082-exec-1] org.springframework.web.servlet.DispatcherServlet : 524: Initializing Servlet 'dispatcherServlet'
+2019-01-18 11:17:37.011 INFO  15700 --- [http-nio-8082-exec-1] org.springframework.web.servlet.DispatcherServlet : 546: Completed initialization in 4 ms
+2019-01-18 11:17:37.079 INFO  15700 --- [http-nio-8082-exec-1] org.hibernate.hql.internal.QueryTranslatorFactoryInitiator : 47: HHH000397: Using ASTQueryTranslatorFactory
+2019-01-18 11:24:38.066 INFO  16570 --- [main] com.framgia.bookStore.BookStoreApplication : 50: Starting BookStoreApplication on framgia0429-pc with PID 16570 (/home/hoang.ngoc.hai/Downloads/BookStore/target/classes started by FRAMGIA\hoang.ngoc.hai in /home/hoang.ngoc.hai/Downloads/BookStore)
+2019-01-18 11:24:38.068 INFO  16570 --- [main] com.framgia.bookStore.BookStoreApplication : 675: No active profile set, falling back to default profiles: default
+2019-01-18 11:24:38.446 INFO  16570 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 11:24:38.446 INFO  16570 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 11:24:38.489 INFO  16570 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 38ms. Found 3 repository interfaces.
+2019-01-18 11:24:38.589 INFO  16570 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 11:24:38.590 INFO  16570 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 11:24:38.612 INFO  16570 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.RoleRepository.
+2019-01-18 11:24:38.613 INFO  16570 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRepository.
+2019-01-18 11:24:38.613 INFO  16570 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRoleRopository.
+2019-01-18 11:24:38.613 INFO  16570 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 19ms. Found 0 repository interfaces.
+2019-01-18 11:24:38.873 INFO  16570 --- [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : 330: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$64c41eaf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-18 11:24:39.079 INFO  16570 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 90: Tomcat initialized with port(s): 8082 (http)
+2019-01-18 11:24:39.094 INFO  16570 --- [main] org.apache.catalina.core.StandardService : 173: Starting service [Tomcat]
+2019-01-18 11:24:39.094 INFO  16570 --- [main] org.apache.catalina.core.StandardEngine : 173: Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-18 11:24:39.099 INFO  16570 --- [main] org.apache.catalina.core.AprLifecycleListener : 173: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-18 11:24:39.210 INFO  16570 --- [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring embedded WebApplicationContext
+2019-01-18 11:24:39.210 INFO  16570 --- [main] org.springframework.web.context.ContextLoader : 296: Root WebApplicationContext: initialization completed in 1109 ms
+2019-01-18 11:24:39.388 INFO  16570 --- [main] com.zaxxer.hikari.HikariDataSource : 110: HikariPool-1 - Starting...
+2019-01-18 11:24:39.456 INFO  16570 --- [main] com.zaxxer.hikari.HikariDataSource : 123: HikariPool-1 - Start completed.
+2019-01-18 11:24:39.483 INFO  16570 --- [main] org.hibernate.jpa.internal.util.LogHelper : 31: HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-18 11:24:39.519 INFO  16570 --- [main] org.hibernate.Version : 46: HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-18 11:24:39.520 INFO  16570 --- [main] org.hibernate.cfg.Environment : 213: HHH000206: hibernate.properties not found
+2019-01-18 11:24:39.592 INFO  16570 --- [main] org.hibernate.annotations.common.Version : 49: HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-18 11:24:39.690 INFO  16570 --- [main] org.hibernate.dialect.Dialect : 157: HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-18 11:24:40.155 INFO  16570 --- [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 415: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 11:24:40.784 INFO  16570 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/vendors/**'], []
+2019-01-18 11:24:40.784 INFO  16570 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/css/**'], []
+2019-01-18 11:24:40.784 INFO  16570 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/js/**'], []
+2019-01-18 11:24:40.784 INFO  16570 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/img/**'], []
+2019-01-18 11:24:40.784 INFO  16570 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/images/**'], []
+2019-01-18 11:24:40.784 INFO  16570 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/static/**'], []
+2019-01-18 11:24:40.785 INFO  16570 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/**/favicon.ico'], []
+2019-01-18 11:24:40.808 INFO  16570 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@24e31f06, org.springframework.security.web.context.SecurityContextPersistenceFilter@19b8f1bd, org.springframework.security.web.header.HeaderWriterFilter@3872867d, org.springframework.security.web.csrf.CsrfFilter@47bfde21, org.springframework.security.web.authentication.logout.LogoutFilter@2b85edc7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@53654b2d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@62fbefad, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@433db56d, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@33478a2f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5d260494, org.springframework.security.web.session.SessionManagementFilter@2e4d252, org.springframework.security.web.access.ExceptionTranslationFilter@7866a7a6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@568fd3de]
+2019-01-18 11:24:40.916 INFO  16570 --- [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 171: Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-18 11:24:40.942 WARN  16570 --- [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration : 234: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-18 11:24:41.169 INFO  16570 --- [main] io.lettuce.core.EpollProvider : 68: Starting without optional epoll library
+2019-01-18 11:24:41.170 INFO  16570 --- [main] io.lettuce.core.KqueueProvider : 70: Starting without optional kqueue library
+2019-01-18 11:24:41.305 INFO  16570 --- [main] org.apache.activemq.broker.BrokerService : 683: Using Persistence Adapter: MemoryPersistenceAdapter
+2019-01-18 11:24:41.305 INFO  16570 --- [JMX connector] org.apache.activemq.broker.jmx.ManagementContext : 156: JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+2019-01-18 11:24:41.425 INFO  16570 --- [main] org.apache.activemq.broker.BrokerService : 746: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-34333-1547785481309-0:1) is starting
+2019-01-18 11:24:41.428 INFO  16570 --- [main] org.apache.activemq.broker.BrokerService : 773: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-34333-1547785481309-0:1) started
+2019-01-18 11:24:41.429 INFO  16570 --- [main] org.apache.activemq.broker.BrokerService : 774: For help or more information please see: http://activemq.apache.org
+2019-01-18 11:24:41.452 INFO  16570 --- [main] org.apache.activemq.broker.TransportConnector : 263: Connector vm://localhost started
+2019-01-18 11:24:42.014 INFO  16570 --- [main] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor : 295: No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-01-18 11:24:42.030 INFO  16570 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 204: Tomcat started on port(s): 8082 (http) with context path ''
+2019-01-18 11:24:42.032 INFO  16570 --- [main] com.framgia.bookStore.BookStoreApplication : 59: Started BookStoreApplication in 4.299 seconds (JVM running for 4.71)
+2019-01-18 11:24:47.310 INFO  16570 --- [http-nio-8082-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-18 11:24:47.310 INFO  16570 --- [http-nio-8082-exec-2] org.springframework.web.servlet.DispatcherServlet : 524: Initializing Servlet 'dispatcherServlet'
+2019-01-18 11:24:47.315 INFO  16570 --- [http-nio-8082-exec-2] org.springframework.web.servlet.DispatcherServlet : 546: Completed initialization in 5 ms
+2019-01-18 11:24:53.121 INFO  16570 --- [http-nio-8082-exec-8] org.hibernate.hql.internal.QueryTranslatorFactoryInitiator : 47: HHH000397: Using ASTQueryTranslatorFactory
+2019-01-18 11:24:53.231 ERROR 16570 --- [DefaultMessageListenerContainer-1] org.thymeleaf.TemplateEngine : 1136: [THYMELEAF][DefaultMessageListenerContainer-1] Exception processing template "/page/reset-password": An error happened during template parsing (template: "class path resource [templates//page/reset-password.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//page/reset-password.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1059)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1048)
+	at com.framgia.bookStore.service.impl.SendMailServiceImpl.send(SendMailServiceImpl.java:38)
+	at com.framgia.bookStore.activemq.Receiver.receive(Receiver.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:170)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:120)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:114)
+	at org.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:77)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:736)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:696)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:674)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:318)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:257)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1189)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1179)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1076)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "_csrf.token" (template: "commons" - line 9, col 51)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 24 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "_csrf.token" (template: "commons" - line 9, col 51)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918)
+	at org.thymeleaf.engine.StandaloneElementTag.beHandled(StandaloneElementTag.java:228)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:1204)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleStandaloneElementEnd(TemplateHandlerAdapterMarkupHandler.java:260)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:256)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleStandaloneElementEnd(OutputExpressionInlinePreProcessorHandler.java:169)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:104)
+	at org.attoparser.HtmlElement.handleStandaloneElementEnd(HtmlElement.java:79)
+	at org.attoparser.HtmlMarkupHandler.handleStandaloneElementEnd(HtmlMarkupHandler.java:241)
+	at org.attoparser.MarkupEventProcessorHandler.handleStandaloneElementEnd(MarkupEventProcessorHandler.java:327)
+	at org.attoparser.ParsingElementMarkupUtil.parseStandaloneElement(ParsingElementMarkupUtil.java:96)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:706)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 26 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'token' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:90)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:111)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	... 48 common frames omitted
+
+2019-01-18 11:30:35.085 INFO  16570 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 836: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-34333-1547785481309-0:1) is shutting down
+2019-01-18 11:30:35.088 INFO  16570 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.TransportConnector : 294: Connector vm://localhost stopped
+2019-01-18 11:30:35.089 WARN  16570 --- [DefaultMessageListenerContainer-1] org.springframework.jms.listener.DefaultMessageListenerContainer : 895: Setup of JMS message listener invoker failed for destination 'mail.q' - trying to recover. Cause: peer (vm://localhost#1) stopped.
+2019-01-18 11:30:35.091 INFO  16570 --- [Thread-14] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 208: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-18 11:30:35.093 INFO  16570 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 896: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-34333-1547785481309-0:1) uptime 5 minutes
+2019-01-18 11:30:35.093 INFO  16570 --- [ActiveMQ ShutdownHook] org.apache.activemq.broker.BrokerService : 898: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-34333-1547785481309-0:1) is shutdown
+2019-01-18 11:30:36.211 INFO  16570 --- [Thread-14] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 597: Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 11:30:36.214 INFO  16570 --- [Thread-14] com.zaxxer.hikari.HikariDataSource : 350: HikariPool-1 - Shutdown initiated...
+2019-01-18 11:30:36.219 INFO  16570 --- [Thread-14] com.zaxxer.hikari.HikariDataSource : 352: HikariPool-1 - Shutdown completed.
+2019-01-18 11:30:38.181 INFO  17498 --- [main] com.framgia.bookStore.BookStoreApplication : 50: Starting BookStoreApplication on framgia0429-pc with PID 17498 (/home/hoang.ngoc.hai/Downloads/BookStore/target/classes started by FRAMGIA\hoang.ngoc.hai in /home/hoang.ngoc.hai/Downloads/BookStore)
+2019-01-18 11:30:38.183 INFO  17498 --- [main] com.framgia.bookStore.BookStoreApplication : 675: No active profile set, falling back to default profiles: default
+2019-01-18 11:30:38.569 INFO  17498 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 11:30:38.570 INFO  17498 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 11:30:38.611 INFO  17498 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 38ms. Found 3 repository interfaces.
+2019-01-18 11:30:38.710 INFO  17498 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 244: Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-01-18 11:30:38.711 INFO  17498 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 126: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-18 11:30:38.733 INFO  17498 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.RoleRepository.
+2019-01-18 11:30:38.734 INFO  17498 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRepository.
+2019-01-18 11:30:38.735 INFO  17498 --- [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : 363: Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.framgia.bookStore.repository.UserRoleRopository.
+2019-01-18 11:30:38.735 INFO  17498 --- [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : 182: Finished Spring Data repository scanning in 19ms. Found 0 repository interfaces.
+2019-01-18 11:30:38.988 INFO  17498 --- [main] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : 330: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1384ccfb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-18 11:30:39.182 INFO  17498 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 90: Tomcat initialized with port(s): 8082 (http)
+2019-01-18 11:30:39.198 INFO  17498 --- [main] org.apache.catalina.core.StandardService : 173: Starting service [Tomcat]
+2019-01-18 11:30:39.198 INFO  17498 --- [main] org.apache.catalina.core.StandardEngine : 173: Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-18 11:30:39.203 INFO  17498 --- [main] org.apache.catalina.core.AprLifecycleListener : 173: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-18 11:30:39.321 INFO  17498 --- [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring embedded WebApplicationContext
+2019-01-18 11:30:39.321 INFO  17498 --- [main] org.springframework.web.context.ContextLoader : 296: Root WebApplicationContext: initialization completed in 1096 ms
+2019-01-18 11:30:39.494 INFO  17498 --- [main] com.zaxxer.hikari.HikariDataSource : 110: HikariPool-1 - Starting...
+2019-01-18 11:30:39.559 INFO  17498 --- [main] com.zaxxer.hikari.HikariDataSource : 123: HikariPool-1 - Start completed.
+2019-01-18 11:30:39.583 INFO  17498 --- [main] org.hibernate.jpa.internal.util.LogHelper : 31: HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-18 11:30:39.617 INFO  17498 --- [main] org.hibernate.Version : 46: HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-18 11:30:39.618 INFO  17498 --- [main] org.hibernate.cfg.Environment : 213: HHH000206: hibernate.properties not found
+2019-01-18 11:30:39.687 INFO  17498 --- [main] org.hibernate.annotations.common.Version : 49: HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-18 11:30:39.783 INFO  17498 --- [main] org.hibernate.dialect.Dialect : 157: HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-18 11:30:40.302 INFO  17498 --- [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 415: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-18 11:30:40.968 INFO  17498 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/vendors/**'], []
+2019-01-18 11:30:40.968 INFO  17498 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/css/**'], []
+2019-01-18 11:30:40.968 INFO  17498 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/js/**'], []
+2019-01-18 11:30:40.968 INFO  17498 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/img/**'], []
+2019-01-18 11:30:40.968 INFO  17498 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/images/**'], []
+2019-01-18 11:30:40.969 INFO  17498 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/static/**'], []
+2019-01-18 11:30:40.969 INFO  17498 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: Ant [pattern='/**/favicon.ico'], []
+2019-01-18 11:30:41.001 INFO  17498 --- [main] org.springframework.security.web.DefaultSecurityFilterChain : 43: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@34604b32, org.springframework.security.web.context.SecurityContextPersistenceFilter@47bfde21, org.springframework.security.web.header.HeaderWriterFilter@66b62ebd, org.springframework.security.web.csrf.CsrfFilter@63614cdd, org.springframework.security.web.authentication.logout.LogoutFilter@7866a7a6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2f11d889, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@20706e70, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6560f387, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@5ca10d0e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@159408a7, org.springframework.security.web.session.SessionManagementFilter@18cb4ed1, org.springframework.security.web.access.ExceptionTranslationFilter@2e667e95, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7699e60a]
+2019-01-18 11:30:41.123 INFO  17498 --- [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 171: Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-18 11:30:41.149 WARN  17498 --- [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration : 234: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-18 11:30:41.369 INFO  17498 --- [main] io.lettuce.core.EpollProvider : 68: Starting without optional epoll library
+2019-01-18 11:30:41.370 INFO  17498 --- [main] io.lettuce.core.KqueueProvider : 70: Starting without optional kqueue library
+2019-01-18 11:30:41.505 INFO  17498 --- [JMX connector] org.apache.activemq.broker.jmx.ManagementContext : 156: JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+2019-01-18 11:30:41.505 INFO  17498 --- [main] org.apache.activemq.broker.BrokerService : 683: Using Persistence Adapter: MemoryPersistenceAdapter
+2019-01-18 11:30:41.640 INFO  17498 --- [main] org.apache.activemq.broker.BrokerService : 746: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-41417-1547785841509-0:1) is starting
+2019-01-18 11:30:41.643 INFO  17498 --- [main] org.apache.activemq.broker.BrokerService : 773: Apache ActiveMQ 5.15.8 (localhost, ID:framgia0429-pc-41417-1547785841509-0:1) started
+2019-01-18 11:30:41.643 INFO  17498 --- [main] org.apache.activemq.broker.BrokerService : 774: For help or more information please see: http://activemq.apache.org
+2019-01-18 11:30:41.662 INFO  17498 --- [main] org.apache.activemq.broker.TransportConnector : 263: Connector vm://localhost started
+2019-01-18 11:30:42.280 INFO  17498 --- [main] org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor : 295: No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-01-18 11:30:42.351 INFO  17498 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : 204: Tomcat started on port(s): 8082 (http) with context path ''
+2019-01-18 11:30:42.355 INFO  17498 --- [main] com.framgia.bookStore.BookStoreApplication : 59: Started BookStoreApplication in 4.467 seconds (JVM running for 4.853)
+2019-01-18 11:30:46.100 INFO  17498 --- [http-nio-8082-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : 173: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-18 11:30:46.100 INFO  17498 --- [http-nio-8082-exec-1] org.springframework.web.servlet.DispatcherServlet : 524: Initializing Servlet 'dispatcherServlet'
+2019-01-18 11:30:46.109 INFO  17498 --- [http-nio-8082-exec-1] org.springframework.web.servlet.DispatcherServlet : 546: Completed initialization in 9 ms
+2019-01-18 11:30:50.325 INFO  17498 --- [http-nio-8082-exec-7] org.hibernate.hql.internal.QueryTranslatorFactoryInitiator : 47: HHH000397: Using ASTQueryTranslatorFactory

@@ -12,4 +12,6 @@ public interface UserRepository extends CustomJpaRepository<UserEntity, Long> {
     UserEntity findByEmailAndDeleted(String email, Boolean deleted);
 
     UserEntity findByEmail(String email);
+
+    UserEntity findByUsernameAndTokenAndDeleted(String user, String token, Boolean deleted);
 }

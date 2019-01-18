@@ -1,6 +1,7 @@
 package com.framgia.bookStore.service.impl;
 
 import com.framgia.bookStore.activemq.Email;
+import com.framgia.bookStore.activemq.Sender;
 import com.framgia.bookStore.constants.RoleType;
 import com.framgia.bookStore.dto.user.RegisterForm;
 import com.framgia.bookStore.entity.RoleEntity;
@@ -10,7 +11,6 @@ import com.framgia.bookStore.entity.UserRoleId;
 import com.framgia.bookStore.repository.RoleRepository;
 import com.framgia.bookStore.repository.UserRepository;
 import com.framgia.bookStore.repository.UserRoleRopository;
-import com.framgia.bookStore.service.SendMailService;
 import com.framgia.bookStore.service.UserService;
 import com.framgia.bookStore.util.WebUtil;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
     private UserRoleRopository userRoleRopository;
 
     @Autowired
-    private SendMailService sendMailService;
+    private Sender sender;
 
     @Override
     public UserEntity findByUsername(String username) {
@@ -67,6 +67,11 @@ public class UserServiceImpl implements UserService {
         userRole.setDeleted(false);
         userRoleRopository.save(userRole);
         return user;
+    }
+
+    @Override
+    public UserEntity findByUsernameAndToken(String username, String token) {
+        return userRepository.findByUsernameAndTokenAndDeleted(username, token, false);
     }
 
     @Override
@@ -100,13 +105,25 @@ public class UserServiceImpl implements UserService {
             email.setSubject("Reset Password");
             email.setTo(user.getEmail());
             email.setTemplate("/page/reset-password");
-            email.getVars().put("url", "abc-resetpass.com");
             String linkReset = WebUtil.getBaseUrl(request) + "/update-password/" + user.getUsername() + "/" + user.getToken();
             email.getVars().put("username", user.getUsername());
-            sendMailService.send(email);
+            email.getVars().put("url", linkReset);
+            sender.send(email);
             userRepository.save(user);
             return true;
         }
         return false;
+    }
+
+    @Override
+    public UserEntity updatePassword(Long userId, String password) {
+        UserEntity user = userRepository.findByIdAndDeleted(userId, false).get();
+        if (user != null){
+            user.setPassword(passwordEncoder.encode(password));
+            user.setToken(null);
+            user = userRepository.save(user);
+            return user;
+        }
+        return null;
     }
 }

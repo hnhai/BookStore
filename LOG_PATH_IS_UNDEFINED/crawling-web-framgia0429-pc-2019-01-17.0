@@ -2812,3 +2812,12 @@ Caused by: java.nio.channels.ClosedByInterruptException: null
 2019-01-17 16:18:27.551 INFO  27338 --- [http-nio-8082-exec-2] org.springframework.web.servlet.DispatcherServlet : 524: Initializing Servlet 'dispatcherServlet'
 2019-01-17 16:18:27.558 INFO  27338 --- [http-nio-8082-exec-2] org.springframework.web.servlet.DispatcherServlet : 546: Completed initialization in 7 ms
 2019-01-17 16:18:32.312 INFO  27338 --- [http-nio-8082-exec-1] org.hibernate.hql.internal.QueryTranslatorFactoryInitiator : 47: HHH000397: Using ASTQueryTranslatorFactory
+<<<<<<< e91e226d534aaf4861178596bb4def22f03bd5c1
+=======
+2019-01-17 16:57:25.983 WARN  27338 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool : 766: HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=38m21s45ms194µs252ns).
+2019-01-17 16:57:26.001 WARN  27338 --- [redisMessageListenerContainer-3] org.springframework.session.data.redis.RedisOperationsSessionRepository : 557: Unable to publish SessionDestroyedEvent for session 6de671de-61e6-4dff-90c7-be7b5c0fd87c
+2019-01-17 16:59:09.217 INFO  27338 --- [Thread-11] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : 208: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-17 16:59:10.352 INFO  27338 --- [Thread-11] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : 597: Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-17 16:59:10.354 INFO  27338 --- [Thread-11] com.zaxxer.hikari.HikariDataSource : 350: HikariPool-1 - Shutdown initiated...
+2019-01-17 16:59:10.357 INFO  27338 --- [Thread-11] com.zaxxer.hikari.HikariDataSource : 352: HikariPool-1 - Shutdown completed.
+>>>>>>> Finish forgot password

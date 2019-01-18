@@ -3,6 +3,7 @@ package com.framgia.bookStore.controller;
 import com.framgia.bookStore.auth.CustomUserDetail;
 import com.framgia.bookStore.dto.user.RegisterForm;
 import com.framgia.bookStore.entity.UserEntity;
+import com.framgia.bookStore.form.UpdatePassword;
 import com.framgia.bookStore.util.SecurityUtil;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -95,6 +96,23 @@ public class LoginController extends BaseController {
             return "/page/update-password";
         }
         return "redirect:/404";
+    }
+
+    @PostMapping("/update-password")
+    public ResponseEntity updatePassword(@Valid UpdatePassword updatePassword, BindingResult bindingResult){
+        if (bindingResult.hasErrors()){
+            return new ResponseEntity(Boolean.FALSE, HttpStatus.OK);
+        }else{
+            UserEntity user = userService.updatePassword(updatePassword.getId(), updatePassword.getPassword());
+            if(user != null){
+                CustomUserDetail userDetails = buildUser(user);
+                UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null,
+                    userDetails.getAuthorities());
+                SecurityContextHolder.getContext().setAuthentication(authentication);
+                return new ResponseEntity(Boolean.TRUE, HttpStatus.OK);
+            }
+        }
+        return new ResponseEntity(Boolean.FALSE, HttpStatus.OK);
     }
 
     private CustomUserDetail buildUser(UserEntity user) {
