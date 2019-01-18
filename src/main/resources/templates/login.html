@@ -6,9 +6,7 @@
     <th:block th:replace="commons :: meta-tags"/>
     <th:block th:replace="commons :: core-styles"/>
     <!-- plugins:css -->
-    <link th:href="@{/vendors/iconfonts/mdi/css/materialdesignicons.min.css}" rel="stylesheet" type="text/css"/>
-    <link th:href="@{/vendors/css/vendor.bundle.base.css}" rel="stylesheet" type="text/css"/>
-    <link th:href="@{/vendors/css/vendor.bundle.addons.css}" rel="stylesheet" type="text/css"/>
+
     <!-- endinject -->
     <link th:href="@{/images/favicon.png}" rel="shortcut icon"/>
 </head>
@@ -73,15 +71,11 @@
 </div>
 <!-- container-scroller -->
 <!-- plugins:js -->
+<th:block th:replace="commons :: core-js"/>
 <th:block>
-    <script th:src="@{/vendors/js/vendor.bundle.base.js}"></script>
-    <script th:src="@{/vendors/js/vendor.bundle.addons.js}"></script>
-    <script th:src="@{/js/off-canvas.js}"></script>
-    <script th:src="@{/js/misc.js}"></script>
     <script th:src="@{/js/login/login.js}"></script>
 </th:block>
 <!-- endinject -->
-<th:block th:replace="commons :: core-js"/>
 <th:block th:replace="commons :: validate"/>
 </body>
 
