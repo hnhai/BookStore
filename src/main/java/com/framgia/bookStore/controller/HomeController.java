@@ -11,7 +11,7 @@ public class HomeController {
         return "home";
     }
 
-    @GetMapping("/view")
+    @GetMapping("admin/view")
     public String adminHome(){
         return "admin/blank";
     }

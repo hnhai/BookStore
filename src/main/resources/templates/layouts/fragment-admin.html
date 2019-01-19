@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <th:block th:fragment="header">
+    <th:block th:fragment="header(currentUser)">
         <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
                 <a class="navbar-brand brand-logo" href="../../index.html">
@@ -185,7 +185,7 @@
             </div>
         </nav>
     </th:block>
-    <th:block th:fragment="main-nav">
+    <th:block th:fragment="main-nav(currentUser)">
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <ul class="nav">
                 <li class="nav-item nav-profile">
@@ -254,7 +254,7 @@
                         <span class="menu-title">Icons</span>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li th:if="${@userPermissionServiceImpl.isAdmin(currentUser)}" class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
                         <i class="menu-icon mdi mdi-restart"></i>
                         <span class="menu-title">User Pages</span>

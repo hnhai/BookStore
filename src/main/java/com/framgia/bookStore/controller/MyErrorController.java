@@ -18,6 +18,10 @@ public class MyErrorController extends BaseController implements ErrorController
         if (status != null) {
             Integer statusCode = Integer.valueOf(status.toString());
             switch (statusCode) {
+                case 403:
+                    model.addAttribute("message", messageSource.getMessage("error-page.message-403", null, locale));
+                    model.addAttribute("code", statusCode);
+                    break;
                 case 404:
                     model.addAttribute("message", messageSource.getMessage("error-page.message-404", null, locale));
                     model.addAttribute("code", statusCode);
