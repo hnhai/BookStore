@@ -43,7 +43,7 @@ $( document ).ready(function() {
                         $('#username').addClass('parsley-error');
                         VALID_USERNAME = false;
                         $('#btnRegister').prop("disabled", true);
-                        $('#username-error').html('This username is exsisted !')
+                        $('#username-error').html('This username is exsisted !');
                     } else {
                         $('#username').removeClass('parsley-error');
                         $('#username').addClass('parsley-success');
@@ -71,7 +71,7 @@ $( document ).ready(function() {
                         $('#email').addClass('parsley-error');
                         VALID_EMAIL = false;
                         $('#btnRegister').prop("disabled", true);
-                        $('#email-error').html('This email is exsisted !')
+                        $('#email-error').html('This email is exsisted !');
                     } else {
                         $('#email').removeClass('parsley-error');
                         $('#email').addClass('parsley-success');

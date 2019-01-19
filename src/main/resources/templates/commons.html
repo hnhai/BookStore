@@ -3,16 +3,21 @@
 <head>
     <th:block th:fragment="meta-tags">
         <meta charset="utf-8"/>
-        <meta http-equiv="content-language" content="ja"/>
+        <meta http-equiv="content-language" content="en"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <meta id="_csrf_token" name="_csrf_token" th:content="${_csrf.token}"/>
         <meta id="_csrf_header" name="_csrf_header" th:content="${_csrf.headerName}"/>
+        <meta id="lang" name="lang" th:content="${#locale}"/>
+        <link th:href="@{/images/favicon.png}" rel="shortcut icon"/>
     </th:block>
 
     <th:block th:fragment="core-styles">
         <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
         <link th:href="@{/css/common.css}" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/vendors/iconfonts/mdi/css/materialdesignicons.min.css}" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/vendors/css/vendor.bundle.base.css}" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/vendors/css/vendor.bundle.addons.css}" rel="stylesheet" type="text/css"/>
     </th:block>
 
 </head>
@@ -21,6 +26,10 @@
 <th:block th:fragment="core-js">
     <!-- Core plugin JavaScript -->
     <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/vendors/js/vendor.bundle.base.js}"></script>
+    <script th:src="@{/vendors/js/vendor.bundle.addons.js}"></script>
+    <script th:src="@{/js/off-canvas.js}"></script>
+    <script th:src="@{/js/misc.js}"></script>
     <script th:inline="javascript">
         /*<![CDATA[*/
         var WebContext = {};
@@ -31,7 +40,12 @@
 
 <th:block th:fragment="validate">
     <link th:href="@{/css/parsley.css}" rel="stylesheet" type="text/css"/>
-    <script th:src="@{/js/parsley.min.js}"></script>
+    <script th:src="@{/js/parsley/parsley.min.js}"></script>
+    <script th:src="@{/js/parsley/en.js}"></script>
+    <script th:src="@{/js/parsley/vi.js}"></script>
+    <script type="text/javascript">
+        window.ParsleyValidator.setLocale($('#lang').attr('content'));
+    </script>
 </th:block>
 
 </body>

@@ -21,21 +21,18 @@ public class MyErrorController extends BaseController implements ErrorController
                 case 404:
                     model.addAttribute("message", messageSource.getMessage("error-page.message-404", null, locale));
                     model.addAttribute("code", statusCode);
-                    model.addAttribute("background", "#308ee0");
                     break;
                 case 500:
                     model.addAttribute("message",  messageSource.getMessage("error-page.message-500", null, locale));
                     model.addAttribute("code", statusCode);
-                    model.addAttribute("background", "#8862e0");
                     break;
                 default:
                     model.addAttribute("message",  messageSource.getMessage("error-page.default", null, locale));
                     model.addAttribute("code", "");
-                    model.addAttribute("background", "#308ee0");
                     break;
             }
         }
-        return "/page/error";
+        return "page/error";
     }
 
     @Override
