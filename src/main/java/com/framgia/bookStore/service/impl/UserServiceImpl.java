@@ -126,4 +126,9 @@ public class UserServiceImpl implements UserService {
         }
         return null;
     }
+
+    @Override
+    public UserEntity findById(Long id) {
+        return userRepository.findById(id).get();
+    }
 }

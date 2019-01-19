@@ -7,15 +7,15 @@
     <th:block th:replace="commons :: core-styles"/>
 </head>
 
-<body>
+<body th:with="currentUser=${@userPermissionServiceImpl.getCurrentUser()}">
 <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
-    <th:block th:replace="layouts/fragment-admin :: header"/>
+    <th:block th:replace="layouts/fragment-admin :: header(${currentUser})"/>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
         <!-- partial:../../partials/_sidebar.html -->
 
-        <th:block th:replace="layouts/fragment-admin :: main-nav"/>
+        <th:block th:replace="layouts/fragment-admin :: main-nav(${currentUser})"/>
 
         <!-- partial -->
         <div class="main-panel">
@@ -42,7 +42,6 @@
 <!-- container-scroller -->
 <!-- plugins:js -->
 <th:block th:replace="commons :: core-js"/>
-<th:block layout:fragment="scripts-customize"/>
 </body>
 
 </html>

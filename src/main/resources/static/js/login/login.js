@@ -4,6 +4,11 @@ var VALID_USERNAME = true;
 var VALID_EMAIL = true;
 
 $( document ).ready(function() {
+    var msg_username_existed = $('#register-existed-account').val();
+    var msg_email_existed = $('#register-existed-email').val();
+    var update_password_fail = $('#update-password-fail').val();
+    var login_error_username_not_exitst = $('#login-reset-username-not-exitst').val();
+    var login_reset_success = $('#login-reset-succcess').val();
     var token = $('#_csrf_token').attr('content');
     var header = $('#_csrf_header').attr('content');
 
@@ -43,12 +48,14 @@ $( document ).ready(function() {
                         $('#username').addClass('parsley-error');
                         VALID_USERNAME = false;
                         $('#btnRegister').prop("disabled", true);
-                        $('#username-error').html('This username is exsisted !');
+                        $('#username-error').html(msg_username_existed);
                     } else {
                         $('#username').removeClass('parsley-error');
                         $('#username').addClass('parsley-success');
                         VALID_USERNAME = true;
-                        $('#btnRegister').prop("disabled", false);
+                        if(VALID_EMAIL){
+                            $('#btnRegister').prop("disabled", false);
+                        }
                         $('#username-error').html('');
                     }
                 },
@@ -71,12 +78,14 @@ $( document ).ready(function() {
                         $('#email').addClass('parsley-error');
                         VALID_EMAIL = false;
                         $('#btnRegister').prop("disabled", true);
-                        $('#email-error').html('This email is exsisted !');
+                        $('#email-error').html(msg_email_existed);
                     } else {
                         $('#email').removeClass('parsley-error');
                         $('#email').addClass('parsley-success');
                         VALID_EMAIL = true;
-                        $('#btnRegister').prop("disabled", false);
+                        if(VALID_USERNAME){
+                            $('#btnRegister').prop("disabled", false);
+                        }
                         $('#email-error').html('');
                     }
                 },
@@ -101,11 +110,11 @@ $( document ).ready(function() {
                     if(data == true){
                         $('#reset-password-message').removeClass('message-parsley-errors');
                         $('#reset-password-message').addClass('message-parsley-success');
-                        $('#reset-password-message').html('Please check your email to complete reset password !')
+                        $('#reset-password-message').html(login_reset_success)
                     }else{
                         $('#reset-password-message').removeClass('message-parsley-success');
                         $('#reset-password-message').addClass('message-parsley-errors');
-                        $('#reset-password-message').html('username or email not existed !')
+                        $('#reset-password-message').html(login_error_username_not_exitst)
                     }
                 },
                 error: function (jqHR, textStatus, errorThrown) {
@@ -126,7 +135,7 @@ $( document ).ready(function() {
                 if(msg == true){
                     window.location.href = WebContext.contextPath;
                 }else{
-                    $('#update-password-message').html('Update Fail!');
+                    $('#update-password-message').html(update_password_fail);
                 }
             },
             error: function (e) {

@@ -21,4 +21,6 @@ public interface UserService {
     Boolean resetPassword(String usernameOrEmail, HttpServletRequest request);
 
     UserEntity updatePassword(Long userId, String password);
+
+    UserEntity findById(Long id);
 }
