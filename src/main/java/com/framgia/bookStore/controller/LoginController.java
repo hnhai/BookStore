@@ -36,16 +36,6 @@ public class LoginController extends BaseController {
         return "login";
     }
 
-    @GetMapping("/admin")
-    public String adminView() {
-        return "admin";
-    }
-
-    @GetMapping("/system")
-    public String sysView() {
-        return "system";
-    }
-
     @GetMapping("/register")
     public String registerView() {
         CustomUserDetail user = SecurityUtil.getCurrentUser();

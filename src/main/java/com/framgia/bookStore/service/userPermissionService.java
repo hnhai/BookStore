@@ -6,4 +6,8 @@ public interface userPermissionService {
     UserEntity getCurrentUser();
 
     Boolean isAdmin(UserEntity user);
+
+    Boolean isAccountant(UserEntity user);
+
+    Boolean isEmployee(UserEntity user);
 }

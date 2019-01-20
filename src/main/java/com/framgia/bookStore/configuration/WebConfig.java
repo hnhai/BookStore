@@ -9,6 +9,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
+import org.thymeleaf.dialect.springdata.SpringDataDialect;
 
 import java.util.Locale;
 
@@ -36,5 +37,10 @@ public class WebConfig implements WebMvcConfigurer {
         LocaleChangeInterceptor localeInterceptor = new LocaleChangeInterceptor();
         localeInterceptor.setParamName("lang");
         registry.addInterceptor(localeInterceptor).addPathPatterns("/*");
+    }
+
+    @Bean
+    public SpringDataDialect springDataDialect() {
+        return new SpringDataDialect();
     }
 }

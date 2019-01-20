@@ -27,4 +27,16 @@ public class userPermissionServiceImpl implements userPermissionService {
         return user.getUserRoleEntities().stream().map(UserRoleEntity::getRoleEntity)
                 .anyMatch(e -> e.getRoleType().equals(RoleType.ROLE_ADMIN));
     }
+
+    @Override
+    public Boolean isAccountant(UserEntity user) {
+        return user.getUserRoleEntities().stream().map(UserRoleEntity::getRoleEntity)
+                .anyMatch(e -> e.getRoleType().equals(RoleType.ROLE_ACCOUNTANT));
+    }
+
+    @Override
+    public Boolean isEmployee(UserEntity user) {
+        return user.getUserRoleEntities().stream().map(UserRoleEntity::getRoleEntity)
+                .anyMatch(e -> e.getRoleType().equals(RoleType.ROLE_EMPLOYEE));
+    }
 }

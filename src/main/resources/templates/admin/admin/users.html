@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/admin/base.html}" xmlns:sd="">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{users.manage}"></title>
+</head>
+<body>
+<th:block layout:fragment="content">
+    <h3 th:text="#{users.manage}" class="text-center"></h3>
+    <div class="float-right">
+        <div class="selectbox">
+            <p>Size</p>
+            <div class="selectbox__item" sd:page-size-selector="javascript">
+                <select id="selectbox">
+                    <option value="1">20</option>
+                    <option value="2">30</option>
+                    <option value="3">40</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                <p class="sort">
+                    <a class="sorted" sd:pagination-sort="id">ID</a>
+                </p>
+            </th>
+            <th>
+                <p class="sort">
+                    <a class="sorted" sd:pagination-sort="username">Username</a>
+                </p>
+            </th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+            <th:block th:each="user : ${users}">
+                <tr>
+                    <td><p th:text="${user.id}"></p></td>
+                    <td><p th:text="${user.username}"></p></td>
+                </tr>
+            </th:block>
+        </tbody>
+    </table>
+    <nav class="paging float-right">
+        <ul class="pagination" sd:pagination="full">
+            <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+        </ul>
+    </nav>
+</th:block>
+</body>
+</html>
