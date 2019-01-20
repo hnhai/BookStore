@@ -2,6 +2,8 @@ package com.framgia.bookStore.service;
 
 import com.framgia.bookStore.dto.user.RegisterForm;
 import com.framgia.bookStore.entity.UserEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -23,4 +25,6 @@ public interface UserService {
     UserEntity updatePassword(Long userId, String password);
 
     UserEntity findById(Long id);
+
+    Page<UserEntity> findAll(Pageable pageable);
 }

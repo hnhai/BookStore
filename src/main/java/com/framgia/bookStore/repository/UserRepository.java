@@ -1,7 +1,10 @@
 package com.framgia.bookStore.repository;
 
 import com.framgia.bookStore.entity.UserEntity;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Repository;
+
+import java.awt.print.Pageable;
 
 @Repository
 public interface UserRepository extends CustomJpaRepository<UserEntity, Long> {
