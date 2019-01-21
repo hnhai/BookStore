@@ -23,6 +23,7 @@
                             <div th:if="${param.error != null}" th:text="#{register.error}" class="text-center alert-danger margin-bottom-20"></div>
                             <div th:if="${param.success != null}" th:text="#{register.success}" class="text-center alert-success margin-bottom-20"></div>
                             <div class="form-row">
+                                <label th:text="#{login.username}"></label><span> &nbsp;*</span>
                                 <div class="form-group col-md-12 form-group__height">
                                     <input id="username" class="form-control form-group__input" th:name="username"
                                            th:placeholder="#{login.username}"
@@ -32,6 +33,7 @@
                             </div>
 
                             <div class="form-row">
+                                <label th:text="#{login.email}"></label><span> &nbsp;*</span>
                                 <div class="form-group col-md-12 form-group__height">
                                     <input id="email" class="form-control form-group__input" th:name="email"
                                            th:placeholder="#{login.email}"
@@ -42,6 +44,7 @@
                             </div>
 
                             <div class="form-row">
+                                <label th:text="#{login.password}"></label><span> &nbsp;*</span>
                                 <div class="form-group col-md-12 form-group__height">
                                     <input class="form-control form-group__input" id="password" th:name="password"
                                            th:placeholder="#{login.password}"
@@ -52,8 +55,9 @@
                             </div>
 
                             <div class="form-row">
+                                <label th:text="#{register.confirm-password}"></label><span> &nbsp;*</span>
                                 <div class="form-group col-md-12 form-group__height">
-                                    <input class="form-control form-group__input"
+                                     <input class="form-control form-group__input"
                                            th:placeholder="#{register.confirm-password}"
                                            data-parsley-required data-parsley-trigger="keyup"
                                            data-parsley-equalto="#password"
@@ -62,7 +66,19 @@
                             </div>
 
                             <div class="form-row">
+                                <label th:text="#{register.fullname}"></label><span> &nbsp;*</span>
                                 <div class="form-group col-md-12 form-group__height">
+                                    <input id="fullname" class="form-control form-group__input" th:name="fullname"
+                                           th:placeholder="#{register.fullname}"
+                                           data-parsley-trigger="keyup"
+                                           data-parsley-required
+                                           data-parsley-minlength="12">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-12 form-group__height">
+                                    <label th:text="#{register.gender}"></label><span></span>
                                     <select th:name="gender" class="form-control form-group__input" data-parsley-required>
                                         <option th:value="${T(com.framgia.bookStore.constants.Gender).MALE}" th:text="#{gender.male}" selected></option>
                                         <option th:value="${T(com.framgia.bookStore.constants.Gender).FEMALE}" th:text="#{gender.female}"></option>

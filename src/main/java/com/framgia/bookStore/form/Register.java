@@ -1,19 +1,25 @@
-package com.framgia.bookStore.dto.user;
+package com.framgia.bookStore.form;
 
 import com.framgia.bookStore.constants.Gender;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-public class RegisterForm {
+public class Register {
     @NotNull
     private String username;
+
     @NotNull
     private String email;
+
+    @NotNull
     @Size(min=6)
     private String password;
-    @NotNull
+
     private Gender gender;
+
+    @Size(min=6)
+    private String fullname;
 
     public String getUsername() {
         return username;
@@ -45,5 +51,13 @@ public class RegisterForm {
 
     public void setGender(Gender gender) {
         this.gender = gender;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
     }
 }

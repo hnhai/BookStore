@@ -3,17 +3,18 @@ package com.framgia.bookStore.service.impl;
 import com.framgia.bookStore.activemq.Email;
 import com.framgia.bookStore.activemq.Sender;
 import com.framgia.bookStore.constants.RoleType;
-import com.framgia.bookStore.dto.user.RegisterForm;
 import com.framgia.bookStore.entity.RoleEntity;
 import com.framgia.bookStore.entity.UserEntity;
 import com.framgia.bookStore.entity.UserRoleEntity;
 import com.framgia.bookStore.entity.UserRoleId;
+import com.framgia.bookStore.form.Register;
 import com.framgia.bookStore.repository.RoleRepository;
 import com.framgia.bookStore.repository.UserRepository;
 import com.framgia.bookStore.repository.UserRoleRopository;
 import com.framgia.bookStore.service.UserService;
 import com.framgia.bookStore.util.WebUtil;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -22,6 +23,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -53,12 +55,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public UserEntity saveUser(RegisterForm form) {
+    public UserEntity saveUser(Register form) {
         UserEntity user = new UserEntity();
         user.setEmail(form.getEmail().trim());
         user.setUsername(form.getUsername().trim());
         user.setPassword(passwordEncoder.encode(form.getPassword().trim()));
         user.setGender(form.getGender());
+        user.setFullname(!StringUtils.isEmpty(form.getFullname()) ? form.getFullname().trim() : StringUtils.EMPTY);
         user.setEnabled(true);
         user.setDeleted(false);
         user.setStatus(true);
@@ -137,5 +140,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public Page<UserEntity> findAll(Pageable pageable) {
         return userRepository.findAllByDeleted(false, pageable);
+    }
+
+    @Override
+    public Boolean deleteAllById(List<Long> ids) {
+        ids.forEach(id->userRepository.updateDeletedById(id));
+        return true;
     }
 }

@@ -30,6 +30,15 @@ public class UserEntity extends AbstractEntity{
     @Column(name = "USERNAME", nullable = false, unique = true)
     private String username;
 
+    @Column(name = "FULLNAME", nullable = false)
+    private String fullname;
+
+    @Column(name = "ADDRESS")
+    private String address;
+
+    @Column(name = "PHONE_NUMBER", length = 20)
+    private String phoneNumber;
+
     @Column(name = "PASSWORD", nullable = false)
     private String password;
 
@@ -49,7 +58,7 @@ public class UserEntity extends AbstractEntity{
     @Column(name = "STATUS")
     private Boolean status;
 
-    @Column(name = "TOKEN")
+    @Column(name = "TOKEN", length = 50)
     private String token;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "userEntity")
@@ -135,5 +144,29 @@ public class UserEntity extends AbstractEntity{
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }

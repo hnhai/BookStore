@@ -8,11 +8,12 @@
 <body>
 <th:block layout:fragment="content">
     <h3 th:text="#{users.manage}" class="text-center"></h3>
+
     <div class="float-right">
         <div class="selectbox">
-            <p>Size</p>
-            <div class="selectbox__item" sd:page-size-selector="javascript">
-                <select id="selectbox">
+            <p th:text="#{users.size}"></p>
+            <div sd:page-size-selector="javascript">
+                <select class="form-control"  id="selectbox">
                     <option value="1">20</option>
                     <option value="2">30</option>
                     <option value="3">40</option>
@@ -20,28 +21,65 @@
             </div>
         </div>
     </div>
+    <div class="float-left" id="btn-delete-user">
+        <p>Delete <i class="menu-icon mdi mdi-delete"></i></p>
+    </div>
     <table class="table">
         <thead>
         <tr>
-            <th>
+            <th width="2%">
+                <input type="checkbox" id="getAll">
+            </th>
+            <th width="2%">
                 <p class="sort">
                     <a class="sorted" sd:pagination-sort="id">ID</a>
                 </p>
             </th>
             <th>
                 <p class="sort">
-                    <a class="sorted" sd:pagination-sort="username">Username</a>
+                    <a class="sorted" sd:pagination-sort="username" th:text="#{login.username}"></a>
                 </p>
             </th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th>
+                <p class="sort">
+                    <a class="sorted" sd:pagination-sort="email">Email</a>
+                </p>
+            </th>
+            <th>
+                <p class="sort">
+                    <a class="sorted" th:text="#{users.role}"></a>
+                </p>
+            </th>
+            <th>
+                <p class="sort">
+                    <a class="sorted" sd:pagination-sort="fullname" th:text="#{register.fullname}"></a>
+                </p>
+            </th>
+            <th>
+                <p class="sort">
+                    <a class="sorted" sd:pagination-sort="fullname" th:text="#{register.address}"></a>
+                </p>
+            </th>
+            <th>
+                <p class="sort">
+                    <a class="sorted" sd:pagination-sort="phoneNumber" th:text="#{register.phoneNumber}"></a>
+                </p>
+            </th>
         </tr>
         </thead>
         <tbody>
             <th:block th:each="user : ${users}">
                 <tr>
+                    <td width="2%">
+                        <input type="checkbox" th:attr="data-id=${user.id}" class="getIDs">
+                    </td>
                     <td><p th:text="${user.id}"></p></td>
                     <td><p th:text="${user.username}"></p></td>
+                    <td><p th:text="${user.email}"></p></td>
+                    <td><p th:text="${user.userRoleEntities[0].roleEntity.roleType}"></p></td>
+                    <td><p th:text="${user.fullname}"></p></td>
+                    <td><p th:text="${user.address}"></p></td>
+                    <td><p th:text="${user.phoneNumber}"></p></td>
                 </tr>
             </th:block>
         </tbody>
@@ -53,5 +91,8 @@
         </ul>
     </nav>
 </th:block>
+    <th:block layout:fragment="scripts-customize">
+        <script th:src="@{/js/admin/users.js}"></script>
+    </th:block>
 </body>
 </html>
