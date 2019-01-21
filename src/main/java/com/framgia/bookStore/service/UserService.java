@@ -1,18 +1,19 @@
 package com.framgia.bookStore.service;
 
-import com.framgia.bookStore.dto.user.RegisterForm;
 import com.framgia.bookStore.entity.UserEntity;
+import com.framgia.bookStore.form.Register;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 public interface UserService {
     UserEntity findByUsername(String username);
 
     UserEntity findByEmail(String email);
 
-    UserEntity saveUser(RegisterForm form);
+    UserEntity saveUser(Register form);
 
     UserEntity findByUsernameAndToken(String username, String token);
 
@@ -27,4 +28,6 @@ public interface UserService {
     UserEntity findById(Long id);
 
     Page<UserEntity> findAll(Pageable pageable);
+
+    Boolean deleteAllById(List<Long> ids);
 }

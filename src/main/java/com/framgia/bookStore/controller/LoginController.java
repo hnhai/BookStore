@@ -1,8 +1,8 @@
 package com.framgia.bookStore.controller;
 
 import com.framgia.bookStore.auth.CustomUserDetail;
-import com.framgia.bookStore.dto.user.RegisterForm;
 import com.framgia.bookStore.entity.UserEntity;
+import com.framgia.bookStore.form.Register;
 import com.framgia.bookStore.form.UpdatePassword;
 import com.framgia.bookStore.util.SecurityUtil;
 import org.springframework.http.HttpStatus;
@@ -46,7 +46,7 @@ public class LoginController extends BaseController {
     }
 
     @PostMapping("/register")
-    public String registerProcess(@Valid RegisterForm form, BindingResult bindingResult, RedirectAttributes redirectAttributes, HttpServletRequest request) {
+    public String registerProcess(@Valid Register form, BindingResult bindingResult, RedirectAttributes redirectAttributes, HttpServletRequest request) {
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("RegisterForm", form);
             return "redirect:/register";

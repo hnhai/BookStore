@@ -1,3 +1,6 @@
-#reset-password:hover{
+#reset-password, #btn-delete-user:hover{
     cursor: pointer;
+}
+#btn-delete-user{
+    margin-top: 25px;
 }
