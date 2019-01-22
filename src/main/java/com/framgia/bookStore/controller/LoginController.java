@@ -51,7 +51,7 @@ public class LoginController extends BaseController {
             redirectAttributes.addFlashAttribute("RegisterForm", form);
             return "redirect:/register";
         }
-        if (userService.saveUser(form) != null) {
+        if (userService.saveUser(form, request) != null) {
             UserEntity user = userService.findByUsername(form.getUsername());
             CustomUserDetail userDetails = buildUser(user);
             UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null,

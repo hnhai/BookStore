@@ -13,7 +13,7 @@ public interface UserService {
 
     UserEntity findByEmail(String email);
 
-    UserEntity saveUser(Register form);
+    UserEntity saveUser(Register form, HttpServletRequest request);
 
     UserEntity findByUsernameAndToken(String username, String token);
 

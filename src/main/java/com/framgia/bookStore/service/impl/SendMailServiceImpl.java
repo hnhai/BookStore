@@ -1,6 +1,7 @@
 package com.framgia.bookStore.service.impl;
 
 import com.framgia.bookStore.activemq.Email;
+import com.framgia.bookStore.constants.MailConst;
 import com.framgia.bookStore.service.SendMailService;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;;
@@ -27,8 +28,11 @@ public class SendMailServiceImpl implements SendMailService {
     public void send(Email email) {
         MimeMessage mimeMessage = mailSender.createMimeMessage();
         Context ctx = new Context();
-        ctx.setVariable("url", email.getVars().get("url"));
-        ctx.setVariable("username", email.getVars().get("user"));
+        if (email.getType().equals(MailConst.ResetPassword.toString())){
+            ctx = resetPassword(email);
+        }else if(email.getType().equals(MailConst.CreatAccount.toString())){
+            ctx = createAccount(email);
+        }
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, "UTF-8");
         try {
             mimeMessageHelper.setFrom(email.getFrom());
@@ -41,5 +45,20 @@ public class SendMailServiceImpl implements SendMailService {
         }catch (Exception e){
             LOGGER.error(e);
         }
+    }
+
+    private Context resetPassword(Email email){
+        Context ctx = new Context();
+        ctx.setVariable("url", email.getVars().get("url"));
+        ctx.setVariable("username", email.getVars().get("user"));
+        return ctx;
+    }
+
+    private Context createAccount(Email email){
+        Context ctx = new Context();
+        ctx.setVariable("baseUrl", email.getVars().get("baseUrl"));
+        ctx.setVariable("username", email.getVars().get("username"));
+        ctx.setVariable("password", email.getVars().get("password"));
+        return ctx;
     }
 }

@@ -10,7 +10,7 @@ public class Email implements Serializable {
 
     private String to;
     private String from;
-    private String personal;
+    private String type;
     private String subject;
     private String content;
     private Map<String, Object> vars;
@@ -86,5 +86,13 @@ public class Email implements Serializable {
 
     public void setTemplate(String template) {
         this.template = template;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

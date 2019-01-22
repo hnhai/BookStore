@@ -1,6 +1,7 @@
 package com.framgia.bookStore.form;
 
 import com.framgia.bookStore.constants.Gender;
+import com.framgia.bookStore.constants.RoleType;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -12,7 +13,6 @@ public class Register {
     @NotNull
     private String email;
 
-    @NotNull
     @Size(min=6)
     private String password;
 
@@ -20,6 +20,8 @@ public class Register {
 
     @Size(min=6)
     private String fullname;
+
+    private RoleType roleType;
 
     public String getUsername() {
         return username;
@@ -59,5 +61,13 @@ public class Register {
 
     public void setFullname(String fullname) {
         this.fullname = fullname;
+    }
+
+    public RoleType getRoleType() {
+        return roleType;
+    }
+
+    public void setRoleType(RoleType roleType) {
+        this.roleType = roleType;
     }
 }

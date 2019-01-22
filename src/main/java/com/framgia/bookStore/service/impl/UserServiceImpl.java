@@ -2,6 +2,7 @@ package com.framgia.bookStore.service.impl;
 
 import com.framgia.bookStore.activemq.Email;
 import com.framgia.bookStore.activemq.Sender;
+import com.framgia.bookStore.constants.MailConst;
 import com.framgia.bookStore.constants.RoleType;
 import com.framgia.bookStore.entity.RoleEntity;
 import com.framgia.bookStore.entity.UserEntity;
@@ -55,10 +56,25 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public UserEntity saveUser(Register form) {
+    public UserEntity saveUser(Register form, HttpServletRequest request) {
         UserEntity user = new UserEntity();
         user.setEmail(form.getEmail().trim());
         user.setUsername(form.getUsername().trim());
+        if (StringUtils.isEmpty(form.getPassword())){
+            String passwordRandom = RandomStringUtils.random(10, true, false);
+            form.setPassword(passwordRandom);
+            Email email = new Email();
+            email.setFrom("bookstore@gmail.com");
+            email.setSubject("Create Account");
+            email.setType(MailConst.CreatAccount.toString());
+            email.setTo(user.getEmail());
+            email.setTemplate("/page/createAccount");
+            String baseUrl = WebUtil.getBaseUrl(request);
+            email.getVars().put("username", user.getUsername());
+            email.getVars().put("baseUrl", baseUrl);
+            email.getVars().put("password", passwordRandom);
+            sender.send(email);
+        }
         user.setPassword(passwordEncoder.encode(form.getPassword().trim()));
         user.setGender(form.getGender());
         user.setFullname(!StringUtils.isEmpty(form.getFullname()) ? form.getFullname().trim() : StringUtils.EMPTY);
@@ -66,7 +82,12 @@ public class UserServiceImpl implements UserService {
         user.setDeleted(false);
         user.setStatus(true);
         user = userRepository.save(user);
-        RoleEntity role = roleRepository.findByRoleType(RoleType.ROLE_USER);
+        RoleEntity role;
+        if(form.getRoleType() != null){
+            role = roleRepository.findByRoleType(form.getRoleType());
+        }else{
+            role = roleRepository.findByRoleType(RoleType.ROLE_USER);
+        }
         UserRoleEntity userRole = new UserRoleEntity(user, role);
         userRole.setId(new UserRoleId(user.getId(), role.getId()));
         userRole.setDeleted(false);
@@ -106,10 +127,11 @@ public class UserServiceImpl implements UserService {
             String token = RandomStringUtils.random(45, true, false);
             user.setToken(token);
             Email email = new Email();
-            email.setFrom("teststackjava@gmail.com");
+            email.setFrom("bookstore@gmail.com");
             email.setSubject("Reset Password");
             email.setTo(user.getEmail());
             email.setTemplate("/page/reset-password");
+            email.setType(MailConst.ResetPassword.toString());
             String linkReset = WebUtil.getBaseUrl(request) + "/update-password/" + user.getUsername() + "/" + user.getToken();
             email.getVars().put("username", user.getUsername());
             email.getVars().put("url", linkReset);

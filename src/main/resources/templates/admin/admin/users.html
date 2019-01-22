@@ -86,10 +86,77 @@
     </table>
     <nav class="paging float-right">
         <ul class="pagination" sd:pagination="full">
-            <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+            <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>e
             <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
         </ul>
     </nav>
+
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Open Large Modal</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title float-left">Modal Header</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" th:action="@{/admin/createUser}" data-parsley-validate id="form-createUser" modelAttribute="addUser">
+                        <div class="form-row">
+                            <label th:text="#{login.username}"></label><span> &nbsp;*</span>
+                            <div class="form-group col-md-12 form-group__height">
+                                <input id="username" class="form-control form-group__input" th:name="username"
+                                       th:placeholder="#{login.username}"
+                                       data-parsley-required data-parsley-trigger="keyup">
+                                <span id="username-error" class="message-parsley-errors"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <label th:text="#{login.email}"></label><span> &nbsp;*</span>
+                            <div class="form-group col-md-12 form-group__height">
+                                <input id="email" class="form-control form-group__input" th:name="email"
+                                       th:placeholder="#{login.email}"
+                                       type="email"
+                                       data-parsley-required data-parsley-trigger="keyup">
+                                <span id="email-error" class="message-parsley-errors"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <label th:text="#{register.fullname}"></label><span> &nbsp;*</span>
+                            <div class="form-group col-md-12 form-group__height">
+                                <input id="fullname" class="form-control form-group__input" th:name="fullname"
+                                       th:placeholder="#{register.fullname}"
+                                       data-parsley-trigger="keyup"
+                                       data-parsley-required
+                                       data-parsley-minlength="12">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-12 form-group__height">
+                                <label th:text="#{users.role}"></label><span></span>
+                                <select th:name="gender" class="form-control form-group__input" data-parsley-required>
+                                    <option th:value="${T(com.framgia.bookStore.constants.RoleType).ROLE_USER}" th:text="${T(com.framgia.bookStore.constants.RoleType).ROLE_USER}" selected></option>
+                                    <option th:value="${T(com.framgia.bookStore.constants.RoleType).ROLE_EMPLOYEE}" th:text="${T(com.framgia.bookStore.constants.RoleType).ROLE_EMPLOYEE}"></option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary submit-btn btn-block"
+                                th:text="#{register.register}"></button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </th:block>
     <th:block layout:fragment="scripts-customize">
         <script th:src="@{/js/admin/users.js}"></script>
