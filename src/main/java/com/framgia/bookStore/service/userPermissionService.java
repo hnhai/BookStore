@@ -7,7 +7,5 @@ public interface userPermissionService {
 
     Boolean isAdmin(UserEntity user);
 
-    Boolean isAccountant(UserEntity user);
-
     Boolean isEmployee(UserEntity user);
 }
