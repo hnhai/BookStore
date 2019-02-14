@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <title>base</title>
+    <th:block th:replace="userCommon :: meta-tags"/>
+    <th:block th:replace="userCommon :: core-styles"/>
+</head>
+
+<body>
+<div class="container-scroller">
+    <th:block th:replace="layouts/fragment-user :: header"/>
+    <th:block layout:fragment="content"/>
+    <th:block th:replace="layouts/fragment-user :: footer"/>
+</div>
+<!-- container-scroller -->
+<!-- plugins:js -->
+<th:block th:replace="userCommon :: core-js"/>
+
+<th:block th:replace="userCommon :: core-js"/>
+<th:block layout:fragment="scripts-customize"/>
+
+</body>
+
+</html>
