@@ -66,6 +66,10 @@ public class UserEntity extends AbstractEntity{
     @OrderBy("id.roleId")
     private Set<UserRoleEntity> userRoleEntities = new HashSet<>(0);
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    @Where(clause = "DELETED = 0")
+    private Set<OrderEntity> orders = new HashSet<>(0);
+
     public Long getId() {
         return id;
     }
