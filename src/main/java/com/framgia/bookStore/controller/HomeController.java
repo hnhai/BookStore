@@ -11,6 +11,16 @@ public class HomeController {
         return "user/home";
     }
 
+    @GetMapping("/books")
+    public String books(){
+        return "user/books";
+    }
+
+    @GetMapping("/book")
+    public String book(){
+        return "user/book";
+    }
+
     @GetMapping("admin/view")
     public String adminHome(){
         return "admin/blank";
