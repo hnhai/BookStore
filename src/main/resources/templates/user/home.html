@@ -16,9 +16,9 @@
                             <img th:src="@{/images/user/slide1.jpg}" alt="slide1">
                             <div class="content">
                                 <div class="title">
-                                    <h3>welcome to bookstore</h3>
-                                    <h5>Discover the best books online with us</h5>
-                                    <a href="#" class="btn">shop books</a>
+                                    <h3 th:text="#{home.welcome}"></h3>
+                                    <h5 th:text="#{home.discovery}"></h5>
+                                    <a th:href="@{/books}" class="btn" th:text="#{home.shop-book}"></a>
                                 </div>
                             </div>
                         </div>
@@ -28,9 +28,9 @@
                             <img th:src="@{/images/user/slide2.jpg}" alt="slide1">
                             <div class="content">
                                 <div class="title">
-                                    <h3>welcome to bookstore</h3>
-                                    <h5>Discover the best books online with us</h5>
-                                    <a href="#" class="btn">shop books</a>
+                                    <h3 th:text="#{home.welcome}"></h3>
+                                    <h5 th:text="#{home.discovery}"></h5>
+                                    <a th:href="@{/books}" class="btn" th:text="#{home.shop-book}"></a>
                                 </div>
                             </div>
                         </div>
@@ -40,9 +40,11 @@
                             <img th:src="@{/images/user/slide3.jpg}" alt="slide1">
                             <div class="content">
                                 <div class="title">
-                                    <h3>welcome to bookstore</h3>
-                                    <h5>Discover the best books online with us</h5>
-                                    <a href="#" class="btn">shop books</a>
+                                    <div class="title">
+                                        <h3 th:text="#{home.welcome}"></h3>
+                                        <h5 th:text="#{home.discovery}"></h5>
+                                        <a th:href="@{/books}" class="btn" th:text="#{home.shop-book}"></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +67,7 @@
         <section class="recomended-sec">
             <div class="container">
                 <div class="title">
-                    <h2>highly recommendes books</h2>
+                    <h2 th:text="#{home.recomend}"></h2>
                     <hr>
                 </div>
                 <div class="row">
@@ -126,19 +128,19 @@
                 <figure th:style="'background:url(' + @{images/user/about-img.jpg} + ')no-repeat;'"></figure>
             </div>
             <div class="about-content">
-                <h2>About bookstore,</h2>
+                <h2 th:text="#{home.about}"></h2>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's printer took a galley of type and Scrambled it to make a type and typesetting industry. Lorem Ipsum has been the book. </p>
                 <p>It has survived not only fiveLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's printer took a galley of type and</p>
                 <div class="btn-sec">
-                    <a href="books.html" class="btn yellow">shop books</a>
-                    <a href="login.html" class="btn black">subscriptions</a>
+                    <a th:href="@{/books}" class="btn yellow" th:text="#{home.view-all}"></a>
+                    <a th:href="@{/login}" class="btn black" th:text="#{home.subscriptions}"></a>
                 </div>
             </div>
         </section>
         <section class="recent-book-sec">
             <div class="container">
                 <div class="title">
-                    <h2>highly recommendes books</h2>
+                    <h2 th:text="#{home.new-books}"></h2>
                     <hr>
                 </div>
                 <div class="row">
@@ -214,7 +216,7 @@
                     </div>
                 </div>
                 <div class="btn-sec">
-                    <a href="#" class="btn gray-btn">view all books</a>
+                    <a th:href="@{/books}" class="btn gray-btn" th:text="#{home.view-all}"></a>
                 </div>
             </div>
         </section>
@@ -223,20 +225,20 @@
                 <ul>
                     <li>
                         <span class="icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
-                        <h3>SAFE SHOPPING</h3>
-                        <h5>Safe Shopping Guarantee</h5>
+                        <h3 th:text="#{home.safe-shopping}"></h3>
+                        <h5 th:text="#{home.safe-shopping-guarantee}"></h5>
                         <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</h6>
                     </li>
                     <li>
                         <span class="icon return"><i class="fa fa-reply-all" aria-hidden="true"></i></span>
-                        <h3>30- DAY RETURN</h3>
-                        <h5>Moneyback guarantee</h5>
+                        <h3 th:text="#{home.30-day-return}"></h3>
+                        <h5 th:text="#{home.money-return}"></h5>
                         <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</h6>
                     </li>
                     <li>
                         <span class="icon chat"><i class="fa fa-comments" aria-hidden="true"></i></span>
-                        <h3>24/7 SUPPORT</h3>
-                        <h5>online Consultations</h5>
+                        <h3 th:text="#{home.24-7-support}"></h3>
+                        <h5 th:text="#{home.online-onsultations}"></h5>
                         <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</h6>
                     </li>
                 </ul>
@@ -248,10 +250,9 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="detail">
-                            <h3>Top 50% OFF on Selected</h3>
-                            <h6>We are now offering some good discount
-                                on selected books go and shop them</h6>
-                            <a href="products.html" class="btn blue-btn">view all books</a>
+                            <h3 th:text="#{home.top-50}"></h3>
+                            <h6 th:text="#{home.top-50-more}"></h6>
+                            <a href="products.html" class="btn blue-btn" th:text="#{home.view-all}"></a>
                             <span class="icon-point percentage">
                             <img th:src="@{images/user/precentagae.png}" alt="">
                         </span>
@@ -259,10 +260,9 @@
                     </div>
                     <div class="col-md-6">
                         <div class="detail">
-                            <h3>Shop $ 500 Above and Get Extra!</h3>
-                            <h6>We are now offering some good discount
-                                on selected books go and shop them</h6>
-                            <a href="products.html" class="btn blue-btn">view all books</a>
+                            <h3 th:text="#{home.sale-off}"></h3>
+                            <h6 th:text="#{home.sale-off-more}"></h6>
+                            <a href="products.html" class="btn blue-btn" th:text="#{home.view-all}"></a>
                             <span class="icon-point amount"><img th:src="@{images/user/amount.png}" alt=""></span>
                         </div>
                     </div>
