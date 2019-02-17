@@ -19,7 +19,7 @@ public class BookEntity extends AbstractEntity{
     @Column(name = "NAME")
     private String name;
 
-    @Column(name = "ALIAS_NAME")
+    @Column(name = "ALIAS_NAME", unique = true)
     private String aliasName;
 
     @Column(name = "DESCRIPTION")
@@ -42,9 +42,15 @@ public class BookEntity extends AbstractEntity{
     private PublisherEntity publisher;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "book")
+    @OrderBy("id ASC")
     private Set<ImageEntity> images = new HashSet<>(0);
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "book")
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OrderBy("id ASC")
+    @JoinTable(name = "BOOK_AUTHORS", catalog = "BOOK_STORE", joinColumns = {
+            @JoinColumn(name = "BOOK_ID", nullable = false, updatable = false) },
+            inverseJoinColumns = { @JoinColumn(name = "AUTHOR_ID",
+                    nullable = false, updatable = false) })
     private Set<AuthorEnity> authors = new HashSet<>(0);
 
     public Long getId() {
