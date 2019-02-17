@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "PUBLISHER")
+@Table(name = "PUBLISHERS")
 public class PublisherEntity extends AbstractEntity{
     private static final long serialVersionUID = 1L;
 

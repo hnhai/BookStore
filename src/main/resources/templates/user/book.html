@@ -10,11 +10,11 @@
 <th:block layout:fragment="content">
     <div class="breadcrumb">
         <div class="container">
-            <a class="breadcrumb-item" th:href="@{/}">Home</a>
-            <span class="breadcrumb-item active">Book Detail</span>
+            <a class="breadcrumb-item" th:href="@{/}" th:text="#{home.home}"></a>
+            <span class="breadcrumb-item active" th:text="#{book.detail}"></span>
         </div>
     </div>
-    <section class="product-sec">
+    <section th:if="${book} != null" class="product-sec">
         <div class="container">
             <h1 th:text="${book.name}"></h1>
             <div class="row">
@@ -43,22 +43,28 @@
                     <!--/main slider carousel-->
                 </div>
                 <div class="col-md-6 slider-content">
-                    <p th:text="${book.description}"></p>
+
+                    <th:block th:each="author, iter : ${book.authors}">
+                        <a th:href="@{'/author/' + ${author.name}}" th:text="${iter.index == 0} ? ${author.name} : ', ' + ${author.name}"></a>
+                    </th:block>
+                    <p><span th:text="#{book.description}"></span><span th:text="${book.description}"></span></p>
                     <ul>
                         <li>
-                            <span class="name">Kindle Price</span><span class="clm">:</span>
-                            <span class="price final" th:text="${book.price}"></span>
+                            <p th:inline="text"><span class="name" th:text="#{book.final-price}"></span> $ [[${#numbers.formatDecimal(book.price, 0, 'POINT', 0, 'POINT')}]] VNĐ</p>
                         </li>
                     </ul>
                     <div class="btn-sec">
-                        <button class="btn ">Add To cart</button>
-                        <button class="btn black">Buy Now</button>
+                        <button class="btn" th:text="#{book.add-to-card}"></button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="related-books">
+    <section th:if="${book} == null" style="min-height: 300px;">
+        <h2 style="margin-top: 110px;" class="text-center text-danger" th:text="#{book.not-found}"></h2>
+        <p class="text-center"><a th:href="@{/books}" th:text="#{book.come-back-store}"></a></p>
+    </section>
+    <section class="related-books" th:if="${book} != null">
         <div class="container">
             <h2>You may also like these book</h2>
             <div class="recomended-sec">
