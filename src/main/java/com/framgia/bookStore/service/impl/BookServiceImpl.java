@@ -30,4 +30,9 @@ public class BookServiceImpl implements BookSerive {
     public Page<BookEntity> getTop5Book() {
         return bookReponsitory.getTop5Book(PageRequest.of(0, 4));
     }
+
+    @Override
+    public List<BookEntity> get10Books() {
+        return bookReponsitory.get10Books(PageRequest.of(0, 10));
+    }
 }
