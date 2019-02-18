@@ -17,7 +17,8 @@ public class HomeController extends BaseController{
     }
 
     @GetMapping("/")
-    public String home(){
+    public String home(Model model){
+        model.addAttribute("get10Books", bookSerive.get10Books());
         return "user/home";
     }
 

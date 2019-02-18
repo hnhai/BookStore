@@ -15,4 +15,7 @@ public interface BookReponsitory extends CustomJpaRepository<BookEntity, Long>{
     // Query get TOP 5 books most sell
     @Query(value = "SELECT b FROM BookEntity b JOIN b.orderDetails d WHERE b.deleted = FALSE GROUP BY b.id ORDER BY SUM(d.quantity) DESC")
     Page<BookEntity> getTop5Book(Pageable pageable);
+
+    @Query(value = "FROM BookEntity b ORDER BY b.id DESC")
+    List<BookEntity> get10Books(Pageable pageable);
 }

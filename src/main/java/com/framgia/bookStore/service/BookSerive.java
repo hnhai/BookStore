@@ -9,4 +9,5 @@ public interface BookSerive {
     List<BookEntity> loadAll();
     BookEntity getByAliasName(String aliasName);
     Page<BookEntity> getTop5Book();
+    List<BookEntity> get10Books();
 }
