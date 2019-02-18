@@ -64,7 +64,7 @@
     </section>
     <section class="related-books" th:if="${book} != null">
         <div class="container">
-            <div th:replace="user/top5sell :: top5sell1"></div>
+            <div th:replace="user/top5sell :: top5sell1(${top5Books})"></div>
         </div>
     </section>
 </th:block>

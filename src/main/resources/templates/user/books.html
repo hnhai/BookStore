@@ -16,155 +16,41 @@
     </div>
     <section class="static about-sec">
         <div class="container">
-            <div th:replace="user/top5sell :: top5sell"></div>
+
+            <div class="float-right">
+                <div class="selectbox">
+                    <p th:text="#{users.size}"></p>
+                    <div sd:page-size-selector="javascript">
+                        <select class="form-control"  id="selectbox">
+                            <option value="1">20</option>
+                            <option value="2">30</option>
+                            <option value="3">40</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
             <h2 th:text="#{books.recently-added}"></h2>
             <div class="recent-book-sec">
                 <div class="row">
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img th:src="@{images/user/r1.jpg}" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">View more</a></h6>
+                    <th:block th:each="book : ${books}">
+                        <div class="col-md-3">
+                            <div class="item text-center">
+                                <img style="width: 165px; height: 260px;" th:src="@{'/images/user/' + ${book.images[0].name}}" alt="img">
+                                <p style="height: 48px; overflow: hidden;" th:text="${book.name}"></p>
+                                <p th:inline="text"><span class="name" th:text="#{book.final-price}"></span><span class="removeChar"> $ [[${#numbers.formatDecimal(book.price, 0, 'POINT', 0, 'POINT')}]] </span> VNĐ</p>
+                                <a th:href="@{'book/' + ${book.aliasName}}" th:text="#{book.show-more}"></a></h6>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img th:src="@{images/user/r2.jpg}" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img th:src="@{images/user/r3.jpg}" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img th:src="@{images/user/r4.jpg}" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img th:src="@{images/user/r5.jpg}" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img th:src="@{images/user/r1.jpg}" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img th:src="@{images/user/r2.jpg}" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img th:src="@{images/user/r3.jpg}" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img th:src="@{images/user/r4.jpg}" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img th:src="@{images/user/r5.jpg}" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img th:src="@{images/user/r1.jpg}" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img th:src="@{images/user/r2.jpg}" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img th:src="@{images/user/r3.jpg}" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img th:src="@{images/user/r4.jpg}" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img th:src="@{images/user/r5.jpg}" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img th:src="@{images/user/r1.jpg}" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img th:src="@{images/user/r2.jpg}" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img th:src="@{images/user/r3.jpg}" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img th:src="@{images/user/r4.jpg}" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="item">
-                            <img th:src="@{images/user/r5.jpg}" alt="img">
-                            <h3><a href="#">Keepers of the kalachakara</a></h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                        </div>
-                    </div>
+                    </th:block>
                 </div>
-                <div class="btn-sec">
-                    <a href="products.html" class="btn gray-btn">load More books</a>
-                </div>
+                <nav class="paging float-right">
+                    <ul class="pagination" sd:pagination="full">
+                        <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>e
+                        <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                    </ul>
+                </nav>
             </div>
+            <div th:replace="user/top5sell :: top5sell(${top5Books})"></div>
         </div>
     </section>
 </th:block>
