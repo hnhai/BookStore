@@ -27,6 +27,9 @@ public class OderDetailEntity extends AbstractEntity{
     @Where(clause = "DELETED_FLAG=0")
     private OrderEntity order;
 
+    @Column(name = "QUANTITY", nullable = false)
+    private Long quantity;
+
     public OderDetailEntity(){}
 
     public OderDetailEntity(BookEntity book, OrderEntity order){
@@ -57,6 +60,15 @@ public class OderDetailEntity extends AbstractEntity{
     public void setOrder(OrderEntity order) {
         this.order = order;
     }
+
+    public Long getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Long quantity) {
+        this.quantity = quantity;
+    }
+
     @Override
     public String toString() {
         return new ToStringBuilder(this, ToStringStyle.JSON_STYLE)
