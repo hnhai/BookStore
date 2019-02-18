@@ -28,7 +28,6 @@ public class userPermissionServiceImpl implements userPermissionService {
                 .anyMatch(e -> e.getRoleType().equals(RoleType.ROLE_ADMIN));
     }
 
-
     @Override
     public Boolean isEmployee(UserEntity user) {
         return user.getUserRoleEntities().stream().map(UserRoleEntity::getRoleEntity)

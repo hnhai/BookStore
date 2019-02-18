@@ -36,6 +36,12 @@
         var WebContext = {};
         WebContext.contextPath = /*[[@{/}]]*/'';
         /*]]>*/
+
+        $(document).ready(function () {
+            $('.removeChar').each(function () {
+                $(this).text($(this).text().replace(/[$;]/g, ''));
+            });
+        });
     </script>
 </th:block>
 

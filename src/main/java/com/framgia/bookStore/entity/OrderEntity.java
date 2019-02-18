@@ -30,6 +30,9 @@ public class OrderEntity extends AbstractEntity{
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "order")
     private Set<PaymentEntity> payments = new HashSet<>(0);
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "order")
+    private Set<OderDetailEntity> orderDetails = new HashSet<>(0);
+
     public Long getId() {
         return id;
     }
@@ -68,5 +71,13 @@ public class OrderEntity extends AbstractEntity{
 
     public void setPayments(Set<PaymentEntity> payments) {
         this.payments = payments;
+    }
+
+    public Set<OderDetailEntity> getOrderDetails() {
+        return orderDetails;
+    }
+
+    public void setOrderDetails(Set<OderDetailEntity> orderDetails) {
+        this.orderDetails = orderDetails;
     }
 }

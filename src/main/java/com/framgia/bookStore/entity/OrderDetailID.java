@@ -19,8 +19,6 @@ public class OrderDetailID implements Serializable {
     @Column(name = "BOOK_ID", nullable = false)
     private Long bookId;
 
-    @Column(name = "QUANTITY", nullable = false)
-    private Long quantity;
 
     public OrderDetailID(){}
 

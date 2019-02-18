@@ -10,66 +10,13 @@
 <th:block layout:fragment="content">
     <div class="breadcrumb">
         <div class="container">
-            <a class="breadcrumb-item" href="index.html">Home</a>
-            <span class="breadcrumb-item active">Products</span>
+            <a class="breadcrumb-item" href="index.html" th:text="#{home.home}"></a>
+            <span class="breadcrumb-item active" th:text="#{home.shop}"></span>
         </div>
     </div>
     <section class="static about-sec">
         <div class="container">
-            <h2>highly recommendes books</h2>
-            <div class="recomended-sec">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="item">
-                            <img th:src="@{images/user/img1.jpg}" alt="img">
-                            <h3>how to be a bwase</h3>
-                            <h6><span class="price">$49</span> / <a href="#">Buy Now</a></h6>
-                            <div class="hover">
-                                <a href="product-single.html">
-                                    <span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="item">
-                            <img th:src="@{images/user/img2.jpg}" alt="img">
-                            <h3>How to write a book...</h3>
-                            <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-                            <span class="sale">Sale !</span>
-                            <div class="hover">
-                                <a href="product-single.html">
-                                    <span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="item">
-                            <img th:src="@{images/user/img3.jpg}" alt="img">
-                            <h3>7-day self publish...</h3>
-                            <h6><span class="price">$49</span> / <a href="#">Buy Now</a></h6>
-                            <div class="hover">
-                                <a href="product-single.html">
-                                    <span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="item">
-                            <img th:src="@{images/user/img4.jpg}" alt="img">
-                            <h3>wendy doniger</h3>
-                            <h6><span class="price">$49</span> / <a href="#">Buy Now</a></h6>
-                            <div class="hover">
-                                <a href="product-single.html">
-                                    <span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div th:replace="user/top5sell :: top5sell"></div>
             <h2 th:text="#{books.recently-added}"></h2>
             <div class="recent-book-sec">
                 <div class="row">

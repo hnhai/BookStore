@@ -4,13 +4,14 @@ import com.framgia.bookStore.entity.BookEntity;
 import com.framgia.bookStore.repository.BookReponsitory;
 import com.framgia.bookStore.service.BookSerive;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
-public class BookServiceIpml implements BookSerive {
+public class BookServiceImpl implements BookSerive {
 
     @Autowired
     private BookReponsitory bookReponsitory;
@@ -23,5 +24,10 @@ public class BookServiceIpml implements BookSerive {
     @Override
     public BookEntity getByAliasName(String aliasName) {
         return bookReponsitory.getByAliasName(aliasName);
+    }
+
+    @Override
+    public Page<BookEntity> getTop5Book() {
+        return bookReponsitory.getTop5Book(PageRequest.of(0, 4));
     }
 }

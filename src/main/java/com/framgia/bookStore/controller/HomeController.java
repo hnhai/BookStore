@@ -1,17 +1,21 @@
 package com.framgia.bookStore.controller;
 
 import com.framgia.bookStore.entity.BookEntity;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.List;
 
 @Controller
 public class HomeController extends BaseController{
+
+    @ModelAttribute("top5Books")
+    Page<BookEntity> getTop5Books(){
+        return bookSerive.getTop5Book();
+    }
+
     @GetMapping("/")
     public String home(){
         return "user/home";
@@ -19,9 +23,6 @@ public class HomeController extends BaseController{
 
     @GetMapping("/books")
     public String books(){
-
-        List<BookEntity> books = bookSerive.loadAll();
-        System.out.println(books.size());
         return "user/books";
     }
 
