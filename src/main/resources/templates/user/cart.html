@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/user/base.html}" xmlns:sd="">
+<head>
+    <meta charset="UTF-8">
+    <title>Card</title>
+    <link th:href="@{/user/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<th:block layout:fragment="content">
+    <div class="breadcrumb">
+        <div class="container">
+            <a class="breadcrumb-item" th:href="@{/}" th:text="#{home.home}"></a>
+            <span class="breadcrumb-item active">Cart</span>
+        </div>
+    </div>
+    <div th:if="${param.invalidQuantity != null}">
+        <p class="text-center text-danger">Invalid Quantity Cart</p>
+    </div>
+    <div class="container" style="min-height: 500px;" th:if="${cart != null}">
+        <h2 class="text-center">Shopping Cart</h2>
+        <div class="row">
+            <th:block>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th width="2%">STT</th>
+                            <th width="30%">Book Name</th>
+                            <th width="1%">Quantity</th>
+                            <th width="10%">Price</th>
+                            <th width="10%">Total</th>
+                            <th width="15%"></th>
+                        </tr>
+                    </thead>
+                    <tbody th:each="item, iter : ${cart}">
+                        <tr>
+                            <td th:text="${iter.index + 1}"></td>
+                            <td><a th:text="${item.getBook().name}" th:href="@{'/book/' + ${item.getBook().aliasName}}"></a></td>
+                            <td><input type="number" th:value="${item.quantity}" class="form-control" th:classappend="'quantity-' + ${item.getBook().id}"></td>
+                            <td th:inline="text"><span class="removeChar"> $ [[${#numbers.formatDecimal(item.getBook().price, 0, 'POINT', 0, 'POINT')}]] </span> VNĐ</td>
+                            <td th:inline="text"><span class="removeChar"> $ [[${#numbers.formatDecimal(item.getBook().price * item.quantity, 0, 'POINT', 0, 'POINT')}]] </span> VNĐ</td>
+                            <td>
+                                <a th:href="@{'/book/delete-cart-item/' + ${item.getBook().id}}"><button class="btn-danger">Delete</button></a>
+                                <button data-th-bookid="${item.getBook().id}" class="btn-info btn-update-cart">Update</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </th:block>
+
+        </div>
+        <div class="row">
+            <div class="col-md-10"></div>
+            <div class="col-md-2">
+                <button class="btn-success">Buy</button>
+                <a th:href="@{'/book/delete-all-cart'}"><button class="btn-danger">Delete All</button></a>
+            </div>
+
+        </div>
+    </div>
+    <div th:if="${cart == null}" style="min-height: 300px;">
+        <h2 style="margin-top: 110px;" class="text-center text-danger" th:text="#{book.not-found}"></h2>
+        <p class="text-center"><a th:href="@{/books}" th:text="#{book.come-back-store}"></a></p>
+    </div>
+</th:block>
+<th:block layout:fragment="scripts-customize">
+    <script th:src="@{/js/admin/cart.js}"></script>
+</th:block>
+</body>
+</html>

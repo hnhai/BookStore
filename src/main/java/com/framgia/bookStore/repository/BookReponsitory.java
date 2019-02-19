@@ -11,6 +11,9 @@ import java.util.List;
 
 @Repository
 public interface BookReponsitory extends CustomJpaRepository<BookEntity, Long>{
+
+    BookEntity getByDeletedAndId(Boolean deleted, Long id);
+
     BookEntity getByAliasName(String aliasName);
 
     // Query get TOP 5 books most sell
