@@ -1,10 +1,10 @@
 package com.framgia.bookStore.controller;
 
 import com.framgia.bookStore.entity.BookEntity;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.SortDefault;
 import org.springframework.stereotype.Controller;
@@ -35,24 +35,10 @@ public class HomeController extends BaseController{
     @GetMapping("/books")
     public String books(Model model, @SortDefault("id") Pageable pageable, @RequestParam(value = "name", required = false) String name,
                         @RequestParam(value = "author", required = false) String author,
-                        @RequestParam(value = "price", required = false) String price){
-        pageable = createPageRequest(pageable);
-        Page<BookEntity> books = null;
-        if(!StringUtils.isEmpty(name)){
-            books = bookSerive.findAllByName(pageable, name);
-        }else if (!StringUtils.isEmpty(author)){
-            books = bookSerive.findAllByAuthor(pageable, author);
-        }else if(!StringUtils.isEmpty(price)){
-            String prices [] = price.split("-");
-            try {
-                books = bookSerive.findAllByPrice(pageable, Long.valueOf(prices[0]), Long.valueOf(prices[1]));
-            }catch (Exception e){
-                LOGGER.error(e);
-                books = bookSerive.findAll(pageable);
-            }
-        }else{
-            books = bookSerive.findAll(pageable);
-        }
+                        @RequestParam(value = "price1", required = false) String price1,
+                        @RequestParam(value = "price2", required = false) String price2){
+        pageable = PageRequest.of(pageable.getPageNumber(), 20, pageable.getSort());
+        Page<BookEntity> books = bookSerive.findBook(pageable, name, author, price1, price2);
         model.addAttribute("books", books);
         return "user/books";
     }

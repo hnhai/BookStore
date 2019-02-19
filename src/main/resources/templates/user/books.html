@@ -5,6 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="#{home.shop}"></title>
+    <link th:href="@{/user/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+    <style>
+        .sort{
+            margin-left: 20px;
+            margin-top: -30px;
+        }
+    </style>
 </head>
 <body>
 <th:block layout:fragment="content">
@@ -15,44 +22,78 @@
         </div>
     </div>
     <section class="static about-sec">
-        <div class="container">
-
+        <div class="container-fluid">
             <div class="float-right">
-                <div class="selectbox">
-                    <p th:text="#{users.size}"></p>
-                    <div sd:page-size-selector="javascript">
-                        <select class="form-control"  id="selectbox">
-                            <option value="1">20</option>
-                            <option value="2">30</option>
-                            <option value="3">40</option>
-                        </select>
+                <p th:text="#{users.size}"></p>
+                <div sd:page-size-selector="javascript">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="border" style="float: left;">
+                        <div>
+                            <p th:text="#{books.order-by}"></p>
+                            <p class="sort">
+                                <a class="sorted" sd:pagination-sort="name" th:text="#{books.name}"></a>
+                            </p>
+                            <p class="sort">
+                                <a class="sorted" sd:pagination-sort="price" th:text="#{books.price}"></a>
+                            </p>
+                            <p class="sort">
+                                <a class="sorted" sd:pagination-sort="id" th:text="#{books.new}"></a>
+                            </p>
+                        </div>
+                        <div>
+                            <p th:text="#{books.search-by}"></p>
+                            <input style="float: right; margin-right: 10px;" id="book-name" class="form-control col-md-11 sort" th:placeholder="#{books.name}">
+                            <p style="margin-right: 10px;">
+                                <input type="number" style="margin-top: 10px; margin-right: 2px; float: right" id="price1" class="form-control col-md-5" th:placeholder="#{books.price}">
+                                <span style="float: right; margin: 16px 12px;">-</span>
+                                <input type="number" style="margin-top: 10px; float: right;" id="price2" class="form-control col-md-5" th:placeholder="#{books.price}">
+                            </p>
+                            <input style="float: right; margin-right: 10px;" id="author-name" class="form-control col-md-11" th:placeholder="#{books.author-name}">
+                            <button style="float: right; margin-right: 10px; margin-top: 20px; margin-bottom: 20px;" type="button" th:text="#{books.search}"
+                                    class="btn btn-primary btn-sm btn-block col-md-11" id="btn-search">
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <h2 th:text="#{books.recently-added}"></h2>
-            <div class="recent-book-sec">
-                <div class="row">
-                    <th:block th:each="book : ${books}">
-                        <div class="col-md-3">
-                            <div class="item text-center">
-                                <img style="width: 165px; height: 260px;" th:src="@{'/images/user/' + ${book.images[0].name}}" alt="img">
-                                <p style="height: 48px; overflow: hidden;" th:text="${book.name}"></p>
-                                <p th:inline="text"><span class="name" th:text="#{book.final-price}"></span><span class="removeChar"> $ [[${#numbers.formatDecimal(book.price, 0, 'POINT', 0, 'POINT')}]] </span> VNĐ</p>
-                                <a th:href="@{'book/' + ${book.aliasName}}" th:text="#{book.show-more}"></a></h6>
-                            </div>
+                <div class="col-md-10" th:if="${!books.empty}">
+                    <h2 th:text="#{books.recently-added}"></h2>
+                    <div class="recent-book-sec">
+                        <div class="row">
+                            <th:block th:each="book : ${books}">
+                                <div class="col-md-3">
+                                    <div class="item text-center">
+                                        <img style="width: 165px; height: 260px;" th:src="@{'/images/user/' + ${book.images[0].name}}" alt="img">
+                                        <p style="height: 48px; overflow: hidden;" th:text="${book.name}"></p>
+                                        <p th:inline="text"><span class="name" th:text="#{book.final-price}"></span><span class="removeChar"> $ [[${#numbers.formatDecimal(book.price, 0, 'POINT', 0, 'POINT')}]] </span> VNĐ</p>
+                                        <a th:href="@{'book/' + ${book.aliasName}}" th:text="#{book.show-more}"></a></h6>
+                                    </div>
+                                </div>
+                            </th:block>
                         </div>
-                    </th:block>
+                        <nav class="paging float-right">
+                            <ul class="pagination" sd:pagination="full">
+                                <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>e
+                                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
-                <nav class="paging float-right">
-                    <ul class="pagination" sd:pagination="full">
-                        <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>e
-                        <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-                    </ul>
-                </nav>
+                <div class="col-md-10" th:if="${books.empty}">
+                    <h2 style="margin-top: 110px;" class="text-center text-danger" th:text="#{book.not-found}"></h2>
+                </div>
             </div>
+        </div>
+        <div class="container">
             <div th:replace="user/top5sell :: top5sell(${top5Books})"></div>
         </div>
     </section>
+</th:block>
+<th:block layout:fragment="scripts-customize">
+    <script th:src="@{/js/admin/books.js}"></script>
 </th:block>
 </body>
 </html>
