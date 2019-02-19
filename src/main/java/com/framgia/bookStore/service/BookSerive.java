@@ -1,6 +1,7 @@
 package com.framgia.bookStore.service;
 
 import com.framgia.bookStore.entity.BookEntity;
+import com.framgia.bookStore.form.BookCart;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -13,4 +14,6 @@ public interface BookSerive {
     List<BookEntity> get10Books();
     Page<BookEntity> findAll(Pageable pageable);
     Page<BookEntity> findBook(Pageable pageable, String name, String author, String price1, String price2);
+    BookCart getBook(Long id);
+    BookEntity getBookById(Long id);
 }

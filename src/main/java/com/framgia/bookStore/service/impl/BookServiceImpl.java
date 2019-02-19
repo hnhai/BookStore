@@ -1,6 +1,7 @@
 package com.framgia.bookStore.service.impl;
 
 import com.framgia.bookStore.entity.BookEntity;
+import com.framgia.bookStore.form.BookCart;
 import com.framgia.bookStore.repository.BookReponsitory;
 import com.framgia.bookStore.service.BookSerive;
 import org.apache.commons.lang3.StringUtils;
@@ -9,7 +10,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.apache.commons.beanutils.BeanUtils;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 @Service
@@ -61,5 +64,17 @@ public class BookServiceImpl implements BookSerive {
             return bookReponsitory.getAllByPriceBetween(pageable, Long.valueOf(price1), Long.valueOf(price2));
         }
         return bookReponsitory.findAll(pageable);
+    }
+
+    @Override
+    public BookCart getBook(Long id) {
+        BookEntity bookEntity = bookReponsitory.getByDeletedAndId(false, id);
+        BookCart bookCart = new BookCart(bookEntity, 1);
+        return bookCart;
+    }
+
+    @Override
+    public BookEntity getBookById(Long id) {
+        return bookReponsitory.getByDeletedAndId(false, id);
     }
 }

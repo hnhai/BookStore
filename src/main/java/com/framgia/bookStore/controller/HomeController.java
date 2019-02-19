@@ -1,6 +1,7 @@
 package com.framgia.bookStore.controller;
 
 import com.framgia.bookStore.entity.BookEntity;
+import com.framgia.bookStore.form.BookCart;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.data.domain.Page;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -53,5 +55,12 @@ public class HomeController extends BaseController{
     @GetMapping("admin/view")
     public String adminHome(){
         return "admin/blank";
+    }
+
+    @GetMapping("/cart")
+    public String goCart(Model model, HttpSession session){
+        List<BookCart> cart = (List<BookCart>) session.getAttribute("cart");
+        model.addAttribute("cart", cart);
+        return "user/cart";
     }
 }

@@ -52,7 +52,7 @@
                     <p><span th:text="#{book.quantity}"></span><span th:text="${book.quantity}"></span></p>
                     <p th:inline="text"><span class="name" th:text="#{book.final-price}"></span><span class="removeChar"> $ [[${#numbers.formatDecimal(book.price, 0, 'POINT', 0, 'POINT')}]] </span> VNĐ</p>
                     <div class="btn-sec">
-                        <button class="btn" th:text="#{book.add-to-card}"></button>
+                        <a th:href="@{'/book/add-to-card/' + ${book.id}}"><button class="btn" th:text="#{book.add-to-card}"></button></a>
                     </div>
                 </div>
             </div>
