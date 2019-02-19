@@ -20,12 +20,24 @@ public interface BookReponsitory extends CustomJpaRepository<BookEntity, Long>{
     @Query(value = "FROM BookEntity b ORDER BY b.id DESC")
     List<BookEntity> get10Books(Pageable pageable);
 
+    @Query("SELECT b FROM BookEntity b JOIN b.authors a WHERE b.name LIKE %:name% AND a.name LIKE %:author% AND (b.price BETWEEN :num1 AND :num2)")
+    Page<BookEntity> getByNameAuthorAndPrice(Pageable pageable, @Param("name") String name, @Param("author") String author, long num1, long num2);
+
     @Query("SELECT b FROM BookEntity b WHERE b.name LIKE %:name%")
     Page<BookEntity> getByName(Pageable pageable, @Param("name") String name);
+
+    @Query("SELECT DISTINCT b FROM BookEntity b JOIN b.authors a WHERE b.name LIKE %:name% AND a.name LIKE %:author%")
+    Page<BookEntity> getByNameAuthor(Pageable pageable, @Param("name") String name, @Param("author") String author);
+
+    @Query("SELECT DISTINCT b FROM BookEntity b WHERE b.name LIKE %:name% AND (b.price BETWEEN :num1 AND :num2) ")
+    Page<BookEntity> getByNamePrice(Pageable pageable, @Param("name") String name, long num1, long num2);
 
     @Query("SELECT b FROM BookEntity b WHERE b.price BETWEEN :num1 AND :num2")
     Page<BookEntity> getAllByPriceBetween(Pageable pageable, long num1, long num2);
 
     @Query("SELECT b FROM BookEntity b JOIN b.authors a WHERE a.name LIKE %:author%")
     Page<BookEntity> getByAuthor(Pageable pageable, @Param("author") String author);
+
+    @Query("SELECT DISTINCT b FROM BookEntity b JOIN b.authors a WHERE a.name LIKE %:author% AND (b.price BETWEEN :num1 AND :num2)")
+    Page<BookEntity> getByAuthorPirce(Pageable pageable, @Param("author") String author, long num1, long num2);
 }

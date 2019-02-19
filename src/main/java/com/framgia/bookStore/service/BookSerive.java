@@ -12,7 +12,5 @@ public interface BookSerive {
     List<BookEntity> getTop5Book();
     List<BookEntity> get10Books();
     Page<BookEntity> findAll(Pageable pageable);
-    Page<BookEntity> findAllByName(Pageable pageable, String name);
-    Page<BookEntity> findAllByPrice(Pageable pageable, Long num1, Long num2);
-    Page<BookEntity> findAllByAuthor(Pageable pageable, String author);
+    Page<BookEntity> findBook(Pageable pageable, String name, String author, String price1, String price2);
 }

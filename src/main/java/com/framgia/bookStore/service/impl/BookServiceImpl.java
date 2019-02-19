@@ -3,6 +3,7 @@ package com.framgia.bookStore.service.impl;
 import com.framgia.bookStore.entity.BookEntity;
 import com.framgia.bookStore.repository.BookReponsitory;
 import com.framgia.bookStore.service.BookSerive;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -43,18 +44,22 @@ public class BookServiceImpl implements BookSerive {
     }
 
     @Override
-    public Page<BookEntity> findAllByName(Pageable pageable, String name) {
-        return bookReponsitory.getByName(pageable, name);
-    }
-
-    @Override
-    public Page<BookEntity> findAllByPrice(Pageable pageable, Long num1, Long num2) {
-        return bookReponsitory.getAllByPriceBetween(pageable, num1, num2);
-    }
-
-    @Override
-    public Page<BookEntity> findAllByAuthor(Pageable pageable, String author) {
-        return bookReponsitory.getByAuthor(pageable, author);
-        //return null;
+    public Page<BookEntity> findBook(Pageable pageable, String name, String author, String price1, String price2) {
+        if(StringUtils.isNotBlank(name) && StringUtils.isNotBlank(author) && StringUtils.isNotBlank(price1) && StringUtils.isNotBlank(price2)){
+            return bookReponsitory.getByNameAuthorAndPrice(pageable, name, author, Long.valueOf(price1), Long.valueOf(price2));
+        }else if(StringUtils.isNotBlank(name) && StringUtils.isNotBlank(author)){
+            return bookReponsitory.getByNameAuthor(pageable, name, author);
+        }else if(StringUtils.isNotBlank(name) && StringUtils.isNotBlank(price1) && StringUtils.isNotBlank(price2)){
+            return bookReponsitory.getByNamePrice(pageable, name, Long.valueOf(price1), Long.valueOf(price2));
+        }else if(StringUtils.isNotBlank(author) && StringUtils.isNotBlank(price1) && StringUtils.isNotBlank(price2)){
+            return bookReponsitory.getByAuthorPirce(pageable, author, Long.valueOf(price1), Long.valueOf(price2));
+        }else if (StringUtils.isNotBlank(name)){
+            return bookReponsitory.getByName(pageable, name);
+        }else if(StringUtils.isNotBlank(author)){
+            return bookReponsitory.getByAuthor(pageable, author);
+        }else if(StringUtils.isNotBlank(price1) && StringUtils.isNotBlank(price2)){
+            return bookReponsitory.getAllByPriceBetween(pageable, Long.valueOf(price1), Long.valueOf(price2));
+        }
+        return bookReponsitory.findAll(pageable);
     }
 }
