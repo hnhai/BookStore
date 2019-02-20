@@ -46,9 +46,9 @@ public class OrderDetailID implements Serializable {
     @Override
     public String toString() {
         return new ToStringBuilder(this, ToStringStyle.JSON_STYLE)
-                .append("orderId", orderId)
-                .append("bookId", bookId)
-                .toString();
+            .append("orderId", orderId)
+            .append("bookId", bookId)
+            .toString();
     }
 
     @Override
@@ -64,16 +64,16 @@ public class OrderDetailID implements Serializable {
         OrderDetailID that = (OrderDetailID) o;
 
         return new EqualsBuilder()
-                .append(orderId, that.orderId)
-                .append(bookId, that.bookId)
-                .isEquals();
+            .append(orderId, that.orderId)
+            .append(bookId, that.bookId)
+            .isEquals();
     }
 
     @Override
     public int hashCode() {
         return new HashCodeBuilder(17, 37)
-                .append(orderId)
-                .append(bookId)
-                .toHashCode();
+            .append(orderId)
+            .append(bookId)
+            .toHashCode();
     }
 }
