@@ -1,6 +1,7 @@
 package com.framgia.bookStore.service;
 
 import com.framgia.bookStore.entity.UserEntity;
+import com.framgia.bookStore.form.BookCart;
 import com.framgia.bookStore.form.Register;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -30,4 +31,6 @@ public interface UserService {
     Page<UserEntity> findAll(Pageable pageable);
 
     Boolean deleteAllById(List<Long> ids);
+
+    Boolean addOrder(List<BookCart> cart, boolean paypal);
 }

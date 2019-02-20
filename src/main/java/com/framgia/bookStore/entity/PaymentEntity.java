@@ -24,7 +24,7 @@ public class PaymentEntity extends AbstractEntity{
     private Integer status;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "ORDER_ID", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "ORDER_ID", nullable = false, updatable = false)
     @Where(clause = "DELETED_FLAG=0")
     private OrderEntity order;
 

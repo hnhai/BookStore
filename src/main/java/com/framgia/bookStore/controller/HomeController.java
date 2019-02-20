@@ -60,6 +60,13 @@ public class HomeController extends BaseController{
     @GetMapping("/cart")
     public String goCart(Model model, HttpSession session){
         List<BookCart> cart = (List<BookCart>) session.getAttribute("cart");
+        Long totalPrice = new Long(0);
+        if(cart != null) {
+            for (BookCart b : cart) {
+                totalPrice += (b.getBook().getPrice() * b.getQuantity());
+            }
+        }
+        model.addAttribute("totalPrice", session.getAttribute("totalPrice"));
         model.addAttribute("cart", cart);
         return "user/cart";
     }
