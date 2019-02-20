@@ -53,8 +53,8 @@ public class BookEntity extends AbstractEntity{
                     nullable = false, updatable = false) })
     private Set<AuthorEnity> authors = new HashSet<>(0);
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "book")
-    private Set<OderDetailEntity> orderDetails = new HashSet<>(0);
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "book", cascade=CascadeType.ALL)
+    private Set<OrderDetailEntity> orderDetails = new HashSet<>(0);
 
     public Long getId() {
         return id;
@@ -136,11 +136,11 @@ public class BookEntity extends AbstractEntity{
         this.authors = authors;
     }
 
-    public Set<OderDetailEntity> getOrderDetails() {
+    public Set<OrderDetailEntity> getOrderDetails() {
         return orderDetails;
     }
 
-    public void setOrderDetails(Set<OderDetailEntity> orderDetails) {
+    public void setOrderDetails(Set<OrderDetailEntity> orderDetails) {
         this.orderDetails = orderDetails;
     }
 }

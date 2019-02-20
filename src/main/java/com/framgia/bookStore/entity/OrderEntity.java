@@ -23,15 +23,15 @@ public class OrderEntity extends AbstractEntity{
     private Integer status;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "USER_ID", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "USER_ID", nullable = false, updatable = false)
     @Where(clause = "DELETED_FLAG=0")
     private UserEntity user;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "order")
     private Set<PaymentEntity> payments = new HashSet<>(0);
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "order")
-    private Set<OderDetailEntity> orderDetails = new HashSet<>(0);
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "order", cascade=CascadeType.ALL)
+    private Set<OrderDetailEntity> orderDetails = new HashSet<>(0);
 
     public Long getId() {
         return id;
@@ -73,11 +73,11 @@ public class OrderEntity extends AbstractEntity{
         this.payments = payments;
     }
 
-    public Set<OderDetailEntity> getOrderDetails() {
+    public Set<OrderDetailEntity> getOrderDetails() {
         return orderDetails;
     }
 
-    public void setOrderDetails(Set<OderDetailEntity> orderDetails) {
+    public void setOrderDetails(Set<OrderDetailEntity> orderDetails) {
         this.orderDetails = orderDetails;
     }
 }

@@ -23,6 +23,7 @@ public class BookController extends BaseController{
             BookCart book = bookSerive.getBook(id);
             cart.add(book);
             session.setAttribute("cart", cart);
+            session.setAttribute("totalPrice", book.getBook().getPrice() * book.getQuantity());
         }else {
             List<BookCart> cart = (List<BookCart>) session.getAttribute("cart");
             int index = this.exists(id, cart);
@@ -32,6 +33,11 @@ public class BookController extends BaseController{
                 int quantity = cart.get(index).getQuantity() + 1;
                 cart.get(index).setQuantity(quantity);
             }
+            Long totalPrice = new Long(0);
+            for (BookCart b: cart) {
+                totalPrice += (b.getBook().getPrice() * b.getQuantity());
+            }
+            session.setAttribute("totalPrice", totalPrice);
             session.setAttribute("cart", cart);
         }
         return "redirect:/cart";
@@ -42,6 +48,11 @@ public class BookController extends BaseController{
         List<BookCart> cart = (List<BookCart>) session.getAttribute("cart");
         int index = this.exists(id, cart);
         cart.remove(index);
+        Long totalPrice = new Long(0);
+        for (BookCart b: cart) {
+            totalPrice += (b.getBook().getPrice() * b.getQuantity());
+        }
+        session.setAttribute("totalPrice", totalPrice);
         session.setAttribute("cart", cart);
         return "redirect:/cart";
     }
@@ -49,6 +60,7 @@ public class BookController extends BaseController{
     @GetMapping(path = "/delete-all-cart")
     public String deleteAllCart(HttpSession session){
         List<BookCart> cart = null;
+        session.setAttribute("totalPrice", 0);
         session.setAttribute("cart", cart);
         return "redirect:/";
     }
@@ -62,6 +74,11 @@ public class BookController extends BaseController{
         }else{
             int index = this.exists(id, cart);
             cart.get(index).setQuantity(quantity);
+            Long totalPrice = new Long(0);
+            for (BookCart b: cart) {
+                totalPrice += (b.getBook().getPrice() * b.getQuantity());
+            }
+            session.setAttribute("totalPrice", totalPrice);
             session.setAttribute("cart", cart);
         }
         return "redirect:/cart";

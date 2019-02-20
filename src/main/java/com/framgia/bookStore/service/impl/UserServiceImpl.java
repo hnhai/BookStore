@@ -4,15 +4,26 @@ import com.framgia.bookStore.activemq.Email;
 import com.framgia.bookStore.activemq.Sender;
 import com.framgia.bookStore.constants.MailConst;
 import com.framgia.bookStore.constants.RoleType;
+import com.framgia.bookStore.entity.BookEntity;
+import com.framgia.bookStore.entity.OrderDetailEntity;
+import com.framgia.bookStore.entity.OrderDetailID;
+import com.framgia.bookStore.entity.OrderEntity;
+import com.framgia.bookStore.entity.PaymentEntity;
 import com.framgia.bookStore.entity.RoleEntity;
 import com.framgia.bookStore.entity.UserEntity;
 import com.framgia.bookStore.entity.UserRoleEntity;
 import com.framgia.bookStore.entity.UserRoleId;
+import com.framgia.bookStore.form.BookCart;
 import com.framgia.bookStore.form.Register;
+import com.framgia.bookStore.repository.BookReponsitory;
+import com.framgia.bookStore.repository.OrderDetailReponsitory;
+import com.framgia.bookStore.repository.OrderReponsitory;
+import com.framgia.bookStore.repository.PaymentReponsitory;
 import com.framgia.bookStore.repository.RoleRepository;
 import com.framgia.bookStore.repository.UserRepository;
 import com.framgia.bookStore.repository.UserRoleRopository;
 import com.framgia.bookStore.service.UserService;
+import com.framgia.bookStore.util.SecurityUtil;
 import com.framgia.bookStore.util.WebUtil;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -43,6 +54,18 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private Sender sender;
+
+    @Autowired
+    private OrderReponsitory orderReponsitory;
+
+    @Autowired
+    private PaymentReponsitory paymentReponsitory;
+
+    @Autowired
+    private OrderDetailReponsitory orderDetailReponsitory;
+
+    @Autowired
+    private BookReponsitory bookReponsitory;
 
     @Override
     public UserEntity findByUsername(String username) {
@@ -167,6 +190,39 @@ public class UserServiceImpl implements UserService {
     @Override
     public Boolean deleteAllById(List<Long> ids) {
         ids.forEach(id->userRepository.updateDeletedById(id));
+        return true;
+    }
+
+    @Override
+    public Boolean addOrder(List<BookCart> cart, boolean paypal) {
+        UserEntity currentUser = userRepository.findByUsernameAndDeleted(SecurityUtil.getCurrentUser().getUsername(), false);
+        OrderEntity order = new OrderEntity();
+        order.setStatus(0);
+        order.setUser(currentUser);
+        order = orderReponsitory.save(order);
+        PaymentEntity payment = new PaymentEntity();
+        if(!paypal){
+            payment.setName("COD");
+            payment.setStatus(0);
+        }else {
+            payment.setName("PayPal");
+            payment.setStatus(1);
+        }
+        payment.setOrder(order);
+        paymentReponsitory.save(payment);
+        for (BookCart od: cart) {
+            BookEntity book = bookReponsitory.getByDeletedAndId(false, od.getBook().getId());
+            OrderDetailEntity ot = new OrderDetailEntity();
+            OrderDetailID id = new OrderDetailID();
+            id.setBookId(book.getId());
+            id.setOrderId(order.getId());
+            ot.setId(id);
+            ot.setQuantity(od.getQuantity());
+            book.setQuantity(book.getQuantity() - od.getQuantity());
+            order.getOrderDetails().add(ot);
+            bookReponsitory.save(book);
+        }
+        orderReponsitory.save(order);
         return true;
     }
 }

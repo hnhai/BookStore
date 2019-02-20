@@ -1,4 +1,8 @@
 package com.framgia.bookStore.repository;
 
-public class OrderReponsitory {
+import com.framgia.bookStore.entity.OrderEntity;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface OrderReponsitory extends CustomJpaRepository<OrderEntity, Long> {
 }
