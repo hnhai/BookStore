@@ -1,10 +1,12 @@
 package com.framgia.bookStore.service;
 
 import com.framgia.bookStore.entity.BookEntity;
+import com.framgia.bookStore.form.AddBook;
 import com.framgia.bookStore.form.BookCart;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public interface BookSerive {
@@ -16,4 +18,6 @@ public interface BookSerive {
     Page<BookEntity> findBook(Pageable pageable, String name, String author, String price1, String price2);
     BookCart getBook(Long id);
     BookEntity getBookById(Long id);
+    Boolean addBook(HttpServletRequest request, AddBook addBook);
+    Boolean checkBook(String alias);
 }
