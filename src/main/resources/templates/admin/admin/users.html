@@ -14,9 +14,7 @@
             <p th:text="#{users.size}"></p>
             <div sd:page-size-selector="javascript">
                 <select class="form-control"  id="selectbox">
-                    <option value="1">20</option>
-                    <option value="2">30</option>
-                    <option value="3">40</option>
+
                 </select>
             </div>
         </div>
@@ -92,14 +90,14 @@
     </nav>
 
     <!-- Trigger the modal with a button -->
-    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Open Large Modal</button>
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" th:text="#{users.add-user}"></button>
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title float-left">Modal Header</h4>
+                    <h4 class="modal-title float-left"  th:text="#{users.add-user}"></h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">

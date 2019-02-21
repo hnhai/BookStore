@@ -1,8 +1,15 @@
 package com.framgia.bookStore.service.impl;
 
 import com.framgia.bookStore.entity.BookEntity;
+import com.framgia.bookStore.entity.CategoryEntity;
+import com.framgia.bookStore.entity.ImageEntity;
+import com.framgia.bookStore.entity.PublisherEntity;
+import com.framgia.bookStore.form.AddBook;
 import com.framgia.bookStore.form.BookCart;
 import com.framgia.bookStore.repository.BookReponsitory;
+import com.framgia.bookStore.repository.CategoryReponsitory;
+import com.framgia.bookStore.repository.ImageRepository;
+import com.framgia.bookStore.repository.PublisherRepository;
 import com.framgia.bookStore.service.BookSerive;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +17,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+import org.apache.commons.io.FileUtils;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
+import java.util.HashSet;
 import java.util.List;
 
 @Service
@@ -17,6 +31,15 @@ public class BookServiceImpl implements BookSerive {
 
     @Autowired
     private BookReponsitory bookReponsitory;
+
+    @Autowired
+    private ImageRepository imageRepository;
+
+    @Autowired
+    private CategoryReponsitory categoryReponsitory;
+
+    @Autowired
+    PublisherRepository publisherRepository;
 
     @Override
     public List<BookEntity> loadAll() {
@@ -73,5 +96,50 @@ public class BookServiceImpl implements BookSerive {
     @Override
     public BookEntity getBookById(Long id) {
         return bookReponsitory.getByDeletedAndId(false, id);
+    }
+
+    @Override
+    public Boolean addBook(HttpServletRequest request, AddBook addBook) {
+        PublisherEntity publisher = publisherRepository.getOne(addBook.getPublisher().getId());
+        CategoryEntity category = categoryReponsitory.getOne(addBook.getCategory().getId());
+        BookEntity book = new BookEntity();
+        book.setCategory(category);
+        book.setPublisher(publisher);
+        if(addBook.getAuthors() != null){
+            book.setAuthors(new HashSet<>(addBook.getAuthors()));
+        }
+        book.setPrice(addBook.getPrice());
+        book.setQuantity(addBook.getQuantity());
+        book.setName(addBook.getBookName());
+        book.setAliasName(addBook.getAliasName());
+        book.setDescription(addBook.getDescription());
+        book = bookReponsitory.save(book);
+        String path = request.getSession().getServletContext().getRealPath("/") + "images/user";
+        for (MultipartFile image: addBook.getImages()) {
+            if(image != null){
+                try {
+                    File folder = new File("/resource/static/images/user");
+                    folder.mkdir();
+//                    File upload = new File("/resource/static/images/user");
+                    image.transferTo(folder);
+                    ImageEntity img = new ImageEntity();
+                    img.setBook(book);
+                    img.setName(image.getOriginalFilename());
+                    imageRepository.save(img);
+                } catch (IOException ex) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public Boolean checkBook(String alias) {
+        BookEntity book = bookReponsitory.getByAliasName(alias);
+        if(book != null){
+            return true;
+        }
+        return false;
     }
 }

@@ -32,12 +32,12 @@ public class BookEntity extends AbstractEntity{
     private Integer quantity;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "CATEGORY_ID", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "CATEGORY_ID", nullable = false, updatable = false)
     @Where(clause = "DELETED_FLAG=0")
     private CategoryEntity category;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "PUBLISHER_ID", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "PUBLISHER_ID", nullable = false, updatable = false)
     @Where(clause = "DELETED_FLAG=0")
     private PublisherEntity publisher;
 

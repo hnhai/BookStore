@@ -21,7 +21,7 @@ public class ImageEntity extends AbstractEntity{
     private String description;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "BOOK_ID", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "BOOK_ID", nullable = false, updatable = false)
     @Where(clause = "DELETED_FLAG=0")
     private BookEntity book;
 
