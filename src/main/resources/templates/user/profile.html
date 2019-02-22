@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/user/base.html}" xmlns:sd="">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{home.shop}"></title>
+    <link th:href="@{/user/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<th:block layout:fragment="content">
+    <div class="breadcrumb">
+        <div class="container">
+            <a class="breadcrumb-item" href="index.html" th:text="#{home.home}"></a>
+            <span class="breadcrumb-item active">Profife</span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <form data-parsley-validate="">
+                <div class="form-row">
+                    <label>Full Name</label><span> &nbsp;*</span>
+                    <div class="form-group col-md-12 form-group__height">
+                        <input id="bookName" class="form-control form-group__input" th:name="fullname"
+                               th:placeholder="#{books.name}"
+                               th:value="${user.fullname}"
+                               data-parsley-required data-parsley-trigger="keyup">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label>Address</label><span> &nbsp;*</span>
+                    <div class="form-group col-md-12 form-group__height">
+                        <input id="bookName" class="form-control form-group__input" th:name="address"
+                               th:placeholder="#{books.name}"
+                               th:value="${user.address}"
+                               data-parsley-required data-parsley-trigger="keyup">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label>Phone Number</label><span> &nbsp;*</span>
+                    <div class="form-group col-md-12 form-group__height">
+                        <input id="bookName" class="form-control form-group__input" th:name="phoneNumber"
+                               th:placeholder="#{books.name}"
+                               th:value="${user.phoneNumber}"
+                               data-parsley-required data-parsley-trigger="keyup">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label>Password</label>
+                    <div class="form-group col-md-12 form-group__height">
+                        <input id="bookName" class="form-control form-group__input" th:name="phoneNumber"
+                               th:placeholder="#{books.name}"
+                               value="********" type="password"
+                               data-parsley-required data-parsley-trigger="keyup">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label>Repassword</label>
+                    <div class="form-group col-md-12 form-group__height">
+                        <input id="bookName" class="form-control form-group__input" th:name="phoneNumber"
+                               th:placeholder="#{books.name}"
+                               value="********" type="password"
+                               data-parsley-required data-parsley-trigger="keyup">
+                    </div>
+                </div>
+
+                <button type="submit" id="btn-addBook" class="btn-success btn btn-block" style="margin-bottom: 50px;">Update</button>
+            </form>
+        </div>
+    </div>
+</th:block>
+<th:block layout:fragment="scripts-customize">
+
+</th:block>
+</body>
+</html>

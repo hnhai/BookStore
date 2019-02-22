@@ -12,6 +12,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -27,6 +28,7 @@ import org.springframework.util.Assert;
 
 @Configuration
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private static final int BCRYPT_PASSWORD_ENCODER_STRENGTH_DEFAULT = 12;
     private static final String DEFAULT_SESSION_COOKIE_NAME = "JSESSIONID";
@@ -60,7 +62,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .frameOptions().sameOrigin()
             .and().authorizeRequests()
                 .antMatchers("/admin/**").access("hasAnyRole('ADMIN')")
-                .antMatchers("/accountant/**").access("hasAnyRole('ACCOUNTANT')")
                 .antMatchers("/employee/**").access("hasAnyRole('EMPLOYEE')")
                 .antMatchers("/user/**").access("hasAnyRole('ADMIN', 'USER')")
                 .antMatchers("/pay/**").access("hasAnyRole('USER')")

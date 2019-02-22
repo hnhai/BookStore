@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/user/base.html}" xmlns:sd="">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{home.home}"></title>
+</head>
+<body>
+<th:block layout:fragment="content">
+    <div class="breadcrumb">
+        <div class="container">
+            <a class="breadcrumb-item" th:href="@{/}" th:text="#{home.home}"></a>
+            <a class="breadcrumb-item" th:href="@{/books}" th:text="#{home.shop}"></a>
+            <span class="breadcrumb-item active">Orders</span>
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="text-center">Orders</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>
+                    <p class="sort">
+                        <a class="sorted" sd:pagination-sort="id">ID</a>
+                    </p>
+                </th>
+                <th>
+                    <p class="sort">
+                        <a class="sorted" sd:pagination-sort="status">Status</a>
+                    </p>
+                </th>
+                <th width="40%">
+                    Total price
+                </th>
+                <th width="10%">
+
+                </th>
+            </tr>
+            </thead>
+            <tbody th:each="order : ${orders}">
+                <tr>
+                    <td th:text="${order.id}"></td>
+                    <td th:text="${order.status == 0 ? 'Handle': 'Done'}"></td>
+                    <td>
+                        <span class="removeChar"> $ [[${#numbers.formatDecimal(order.totalPrice, 0, 'POINT', 0, 'POINT')}]] </span> VNĐ
+                    </td>
+                    <td>
+                        <a th:href="@{'/order/' + ${order.id}}"><button class="btn btn-sm btn-info">View more</button></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</th:block>
+</body>
+</html>
