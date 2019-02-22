@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <title>base</title>
     <th:block th:replace="userCommon :: meta-tags"/>
@@ -33,18 +34,27 @@
                                 <a href="faq.html" class="nav-link" th:text="#{home.fag}"></a>
                             </li>
                             <li class="navbar-item">
-                                <a th:href="@{/login}" class="nav-link"  th:text="#{home.login}"></a>
+                                <div sec:authorize="isAnonymous()">
+                                    <a th:href="@{/login}" class="nav-link"  th:text="#{home.login}"></a>
+                                </div>
+                                <div sec:authorize="isAuthenticated()">
+                                    <div class="dropdown">
+                                        <i class="fa fa-user" aria-hidden="true" data-toggle="dropdown"></i>
+                                        <ul class="dropdown-menu">
+                                            <li><a th:href="@{/orders}">Orders</a></li>
+                                            <li><a th:href="@{/profile}">Profile</a></li>
+                                            <li><a th:href="@{/logout}">Log out</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                         <div class="cart my-2 my-lg-0">
                             <a th:href="@{/cart}"><span>
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
                         </div>
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search"
-                                   placeholder="Search here..." aria-label="Search">
-                            <span class="fa fa-search"></span>
-                        </form>
+                        <a th:href="@{'/?lang=vi'}"><img th:src="@{/images/user/vi.png}"></a>
+                        <a style="margin-left: 10px;" th:href="@{'/?lang=en'}"><img th:src="@{/images/user/en.png}"></a>
                     </div>
                 </nav>
             </div>

@@ -3,6 +3,7 @@ package com.framgia.bookStore.controller;
 import com.framgia.bookStore.service.AuthorService;
 import com.framgia.bookStore.service.BookSerive;
 import com.framgia.bookStore.service.CategoryService;
+import com.framgia.bookStore.service.OrderService;
 import com.framgia.bookStore.service.PublisherService;
 import com.framgia.bookStore.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,9 @@ public class BaseController {
 
     @Autowired
     protected AuthorService authorService;
+
+    @Autowired
+    protected OrderService orderService;
 
     protected PageRequest createPageRequest(Pageable pageable){
         Integer pageSize = 10;
