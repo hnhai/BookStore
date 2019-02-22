@@ -26,7 +26,7 @@
                         <div class="carousel-inner">
                             <th:block th:each="image, iter : ${book.images}">
                                 <div th:classappend="${iter.index == 0} ? active : ''" class="item carousel-item" th:data-slide-number="${iter.index}">
-                                    <img width="360px" height="576px" th:src="@{'/images/user/' + ${image.name}}" class="img-fluid">
+                                    <img width="360px" height="576px" th:src="@{'/upload/' + ${image.name}}" class="img-fluid">
                                 </div>
                             </th:block>
                         </div>
@@ -35,7 +35,7 @@
                             <th:block th:each="image,iter : ${book.images}">
                                 <li class="list-inline-item" th:classappend="${iter.index == 0} ? active : ''">
                                     <a th:id="'carousel-selector-'+${iter.index}" th:classappend="${iter.index == 0} ? selected : ''" th:data-slide-to="${iter.index}" data-target="#myCarousel">
-                                        <img width="115px" height="184px" th:src="@{'/images/user/' + ${image.name}}" class="img-fluid">
+                                        <img width="115px" height="184px" th:src="@{'/upload/' + ${image.name}}" class="img-fluid">
                                     </a>
                                 </li>
                             </th:block>
