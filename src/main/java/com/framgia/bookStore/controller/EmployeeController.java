@@ -46,8 +46,8 @@ public class EmployeeController extends BaseController{
     }
 
     @PostMapping("/addBook")
-    public String addBook(HttpServletRequest request, Model model, @Valid AddBook addBook){
-        if(bookSerive.addBook(request, addBook)){
+    public String addBook(@Valid AddBook addBook){
+        if(bookSerive.addBook(addBook)){
             return "redirect:/employee/books";
         }
         return "redirect:/employee/books?addError";

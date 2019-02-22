@@ -18,6 +18,6 @@ public interface BookSerive {
     Page<BookEntity> findBook(Pageable pageable, String name, String author, String price1, String price2);
     BookCart getBook(Long id);
     BookEntity getBookById(Long id);
-    Boolean addBook(HttpServletRequest request, AddBook addBook);
+    Boolean addBook(AddBook addBook);
     Boolean checkBook(String alias);
 }
