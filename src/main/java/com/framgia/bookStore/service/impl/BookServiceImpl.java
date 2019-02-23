@@ -121,7 +121,7 @@ public class BookServiceImpl implements BookSerive {
         book.setAliasName(addBook.getAliasName());
         book.setDescription(addBook.getDescription());
         book = bookReponsitory.save(book);
-        String UPLOADED_FOLDER = "file://" + System.getProperty("user.dir") + "/src/main/upload/";
+//         String UPLOADED_FOLDER = "file://" + System.getProperty("user.dir") + "/src/main/upload/";
         for (MultipartFile image: addBook.getImages()) {
             if(image != null){
                 try {
