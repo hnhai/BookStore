@@ -2,6 +2,7 @@ package com.framgia.bookStore.controller;
 
 import com.framgia.bookStore.auth.CustomUserDetail;
 import com.framgia.bookStore.entity.UserEntity;
+import com.framgia.bookStore.form.Profile;
 import com.framgia.bookStore.form.Register;
 import com.framgia.bookStore.form.UpdatePassword;
 import com.framgia.bookStore.util.SecurityUtil;
@@ -26,6 +27,21 @@ import java.util.List;
 
 @Controller
 public class LoginController extends BaseController {
+
+    @PostMapping("/updateProfile")
+    public String updateProfile(@Valid Profile profile, BindingResult bindingResult){
+        if (bindingResult.hasErrors()) {
+            return "redirect:/profile?error";
+        }
+        UserEntity user = userService.findByUsername(SecurityUtil.getCurrentUser().getUsername());
+        if (user == null){
+            return "redirect:/profile?error";
+        }
+        if(!userService.updateProfile(user, profile)){
+            return "redirect:/profile?error";
+        }
+        return "redirect:/profile";
+    }
 
     @GetMapping("/login")
     public String loginPage() {

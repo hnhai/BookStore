@@ -55,24 +55,6 @@
                             </div>
 
                             <div class="form-row">
-                                <label>Phone Number</label><span> &nbsp;*</span>
-                                <div class="form-group col-md-12 form-group__height">
-                                    <input class="form-control form-group__input" th:name="phoneNumber"
-                                           th:placeholder="#{login.username}"
-                                           data-parsley-required data-parsley-trigger="keyup">
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <label>Address</label><span> &nbsp;*</span>
-                                <div class="form-group col-md-12 form-group__height">
-                                    <input class="form-control form-group__input" th:name="address"
-                                           th:placeholder="#{login.username}"
-                                           data-parsley-required data-parsley-trigger="keyup">
-                                </div>
-                            </div>
-
-                            <div class="form-row">
                                 <label th:text="#{register.confirm-password}"></label><span> &nbsp;*</span>
                                 <div class="form-group col-md-12 form-group__height">
                                      <input class="form-control form-group__input"
@@ -83,7 +65,25 @@
                                 </div>
                             </div>
 
+                            <div class="form-row">
+                                <label>Phone Number</label><span> &nbsp;*</span>
+                                <div class="form-group col-md-12 form-group__height">
+                                    <input id="phoneNumber" class="form-control form-group__input" th:name="phoneNumber"
+                                           placeholder="Phone number"
+                                           data-parsley-required data-parsley-trigger="keyup"
+                                           data-parsley-minlength="8">
+                                </div>
+                            </div>
 
+                            <div class="form-row">
+                                <label>Address</label><span> &nbsp;*</span>
+                                <div class="form-group col-md-12 form-group__height">
+                                    <input id="address" class="form-control form-group__input" th:name="address"
+                                           placeholder="Phone number"
+                                           data-parsley-required data-parsley-trigger="keyup"
+                                           data-parsley-minlength="20">
+                                </div>
+                            </div>
 
                             <div class="form-row">
                                 <label th:text="#{register.fullname}"></label><span> &nbsp;*</span>

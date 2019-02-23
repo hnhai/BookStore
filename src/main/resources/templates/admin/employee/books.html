@@ -61,7 +61,7 @@
         <tbody th:each="book: ${books}">
             <tr>
                 <td th:text="${book.id}"></td>
-                <td><a th:href="@{'/book/' + ${book.name}}" th:text="${book.name}"></a></td>
+                <td><a th:href="@{'/book/' + ${book.aliasName}}" th:text="${book.name}"></a></td>
                 <td th:text="${book.quantity}"></td>
                 <td th:inline="text"><span class="removeChar"> $ [[${#numbers.formatDecimal(book.price, 0, 'POINT', 0, 'POINT')}]] </span> VNĐ</td>
                 <td th:text="${book.category.name}"></td>

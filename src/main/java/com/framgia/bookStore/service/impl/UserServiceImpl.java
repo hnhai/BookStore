@@ -14,6 +14,7 @@ import com.framgia.bookStore.entity.UserEntity;
 import com.framgia.bookStore.entity.UserRoleEntity;
 import com.framgia.bookStore.entity.UserRoleId;
 import com.framgia.bookStore.form.BookCart;
+import com.framgia.bookStore.form.Profile;
 import com.framgia.bookStore.form.Register;
 import com.framgia.bookStore.repository.BookReponsitory;
 import com.framgia.bookStore.repository.OrderDetailReponsitory;
@@ -104,6 +105,8 @@ public class UserServiceImpl implements UserService {
         user.setEnabled(true);
         user.setDeleted(false);
         user.setStatus(true);
+        user.setPhoneNumber(form.getPhoneNumber());
+        user.setAddress(form.getAddress());
         user = userRepository.save(user);
         RoleEntity role;
         if(form.getRoleType() != null){
@@ -223,6 +226,18 @@ public class UserServiceImpl implements UserService {
             bookReponsitory.save(book);
         }
         orderReponsitory.save(order);
+        return true;
+    }
+
+    @Override
+    public boolean updateProfile(UserEntity userEntity, Profile form) {
+        userEntity.setAddress(form.getAddress());
+        userEntity.setPhoneNumber(form.getPhoneNumber());
+        userEntity.setFullname(form.getFullName());
+        if(StringUtils.isNotBlank(form.getPassword())){
+            userEntity.setPassword(passwordEncoder.encode(form.getPassword().trim()));
+        }
+        userRepository.save(userEntity);
         return true;
     }
 }

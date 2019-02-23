@@ -18,12 +18,12 @@
     <div class="container">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-            <form data-parsley-validate="">
+            <form method="POST" th:action="@{/updateProfile}" th:object="${Profile}" data-parsley-validate="">
                 <div class="form-row">
                     <label>Full Name</label><span> &nbsp;*</span>
                     <div class="form-group col-md-12 form-group__height">
-                        <input id="bookName" class="form-control form-group__input" th:name="fullname"
-                               th:placeholder="#{books.name}"
+                        <input class="form-control form-group__input" th:name="fullName"
+                               placeholder="Full Name"
                                th:value="${user.fullname}"
                                data-parsley-required data-parsley-trigger="keyup">
                     </div>
@@ -32,9 +32,10 @@
                 <div class="form-row">
                     <label>Address</label><span> &nbsp;*</span>
                     <div class="form-group col-md-12 form-group__height">
-                        <input id="bookName" class="form-control form-group__input" th:name="address"
-                               th:placeholder="#{books.name}"
+                        <input class="form-control form-group__input" th:name="address"
+                               placeholder="Address"
                                th:value="${user.address}"
+                               data-parsley-minlength="20"
                                data-parsley-required data-parsley-trigger="keyup">
                     </div>
                 </div>
@@ -42,9 +43,10 @@
                 <div class="form-row">
                     <label>Phone Number</label><span> &nbsp;*</span>
                     <div class="form-group col-md-12 form-group__height">
-                        <input id="bookName" class="form-control form-group__input" th:name="phoneNumber"
-                               th:placeholder="#{books.name}"
+                        <input  class="form-control form-group__input" th:name="phoneNumber"
+                               placeholder="Phone Number"
                                th:value="${user.phoneNumber}"
+                               data-parsley-minlength="8"
                                data-parsley-required data-parsley-trigger="keyup">
                     </div>
                 </div>
@@ -52,30 +54,26 @@
                 <div class="form-row">
                     <label>Password</label>
                     <div class="form-group col-md-12 form-group__height">
-                        <input id="bookName" class="form-control form-group__input" th:name="phoneNumber"
-                               th:placeholder="#{books.name}"
-                               value="********" type="password"
-                               data-parsley-required data-parsley-trigger="keyup">
+                        <input id="password" class="form-control form-group__input" th:name="password"
+                               placeholder="Password"
+                               type="password"
+                               data-parsley-minlength="6"
+                               data-parsley-trigger="keyup">
                     </div>
                 </div>
-
-                <div class="form-row">
-                    <label>Repassword</label>
-                    <div class="form-group col-md-12 form-group__height">
-                        <input id="bookName" class="form-control form-group__input" th:name="phoneNumber"
-                               th:placeholder="#{books.name}"
-                               value="********" type="password"
-                               data-parsley-required data-parsley-trigger="keyup">
-                    </div>
-                </div>
-
-                <button type="submit" id="btn-addBook" class="btn-success btn btn-block" style="margin-bottom: 50px;">Update</button>
+                <button type="submit" class="btn-success btn btn-block" style="margin-bottom: 50px;">Update</button>
             </form>
         </div>
     </div>
 </th:block>
 <th:block layout:fragment="scripts-customize">
-
+    <link th:href="@{/css/parsley.css}" rel="stylesheet" type="text/css"/>
+    <script th:src="@{/js/parsley/parsley.min.js}"></script>
+    <script th:src="@{/js/parsley/en.js}"></script>
+    <script th:src="@{/js/parsley/vi.js}"></script>
+    <script type="text/javascript">
+        window.ParsleyValidator.setLocale($('#lang').attr('content'));
+    </script>
 </th:block>
 </body>
 </html>
