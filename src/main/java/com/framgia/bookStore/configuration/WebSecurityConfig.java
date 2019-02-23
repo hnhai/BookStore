@@ -64,7 +64,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin/**").access("hasAnyRole('ADMIN')")
                 .antMatchers("/employee/**").access("hasAnyRole('EMPLOYEE')")
                 .antMatchers("/user/**").access("hasAnyRole('ADMIN', 'USER')")
-                .antMatchers("/pay/**").access("hasAnyRole('USER')")
+                .antMatchers("/pay/**").access("hasAnyRole('ROLE_USER')")
                 .antMatchers("/home").permitAll()
             .and().formLogin()
                 .loginPage("/login").loginProcessingUrl("/j_spring_security_login")

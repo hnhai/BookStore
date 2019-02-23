@@ -1,5 +1,6 @@
 package com.framgia.bookStore.service.impl;
 
+import com.framgia.bookStore.configuration.ResourceConfig;
 import com.framgia.bookStore.entity.BookEntity;
 import com.framgia.bookStore.entity.CategoryEntity;
 import com.framgia.bookStore.entity.ImageEntity;
@@ -126,7 +127,7 @@ public class BookServiceImpl implements BookSerive {
             if(image != null){
                 try {
                     byte[] bytes = image.getBytes();
-                    Path path = Paths.get(UPLOADED_FOLDER + image.getOriginalFilename());
+                    Path path = Paths.get(ResourceConfig.FILE_PATH + image.getOriginalFilename());
                     Files.write(path, bytes);
                     ImageEntity img = new ImageEntity();
                     img.setBook(book);

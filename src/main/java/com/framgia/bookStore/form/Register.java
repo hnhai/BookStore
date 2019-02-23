@@ -19,7 +19,16 @@ public class Register {
     private Gender gender;
 
     @Size(min=6)
+    @NotNull
     private String fullname;
+
+    @Size(min=20)
+    @NotNull
+    private String address;
+
+    @Size(min=8)
+    @NotNull
+    private String phoneNumber;
 
     private RoleType roleType;
 
@@ -69,5 +78,21 @@ public class Register {
 
     public void setRoleType(RoleType roleType) {
         this.roleType = roleType;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }
