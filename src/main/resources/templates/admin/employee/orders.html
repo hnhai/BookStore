@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/admin/base.html}" xmlns:sd="">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{books.book-manege}"></title>
+
+</head>
+<body>
+<th:block layout:fragment="content">
+    <h3 class="text-center">Orders Manage</h3>
+    <div class="float-right">
+        <div class="selectbox">
+            <p th:text="#{users.size}"></p>
+            <div sd:page-size-selector="javascript">
+                <select class="form-control"  id="selectbox">
+
+                </select>
+            </div>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                <p class="sort">
+                    <a class="sorted" sd:pagination-sort="id">ID</a>
+                </p>
+            </th>
+            <th>
+                <p class="sort">
+                    <a class="sorted" sd:pagination-sort="status">Status</a>
+                </p>
+            </th>
+            <th width="40%">
+                Total price
+            </th>
+            <th>
+                <p class="sort">
+                    <a class="sorted" sd:pagination-sort="user">Buyer</a>
+                </p>
+            </th>
+            <th width="10%">
+
+            </th>
+        </tr>
+        </thead>
+        <tbody th:each="order: ${orders}">
+        <tr>
+        <tr>
+            <td th:text="${order.id}"></td>
+            <td>
+                <select class="form-control" th:id="'order-status-' + ${order.id}">
+                    <option value="0" th:selected="${order.status == 0}">Wait</option>
+                    <option value="1" th:selected="${order.status == 1}">Handle</option>
+                    <option value="2" th:selected="${order.status == 2}">Done</option>
+                </select>
+            </td>
+            <td>
+                <span class="removeChar"> $ [[${#numbers.formatDecimal(order.totalPrice, 0, 'POINT', 0, 'POINT')}]] </span> VNĐ
+            </td>
+            <td>
+                <a href="#" th:text="${order.user.fullname}"></a>
+            </td>
+            <td>
+                <button class="btn btn-sm btn-success btn-update-status" th:id="${order.id}">Update</button>
+                <a th:href="@{'/order/' + ${order.id}}"><button class="btn btn-sm btn-info">View more</button></a>
+            </td>
+        </tr>
+        </tr>
+        </tbody>
+    </table>
+    <nav class="paging float-right">
+        <ul class="pagination" sd:pagination="full">
+            <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>e
+            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+        </ul>
+    </nav>
+</th:block>
+<th:block layout:fragment="scripts-customize">
+    <script th:src="@{/js/admin/order.js}"></script>
+</th:block>
+</body>
+</html>

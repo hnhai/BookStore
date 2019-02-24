@@ -9,6 +9,7 @@ public class TranferUtil {
         OrderDTO order = new OrderDTO();
         order.setId(entity.getId());
         order.setStatus(entity.getStatus());
+        order.setUser(entity.getUser());
         Long total = new Long(0);
         for (OrderDetailEntity od: entity.getOrderDetails()) {
             total = total + od.getQuantity() * od.getBook().getPrice();

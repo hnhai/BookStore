@@ -11,4 +11,5 @@ import java.util.List;
 @Repository
 public interface OrderReponsitory extends CustomJpaRepository<OrderEntity, Long> {
     Page<OrderEntity> findByUserAndDeleted(Pageable page, UserEntity user, Boolean deleted);
+    Page<OrderEntity> findAllByDeleted(Pageable pageable, Boolean deleted);
 }

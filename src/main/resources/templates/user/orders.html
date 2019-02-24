@@ -41,7 +41,11 @@
             <tbody th:each="order : ${orders}">
                 <tr>
                     <td th:text="${order.id}"></td>
-                    <td th:text="${order.status == 0 ? 'Handle': 'Done'}"></td>
+                    <td>
+                        <button th:if="${order.status == 0}" class="btn">Wait</button>
+                        <button th:if="${order.status == 1}" class="btn">Handle</button>
+                        <button th:if="${order.status == 2}" class="btn">Done</button>
+                    </td>
                     <td>
                         <span class="removeChar"> $ [[${#numbers.formatDecimal(order.totalPrice, 0, 'POINT', 0, 'POINT')}]] </span> VNĐ
                     </td>
