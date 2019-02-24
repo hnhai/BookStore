@@ -57,6 +57,12 @@
                         <span class="menu-title">Books</span>
                     </a>
                 </li>
+                <li th:if="${@userPermissionServiceImpl.isEmployee(currentUser)}" class="nav-item">
+                    <a class="nav-link" th:href="@{/employee/orders}">
+                        <i class="menu-icon mdi mdi-cast"></i>
+                        <span class="menu-title">Orders</span>
+                    </a>
+                </li>
 
             </ul>
         </nav>

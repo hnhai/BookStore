@@ -58,4 +58,17 @@ public class EmployeeController extends BaseController{
     public ResponseEntity checkName(@PathVariable("alias") String alias){
         return new ResponseEntity<>(bookSerive.checkBook(alias), HttpStatus.OK);
     }
+
+    @GetMapping("/orders")
+    public String orders(Model model, @SortDefault("id") Pageable pageable){
+        pageable = pageable = PageRequest.of(pageable.getPageNumber(), 10, pageable.getSort());
+        model.addAttribute("orders", orderService.loadAll(pageable));
+        return "admin/employee/orders";
+    }
+
+    @PostMapping("/order/{id}/{status}")
+    @ResponseBody
+    public ResponseEntity updateOrder(@PathVariable("id") Long id, @PathVariable("status") Integer status){
+        return new ResponseEntity(orderService.updateOrder(id, status), HttpStatus.OK);
+    }
 }

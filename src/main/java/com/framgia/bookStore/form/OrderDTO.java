@@ -1,9 +1,12 @@
 package com.framgia.bookStore.form;
 
+import com.framgia.bookStore.entity.UserEntity;
+
 public class OrderDTO {
     private Long id;
     private Long totalPrice;
     private Integer status;
+    private UserEntity user;
 
     public Long getId() {
         return id;
@@ -27,5 +30,13 @@ public class OrderDTO {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(UserEntity user) {
+        this.user = user;
     }
 }
