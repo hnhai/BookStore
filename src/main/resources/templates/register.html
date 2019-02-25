@@ -66,20 +66,20 @@
                             </div>
 
                             <div class="form-row">
-                                <label>Phone Number</label><span> &nbsp;*</span>
+                                <label th:text="#{profile.phone}"></label><span> &nbsp;*</span>
                                 <div class="form-group col-md-12 form-group__height">
                                     <input id="phoneNumber" class="form-control form-group__input" th:name="phoneNumber"
-                                           placeholder="Phone number"
+                                           th:placeholder="#{profile.phone}"
                                            data-parsley-required data-parsley-trigger="keyup"
                                            data-parsley-minlength="8">
                                 </div>
                             </div>
 
                             <div class="form-row">
-                                <label>Address</label><span> &nbsp;*</span>
+                                <label th:text="#{profile.adderss}"></label><span> &nbsp;*</span>
                                 <div class="form-group col-md-12 form-group__height">
                                     <input id="address" class="form-control form-group__input" th:name="address"
-                                           placeholder="Phone number"
+                                           th:placeholder="#{profile.adderss}"
                                            data-parsley-required data-parsley-trigger="keyup"
                                            data-parsley-minlength="20">
                                 </div>

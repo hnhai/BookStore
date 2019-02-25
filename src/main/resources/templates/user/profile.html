@@ -20,20 +20,20 @@
         <div class="col-md-8">
             <form method="POST" th:action="@{/updateProfile}" th:object="${Profile}" data-parsley-validate="">
                 <div class="form-row">
-                    <label>Full Name</label><span> &nbsp;*</span>
+                    <label th:text="#{register.fullname}"></label><span> &nbsp;*</span>
                     <div class="form-group col-md-12 form-group__height">
                         <input class="form-control form-group__input" th:name="fullName"
-                               placeholder="Full Name"
+                               th:placeholder="#{register.fullname}"
                                th:value="${user.fullname}"
                                data-parsley-required data-parsley-trigger="keyup">
                     </div>
                 </div>
 
                 <div class="form-row">
-                    <label>Address</label><span> &nbsp;*</span>
+                    <label th:text="#{profile.adderss}"></label><span> &nbsp;*</span>
                     <div class="form-group col-md-12 form-group__height">
                         <input class="form-control form-group__input" th:name="address"
-                               placeholder="Address"
+                               th:placeholder="#{profile.adderss}"
                                th:value="${user.address}"
                                data-parsley-minlength="20"
                                data-parsley-required data-parsley-trigger="keyup">
@@ -41,10 +41,10 @@
                 </div>
 
                 <div class="form-row">
-                    <label>Phone Number</label><span> &nbsp;*</span>
+                    <label th:text="#{profile.phone}"></label><span> &nbsp;*</span>
                     <div class="form-group col-md-12 form-group__height">
                         <input  class="form-control form-group__input" th:name="phoneNumber"
-                               placeholder="Phone Number"
+                               th:placeholder="#{profile.phone}"
                                th:value="${user.phoneNumber}"
                                data-parsley-minlength="8"
                                data-parsley-required data-parsley-trigger="keyup">
@@ -52,16 +52,16 @@
                 </div>
 
                 <div class="form-row">
-                    <label>Password</label>
+                    <label th:text="#{login.password}"></label>
                     <div class="form-group col-md-12 form-group__height">
                         <input id="password" class="form-control form-group__input" th:name="password"
-                               placeholder="Password"
+                               th:placeholder="#{login.password}"
                                type="password"
                                data-parsley-minlength="6"
                                data-parsley-trigger="keyup">
                     </div>
                 </div>
-                <button type="submit" class="btn-success btn btn-block" style="margin-bottom: 50px;">Update</button>
+                <button type="submit" class="btn-success btn btn-block" style="margin-bottom: 50px;" th:text="#{orders.update}"></button>
             </form>
         </div>
     </div>

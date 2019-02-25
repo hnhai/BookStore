@@ -8,6 +8,7 @@
 </head>
 <body>
 <th:block layout:fragment="content">
+    <input id="msg-duplicate" hidden th:value="#{book.duplicate}">
     <h3 th:text="#{books.book-manege}" class="text-center"></h3>
 
     <div class="float-right">
@@ -77,7 +78,7 @@
     </nav>
 
     <div class="container" style="min-height: 1200px;">
-        <h2 class="text-center" style="margin-top: 80px;">Add book</h2>
+        <h2 class="text-center" style="margin-top: 80px;" th:text="#{book.add-book}"></h2>
         <form id="formBook"  modelAttribute="addBook" method="POST" th:action="@{/employee/addBook}" enctype="multipart/form-data" data-parsley-validate="">
             <div class="form-row">
                 <label th:text="#{books.name}"></label><span> &nbsp;*</span>

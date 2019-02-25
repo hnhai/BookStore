@@ -41,9 +41,9 @@
                                     <div class="dropdown">
                                         <i class="fa fa-user" aria-hidden="true" data-toggle="dropdown"></i>
                                         <ul class="dropdown-menu">
-                                            <li><a th:href="@{/orders}">Orders</a></li>
-                                            <li><a th:href="@{/profile}">Profile</a></li>
-                                            <li><a th:href="@{/logout}">Log out</a></li>
+                                            <li><a th:href="@{/orders}" th:text="#{home.orders}"></a></li>
+                                            <li><a th:href="@{/profile}" th:text="#{home.profile}"></a></li>
+                                            <li><a th:href="@{/logout}" th:text="#{home.logout}"></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -69,57 +69,55 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="address">
-                        <h4>Our Address</h4>
-                        <h6>The BookStore Theme, 4th Store
-                            Beside that building, USA</h6>
-                        <h6>Call : 800 1234 5678</h6>
-                        <h6>Email : info@bookstore.com</h6>
+                        <h4 th:text="#{home.our-address}"></h4>
+                        <h6 th:text="#{home.address}"></h6>
+                        <h6 th:text="#{home.phone}"></h6>
+                        <h6 th:text="#{home.email}"></h6>
                     </div>
                     <div class="timing">
-                        <h4>Timing</h4>
-                        <h6>Mon - Fri: 7am - 10pm</h6>
-                        <h6>​​Saturday: 8am - 10pm</h6>
-                        <h6>​Sunday: 8am - 11pm</h6>
+                        <h4 th:text="#{home.timing}"></h4>
+                        <h6 th:text="#{home.mon-fri}"></h6>
+                        <h6 th:text="#{home.saturday}">​​</h6>
+                        <h6 th:text="#{home.sunday}">​</h6>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="navigation">
-                        <h4>Navigation</h4>
+                        <h4 th:text="#{home.navigation}"></h4>
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                            <li><a href="terms-conditions.html">Terms</a></li>
-                            <li><a href="products.html">Products</a></li>
+                            <li><a th:href="@{/}">Home</a></li>
+                            <li><a href="#" th:text="#{home.about}"></a></li>
+                            <li><a href="#" th:text="#{home.privacy}"></a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a th:href="@{/books}">Products</a></li>
                         </ul>
                     </div>
                     <div class="navigation">
-                        <h4>Help</h4>
+                        <h4 th:text="#{home.help}"></h4>
                         <ul>
                             <li><a href="">Shipping & Returns</a></li>
-                            <li><a href="privacy-policy.html">Privacy</a></li>
+                            <li><a href="#" th:text="#{home.privacy}"></a></li>
                             <li><a href="faq.html">FAQ’s</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-5">
                     <div class="form">
-                        <h3>Quick Contact us</h3>
-                        <h6>We are now offering some good discount
-                            on selected books go and shop them</h6>
+                        <h3 th:text="#{home.quick-contact}"></h3>
+                        <h6 th:text="#{home.sale-off-more}"></h6>
                         <form>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input placeholder="Name" required>
+                                    <input th:placeholder="#{home.name}" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="email" placeholder="Email" required>
+                                    <input type="email" th:placeholder="#{home.mail}" required>
                                 </div>
                                 <div class="col-md-12">
-                                    <textarea placeholder="Messege"></textarea>
+                                    <textarea th:placeholder="#{home.massage}"></textarea>
                                 </div>
                                 <div class="col-md-12">
-                                    <button class="btn black">Alright, Submit</button>
+                                    <button class="btn black" th:text="#{home.send}"></button>
                                 </div>
                             </div>
                         </form>
