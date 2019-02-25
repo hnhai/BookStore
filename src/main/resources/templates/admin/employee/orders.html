@@ -29,15 +29,13 @@
             </th>
             <th>
                 <p class="sort">
-                    <a class="sorted" sd:pagination-sort="status">Status</a>
+                    <a class="sorted" sd:pagination-sort="status" th:text="#{orders.status}"></a>
                 </p>
             </th>
-            <th width="40%">
-                Total price
-            </th>
+            <th width="40%" th:text="#{orders.total-price}"></th>
             <th>
                 <p class="sort">
-                    <a class="sorted" sd:pagination-sort="user">Buyer</a>
+                    <a class="sorted" sd:pagination-sort="user" th:text="#{orders.buyer}"></a>
                 </p>
             </th>
             <th width="10%">
@@ -51,9 +49,9 @@
             <td th:text="${order.id}"></td>
             <td>
                 <select class="form-control" th:id="'order-status-' + ${order.id}">
-                    <option value="0" th:selected="${order.status == 0}">Wait</option>
-                    <option value="1" th:selected="${order.status == 1}">Handle</option>
-                    <option value="2" th:selected="${order.status == 2}">Done</option>
+                    <option value="0" th:selected="${order.status == 0}" th:text="#{orders.wait}"></option>
+                    <option value="1" th:selected="${order.status == 1}" th:text="#{orders.handle}"></option>
+                    <option value="2" th:selected="${order.status == 2}" th:text="#{orders.done}"></option>
                 </select>
             </td>
             <td>
@@ -63,8 +61,8 @@
                 <a href="#" th:text="${order.user.fullname}"></a>
             </td>
             <td>
-                <button class="btn btn-sm btn-success btn-update-status" th:id="${order.id}">Update</button>
-                <a th:href="@{'/order/' + ${order.id}}"><button class="btn btn-sm btn-info">View more</button></a>
+                <button class="btn btn-sm btn-success btn-update-status" th:id="${order.id}" th:text="#{orders.update}"></button>
+                <a th:href="@{'/order/' + ${order.id}}"><button class="btn btn-sm btn-info" th:text="#{orders.view-more}"></button></a>
             </td>
         </tr>
         </tr>

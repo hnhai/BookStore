@@ -17,7 +17,7 @@ $( document ).ready(function() {
             url: WebContext.contextPath + "employee/api-check-book-name/" + alias,
             success: function (data) {
                 if (data == true){
-                    $('#bookName-error').text('Duplicate');
+                    $('#bookName-error').text($('#msg-duplicate').val());
                     $("#btn-addBook").prop('disabled', true);
                 }else{
                     $("#btn-addBook").prop('disabled', false);
