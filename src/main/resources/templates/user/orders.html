@@ -12,11 +12,11 @@
         <div class="container">
             <a class="breadcrumb-item" th:href="@{/}" th:text="#{home.home}"></a>
             <a class="breadcrumb-item" th:href="@{/books}" th:text="#{home.shop}"></a>
-            <span class="breadcrumb-item active">Orders</span>
+            <span class="breadcrumb-item active" th:text="#{home.orders}"></span>
         </div>
     </div>
     <div class="container">
-        <h2 class="text-center">Orders</h2>
+        <h2 class="text-center" th:text="#{home.orders}"></h2>
         <table class="table">
             <thead>
             <tr>
@@ -30,8 +30,7 @@
                         <a class="sorted" sd:pagination-sort="status">Status</a>
                     </p>
                 </th>
-                <th width="40%">
-                    Total price
+                <th width="40%" th:text="#{orders.total-price}">
                 </th>
                 <th width="10%">
 
@@ -42,15 +41,15 @@
                 <tr>
                     <td th:text="${order.id}"></td>
                     <td>
-                        <button th:if="${order.status == 0}" class="btn">Wait</button>
-                        <button th:if="${order.status == 1}" class="btn">Handle</button>
-                        <button th:if="${order.status == 2}" class="btn">Done</button>
+                        <button th:if="${order.status == 0}" class="btn" th:text="#{orders.wait}"></button>
+                        <button th:if="${order.status == 1}" class="btn" th:text="#{orders.handle}"></button>
+                        <button th:if="${order.status == 2}" class="btn" th:text="#{orders.done}"></button>
                     </td>
                     <td>
                         <span class="removeChar"> $ [[${#numbers.formatDecimal(order.totalPrice, 0, 'POINT', 0, 'POINT')}]] </span> VNĐ
                     </td>
                     <td>
-                        <a th:href="@{'/order/' + ${order.id}}"><button class="btn btn-sm btn-info">View more</button></a>
+                        <a th:href="@{'/order/' + ${order.id}}"><button class="btn btn-sm btn-info" th:text="#{orders.view-more}"></button></a>
                     </td>
                 </tr>
             </tbody>

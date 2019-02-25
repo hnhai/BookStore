@@ -12,12 +12,12 @@
         <div class="container">
             <a class="breadcrumb-item" th:href="@{/}" th:text="#{home.home}"></a>
             <a class="breadcrumb-item" th:href="@{/books}" th:text="#{home.shop}"></a>
-            <a class="breadcrumb-item" th:href="@{/orders}">Orders</a>
-            <span class="breadcrumb-item active">Order</span>
+            <a class="breadcrumb-item" th:href="@{/orders}" th:text="#{home.orders}"></a>
+            <span class="breadcrumb-item active" th:text="#{order.order}"></span>
         </div>
     </div>
     <div class="container">
-        <h2 class="text-center">Orders</h2>
+        <h2 class="text-center" th:text="#{order.order}"></h2>
         <table class="table">
             <thead>
             <tr>
