@@ -23,4 +23,5 @@ public interface BookSerive {
     Boolean checkBook(String alias);
     BookEntity getById(Long id);
     Boolean editBook(EditBook editBook);
+    Boolean deleteBookByIds(List<Long> ids);
 }
