@@ -1146,3 +1146,9 @@ footer {
     margin-top: 10px; } }
 
 /*# sourceMappingURL=styles.css.map */
+
+.book-title{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
