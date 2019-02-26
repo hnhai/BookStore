@@ -69,7 +69,7 @@
                                         <th:block th:if="${book.images != null && !book.images.empty}">
                                             <img style="width: 165px; height: 260px;" th:src="@{'/upload/' + ${book.images[0].name}}" alt="img">
                                         </th:block>
-                                        <p style="height: 55px; overflow: hidden;" th:text="${book.name}"></p>
+                                        <p style="height: 48px; overflow: hidden;" class="book-title" th:text="${book.name}"></p>
                                         <p th:inline="text"><span class="name" th:text="#{book.final-price}"></span><span class="removeChar"> $ [[${#numbers.formatDecimal(book.price, 0, 'POINT', 0, 'POINT')}]] </span> VNĐ</p>
                                         <a th:href="@{'book/' + ${book.aliasName}}" th:text="#{book.show-more}"></a></h6>
                                     </div>

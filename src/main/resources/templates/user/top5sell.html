@@ -16,7 +16,7 @@
                             <th:block th:if="${row.images != null && !row.images.empty}">
                                 <img width="165px" heigh="260px" th:src="@{'/upload/' + ${row.images[0].name}}" alt="img">
                             </th:block>
-                            <p th:text="${row.name}"></p>
+                            <p class="book-title" th:text="${row.name}"></p>
                             <p th:inline="text"><span class="name" th:text="#{book.final-price}"></span><span class="removeChar"> $ [[${#numbers.formatDecimal(row.price, 0, 'POINT', 0, 'POINT')}]] </span> VNĐ</p>
                             <a th:href="@{'book/' + ${row.aliasName}}" th:text="#{book.show-more}"></a></h6>
                         </div>
@@ -37,7 +37,7 @@
                             <th:block th:if="${row.images != null && !row.images.empty}">
                                 <img width="165px" heigh="260px" th:src="@{'/upload/' + ${row.images[0].name}}" alt="img">
                             </th:block>
-                            <p th:text="${row.name}"></p>
+                            <p class="book-title" th:text="${row.name}"></p>
                             <p th:inline="text"><span class="name" th:text="#{book.final-price}"></span><span class="removeChar"> $ [[${#numbers.formatDecimal(row.price, 0, 'POINT', 0, 'POINT')}]] </span> VNĐ</p>
                             <a th:href="@{'' + ${row.aliasName}}" th:text="#{book.show-more}"></a></h6>
                         </div>

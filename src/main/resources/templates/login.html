@@ -51,14 +51,16 @@
                                 <a id="reset-password" class="text-small forgot-password text-black" th:text="#{login.forgot-password}"></a>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-block g-login">
+                                <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8081/login-google&response_type=code
+    &client_id=688500547573-jjc1aa7qrbe0mrdunm8j1bps7seq6lio.apps.googleusercontent.com&approval_prompt=force"><div class="btn btn-block g-login">
                                     <img class="mr-3" src="/images/auth/googlePlus.png" width="25px" height="25px"
                                          alt="" th:text="#{login.log-in-with-google}">
-                                </button>
+                                </div></a>
                             </div>
                             <div class="text-block text-center my-3">
                                 <span class="text-small font-weight-semibold" th:text="#{login.not-a-member}"></span>
                                 <a th:href="@{/register}" class="text-black text-small" th:text="#{login.create-new-account}"></a>
+                                <p><a th:href="@{/}" th:text="#{home.home}"></a></p>
                             </div>
                         </form>
                     </div>
