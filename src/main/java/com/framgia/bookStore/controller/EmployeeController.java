@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -85,5 +86,11 @@ public class EmployeeController extends BaseController{
     public String getBook(@PathVariable("id") Long id, Model model){
         model.addAttribute("book", bookSerive.getById(id));
         return "admin/employee/book";
+    }
+
+    @PostMapping("/books")
+    @ResponseBody
+    public ResponseEntity deleteUsers(@RequestParam("ids[]") List<Long> ids){
+        return new ResponseEntity(bookSerive.deleteBookByIds(ids), HttpStatus.OK);
     }
 }

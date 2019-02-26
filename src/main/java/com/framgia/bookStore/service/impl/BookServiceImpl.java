@@ -64,7 +64,7 @@ public class BookServiceImpl implements BookSerive {
 
     @Override
     public BookEntity getByAliasName(String aliasName) {
-        return bookReponsitory.getByAliasName(aliasName);
+        return bookReponsitory.getByAliasNameAndDeleted(aliasName, false);
     }
 
     @Override
@@ -99,7 +99,7 @@ public class BookServiceImpl implements BookSerive {
         }else if(StringUtils.isNotBlank(price1) && StringUtils.isNotBlank(price2)){
             return bookReponsitory.getAllByPriceBetween(pageable, Long.valueOf(price1), Long.valueOf(price2));
         }
-        return bookReponsitory.findAll(pageable);
+        return bookReponsitory.getAllByDeleted(pageable, false);
     }
 
     @Override
@@ -204,6 +204,12 @@ public class BookServiceImpl implements BookSerive {
                 }
             }
         }
+        return true;
+    }
+
+    @Override
+    public Boolean deleteBookByIds(List<Long> ids) {
+        ids.forEach(id -> bookReponsitory.updateDeletedById(id));
         return true;
     }
 }
