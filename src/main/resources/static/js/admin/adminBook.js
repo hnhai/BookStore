@@ -1,5 +1,14 @@
 $( document ).ready(function() {
 
+    var token = $('#_csrf_token').attr('content');
+    var header = $('#_csrf_header').attr('content');
+
+    $.ajaxSetup({
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader(header, token);
+        }
+    });
+
     $(document).on("change","#getAll",function() {
         if ($(this).is(":checked"))
         {
@@ -51,13 +60,13 @@ $( document ).ready(function() {
         if(ids.length > 0){
             $.ajax({
                 type: "POST",
-                url: WebContext.contextPath + "admin/users",
+                url: WebContext.contextPath + "employee/books",
                 data: {
                     ids: ids
                 },
                 success: function (data) {
                     if (data == true){
-                        window.location.href = WebContext.contextPath + "admin/users";
+                        window.location.href = WebContext.contextPath + "employee/books";
                     }
                 },
                 error: function (jqHR, textStatus, errorThrown) {
