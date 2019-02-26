@@ -5,6 +5,7 @@ import com.framgia.bookStore.entity.BookEntity;
 import com.framgia.bookStore.entity.CategoryEntity;
 import com.framgia.bookStore.entity.PublisherEntity;
 import com.framgia.bookStore.form.AddBook;
+import com.framgia.bookStore.form.EditBook;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -53,6 +54,14 @@ public class EmployeeController extends BaseController{
         return "redirect:/employee/books?addError";
     }
 
+    @PostMapping("/editBook")
+    public String editBook(@Valid EditBook editBook){
+        if(bookSerive.editBook(editBook)){
+            return "redirect:/employee/books";
+        }
+        return "redirect:/employee/books?addError";
+    }
+
     @GetMapping("/api-check-book-name/{alias}")
     @ResponseBody
     public ResponseEntity checkName(@PathVariable("alias") String alias){
@@ -70,5 +79,11 @@ public class EmployeeController extends BaseController{
     @ResponseBody
     public ResponseEntity updateOrder(@PathVariable("id") Long id, @PathVariable("status") Integer status){
         return new ResponseEntity(orderService.updateOrder(id, status), HttpStatus.OK);
+    }
+
+    @GetMapping("/book/{id}")
+    public String getBook(@PathVariable("id") Long id, Model model){
+        model.addAttribute("book", bookSerive.getById(id));
+        return "admin/employee/book";
     }
 }

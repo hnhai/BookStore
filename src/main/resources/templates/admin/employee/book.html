@@ -8,95 +8,17 @@
 </head>
 <body>
 <th:block layout:fragment="content">
-    <input id="msg-duplicate" hidden th:value="#{book.duplicate}">
-    <h3 th:text="#{books.book-manege}" class="text-center"></h3>
-
-    <div class="float-right">
-        <div class="selectbox">
-            <p th:text="#{users.size}"></p>
-            <div sd:page-size-selector="javascript">
-                <select class="form-control"  id="selectbox">
-
-                </select>
-            </div>
-        </div>
-    </div>
-    <div class="float-left" id="btn-delete-user">
-        <p>Delete <i class="menu-icon mdi mdi-delete"></i></p>
-    </div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th width="2%">
-                    <input type="checkbox" id="getAll">
-                </th>
-                <th>
-                    <p class="sort">
-                        <a class="sorted" sd:pagination-sort="id">ID</a>
-                    </p>
-                </th>
-                <th>
-                    <p class="sort">
-                        <a class="sorted" sd:pagination-sort="name" th:text="#{books.name}"></a>
-                    </p>
-                </th>
-                <th>
-                    <p class="sort">
-                        <a class="sorted" sd:pagination-sort="quantity" th:text="#{cart.quantity}"></a>
-                    </p>
-                </th>
-                <th>
-                    <p class="sort">
-                        <a class="sorted" sd:pagination-sort="price" th:text="#{cart.price}"></a>
-                    </p>
-                </th>
-                <th>
-                    <p class="sort">
-                        <a class="sorted" sd:pagination-sort="category" th:text="#{books.category}"></a>
-                    </p>
-                </th>
-                <th>
-                    <p class="sort">
-                        <a class="sorted" sd:pagination-sort="publisher" th:text="#{books.publisher}"></a>
-                    </p>
-                </th>
-                <th>
-
-                </th>
-            </tr>
-        </thead>
-        <tbody th:each="book: ${books}">
-            <tr>
-                <td width="2%">
-                    <input type="checkbox" th:attr="data-id=${book.id}" class="getIDs">
-                </td>
-                <td th:text="${book.id}"></td>
-                <td><a th:href="@{'/book/' + ${book.aliasName}}" th:text="${book.name}"></a></td>
-                <td th:text="${book.quantity}"></td>
-                <td th:inline="text"><span class="removeChar"> $ [[${#numbers.formatDecimal(book.price, 0, 'POINT', 0, 'POINT')}]] </span> VNĐ</td>
-                <td th:text="${book.category.name}"></td>
-                <td th:text="${book.publisher.name}"></td>
-                <td>
-                    <a th:href="@{'book/' + ${book.id}}"><button class="btn btn-info" th:attr="data-id=${book.id}" th:text="#{orders.update}"></button></a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <nav class="paging float-right">
-        <ul class="pagination" sd:pagination="full">
-            <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>e
-            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-        </ul>
-    </nav>
+    <h2 class="text-center" th:text="#{book.update-book}"></h2>
 
     <div class="container" style="min-height: 1200px;">
-        <h2 class="text-center" style="margin-top: 80px;" th:text="#{book.add-book}"></h2>
-        <form id="formBook"  modelAttribute="addBook" method="POST" th:action="@{/employee/addBook}" enctype="multipart/form-data" data-parsley-validate="">
+        <h2 class="text-center" style="margin-top: 80px;" th:text="#{book.update-book}"></h2>
+        <form id="formBook"  modelAttribute="editBook" method="POST" th:action="@{/employee/editBook}" enctype="multipart/form-data" data-parsley-validate="">
+            <input hidden th:name="id" th:value="${book.id}">
             <div class="form-row">
                 <label th:text="#{books.name}"></label><span> &nbsp;*</span>
                 <div class="form-group col-md-12 form-group__height">
                     <input id="bookName" class="form-control form-group__input" th:name="bookName"
-                           th:placeholder="#{books.name}"
+                           th:placeholder="#{books.name}" th:value="${book.name}"
                            data-parsley-required data-parsley-trigger="keyup">
                     <span id="bookName-error" class="message-parsley-errors"></span>
                 </div>
@@ -109,7 +31,7 @@
                 <div class="form-group col-md-12 form-group__height">
                     <input id="price" class="form-control form-group__input" th:name="price"
                            th:placeholder="#{books.price}"
-                           type="number"
+                           type="number" th:value="${book.price}"
                            data-parsley-required data-parsley-trigger="keyup">
                 </div>
             </div>
@@ -119,7 +41,7 @@
                 <div class="form-group col-md-12 form-group__height">
                     <input id="quantiy" class="form-control form-group__input" th:name="quantity"
                            th:placeholder="#{book.quantity}"
-                           type="number"
+                           type="number" th:value="${book.quantity}"
                            data-parsley-required data-parsley-trigger="keyup">
                 </div>
             </div>
@@ -129,7 +51,7 @@
                     <label th:text="#{books.category}"></label><span> &nbsp;*</span>
                     <select th:name="category.id" class="form-control form-group__input" data-parsley-required>
                         <th:block th:each="category : ${categories}">
-                            <option th:value="${category.id}" th:text="${category.name}"></option>
+                            <option th:value="${category.id}" th:text="${category.name}" th:selected="${book.category.id == category.id}"></option>
                         </th:block>
                     </select>
                 </div>
@@ -140,7 +62,7 @@
                     <label th:text="#{books.publisher}"></label><span> &nbsp;*</span>
                     <select th:name="publisher.id" class="form-control form-group__input" data-parsley-required>
                         <th:block th:each="publisher : ${publishers}">
-                            <option th:value="${publisher.id}" th:text="${publisher.name}"></option>
+                            <option th:value="${publisher.id}" th:text="${publisher.name}" th:selected="${book.publisher.id == publisher.id}"></option>
                         </th:block>
                     </select>
                 </div>
@@ -152,15 +74,23 @@
                         <option th:each="author, itemStat : ${authors}"
                                 th:name="|authors[${itemStat.index}].id|"
                                 th:value="${author.id}"
-                                th:text="${author.name}"></option>
+                                th:text="${author.name}"
+                                th:selected="${book.authors.contains(author)}">
+                        </option>
                     </select>
                 </div>
             </div>
             <div id="block-images">
-                <div class="form-row" style="margin: 15px 0;">
-                    <input class="form-control col-md-9" th:name="images" type="file" accept="image/*"/>
+                <div class="form-row" style="margin: 15px 0;" th:if="${book.images.empty}">
+                    <input class="form-control col-md-9" th:name="images" type="file"/>
                     <button class="btn btn-success btn-add-image" style="margin-left: 85px;">Add</button>
                     <button class="btn btn-danger btn-delete-image" style="margin-left: 20px;">Delete</button>
+                </div>
+                <div class="form-row" style="margin: 15px 0;" th:if="${!book.images.empty}" th:each="image, row : ${book.images}">
+                    <label th:id="'lable-img' + ${row.index}" th:for="img + ${row.index}" th:text="${image.name}" class="form-control col-md-9"></label>
+                    <input hidden th:id="'img' + ${row.index}" class="form-control col-md-9 image-input" th:placeholder="${image.name}" th:name="img" type="file" accept="image/*"/>
+                    <button class="btn btn-success btn-add-image" style="margin-left: 85px;">Add</button>
+                    <button th:attr="data-img-id=${row.index}" class="btn btn-danger btn-remove-image" th:data style="margin-left: 20px;">Delete</button>
                 </div>
             </div>
             <div class="form-row">
