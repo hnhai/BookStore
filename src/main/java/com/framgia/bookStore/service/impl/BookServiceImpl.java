@@ -1,12 +1,15 @@
 package com.framgia.bookStore.service.impl;
 
 import com.framgia.bookStore.configuration.ResourceConfig;
+import com.framgia.bookStore.entity.AuthorEnity;
 import com.framgia.bookStore.entity.BookEntity;
 import com.framgia.bookStore.entity.CategoryEntity;
 import com.framgia.bookStore.entity.ImageEntity;
 import com.framgia.bookStore.entity.PublisherEntity;
 import com.framgia.bookStore.form.AddBook;
 import com.framgia.bookStore.form.BookCart;
+import com.framgia.bookStore.form.EditBook;
+import com.framgia.bookStore.repository.AuthorRepository;
 import com.framgia.bookStore.repository.BookReponsitory;
 import com.framgia.bookStore.repository.CategoryReponsitory;
 import com.framgia.bookStore.repository.ImageRepository;
@@ -20,6 +23,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import org.apache.commons.io.FileUtils;
 
@@ -29,6 +33,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
@@ -47,7 +52,10 @@ public class BookServiceImpl implements BookSerive {
     private CategoryReponsitory categoryReponsitory;
 
     @Autowired
-    PublisherRepository publisherRepository;
+    private PublisherRepository publisherRepository;
+
+    @Autowired
+    private AuthorRepository authorRepository;
 
     @Override
     public List<BookEntity> loadAll() {
@@ -119,7 +127,7 @@ public class BookServiceImpl implements BookSerive {
         book.setPrice(addBook.getPrice());
         book.setQuantity(addBook.getQuantity());
         book.setName(addBook.getBookName());
-        book.setAliasName(addBook.getAliasName());
+        book.setAliasName(addBook.getAliasName().toLowerCase());
         book.setDescription(addBook.getDescription());
         book = bookReponsitory.save(book);
 //         String UPLOADED_FOLDER = "file://" + System.getProperty("user.dir") + "/src/main/upload/";
@@ -149,5 +157,53 @@ public class BookServiceImpl implements BookSerive {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public BookEntity getById(Long id) {
+        return bookReponsitory.getOne(id);
+    }
+
+    @Override
+    @Transactional
+    public Boolean editBook(EditBook editBook) {
+//        Delete images
+        if(!editBook.getRemoveImages().isEmpty()){
+            for (String img: editBook.getRemoveImages()){
+                File file = new File(ResourceConfig.FILE_PATH + img);
+                file.delete();
+            }
+        }
+        BookEntity book = bookReponsitory.getOne(editBook.getId());
+        book.setName(editBook.getBookName());
+        book.setAliasName(editBook.getAliasName().toLowerCase());
+        book.setPublisher(editBook.getPublisher());
+        book.setCategory(editBook.getCategory());
+        book.setPrice(editBook.getPrice());
+        book.setQuantity(editBook.getQuantity());
+        book.setDescription(editBook.getDescription());
+        if(editBook.getAuthors() != null){
+            book.setAuthors(new HashSet<>(editBook.getAuthors()));
+        }
+        book = bookReponsitory.save(book);
+        imageRepository.deleteAllByBook(book);
+//        Add images
+        for (MultipartFile image: editBook.getImages()) {
+            if(image != null){
+                try {
+                    byte[] bytes = image.getBytes();
+                    Path path = Paths.get(ResourceConfig.FILE_PATH + image.getOriginalFilename());
+                    Files.write(path, bytes);
+                    ImageEntity img = new ImageEntity();
+                    img.setBook(book);
+                    img.setName(image.getOriginalFilename());
+                    imageRepository.save(img);
+                } catch (IOException ex) {
+                    LOGGER.error(ex);
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
