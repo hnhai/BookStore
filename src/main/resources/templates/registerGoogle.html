@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/user/base.html}" xmlns:sd="">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{home.shop}"></title>
+    <link th:href="@{/user/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<th:block layout:fragment="content">
+    <div class="breadcrumb">
+        <div class="container">
+            <a class="breadcrumb-item" href="index.html" th:text="#{home.home}"></a>
+            <span class="breadcrumb-item active">Profife</span>
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="text-center" th:text="#{register.more-info}"></h2>
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <form  method="POST" th:action="@{/register}" data-parsley-validate th:object="${RegisterForm}">
+                <input hidden class="form-control form-group__input" th:name="email"
+                   th:value="${userGoogle.email}" data-parsley-required>
+                <input hidden class="form-control form-group__input" th:name="username"
+                   th:value="${userGoogle.id}" data-parsley-required>
+                <div class="form-row">
+                    <label th:text="#{register.fullname}"></label><span> &nbsp;*</span>
+                    <div class="form-group col-md-12 form-group__height">
+                        <input class="form-control form-group__input" th:name="fullname"
+                               th:placeholder="#{register.fullname}"
+                               th:value="${userGoogle.name}"
+                               data-parsley-required data-parsley-trigger="keyup">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label th:text="#{profile.adderss}"></label><span> &nbsp;*</span>
+                    <div class="form-group col-md-12 form-group__height">
+                        <input class="form-control form-group__input" th:name="address"
+                               th:placeholder="#{profile.adderss}"
+                               data-parsley-minlength="20"
+                               data-parsley-required data-parsley-trigger="keyup">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label th:text="#{profile.phone}"></label><span> &nbsp;*</span>
+                    <div class="form-group col-md-12 form-group__height">
+                        <input  class="form-control form-group__input" th:name="phoneNumber"
+                                th:placeholder="#{profile.phone}"
+                                data-parsley-minlength="8"
+                                data-parsley-required data-parsley-trigger="keyup">
+                    </div>
+                </div>
+                <button type="submit" class="btn-success btn btn-block" style="margin-bottom: 50px;" th:text="#{orders.update}"></button>
+            </form>
+        </div>
+    </div>
+</th:block>
+<th:block layout:fragment="scripts-customize">
+    <link th:href="@{/css/parsley.css}" rel="stylesheet" type="text/css"/>
+    <script th:src="@{/js/parsley/parsley.min.js}"></script>
+    <script th:src="@{/js/parsley/en.js}"></script>
+    <script th:src="@{/js/parsley/vi.js}"></script>
+    <script type="text/javascript">
+        window.ParsleyValidator.setLocale($('#lang').attr('content'));
+    </script>
+</th:block>
+</body>
+</html>
