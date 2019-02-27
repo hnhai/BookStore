@@ -32,6 +32,8 @@ public class SendMailServiceImpl implements SendMailService {
             ctx = resetPassword(email);
         }else if(email.getType().equals(MailConst.CreatAccount.toString())){
             ctx = createAccount(email);
+        }else if(email.getType().equals(MailConst.ConfirmOrder.toString())){
+            ctx = confirmOrder(email);
         }
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, "UTF-8");
         try {
@@ -59,6 +61,14 @@ public class SendMailServiceImpl implements SendMailService {
         ctx.setVariable("baseUrl", email.getVars().get("baseUrl"));
         ctx.setVariable("username", email.getVars().get("username"));
         ctx.setVariable("password", email.getVars().get("password"));
+        return ctx;
+    }
+
+    private Context confirmOrder(Email email){
+        Context ctx = new Context();
+        ctx.setVariable("orderUrl", email.getVars().get("orderUrl"));
+        ctx.setVariable("total", email.getVars().get("total"));
+        ctx.setVariable("payment", email.getVars().get("payment"));
         return ctx;
     }
 }
