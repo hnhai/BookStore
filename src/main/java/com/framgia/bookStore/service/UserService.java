@@ -33,7 +33,7 @@ public interface UserService {
 
     Boolean deleteAllById(List<Long> ids);
 
-    Boolean addOrder(List<BookCart> cart, boolean paypal);
+    Boolean addOrder(List<BookCart> cart, boolean paypal, HttpServletRequest request);
 
     boolean updateProfile(UserEntity userEntity, Profile form);
 }
