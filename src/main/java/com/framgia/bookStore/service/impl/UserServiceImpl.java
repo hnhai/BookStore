@@ -197,22 +197,26 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Boolean addOrder(List<BookCart> cart, boolean paypal) {
+    public Boolean addOrder(List<BookCart> cart, boolean paypal, HttpServletRequest request) {
         UserEntity currentUser = userRepository.findByUsernameAndDeleted(SecurityUtil.getCurrentUser().getUsername(), false);
         OrderEntity order = new OrderEntity();
         order.setStatus(0);
         order.setUser(currentUser);
         order = orderReponsitory.save(order);
         PaymentEntity payment = new PaymentEntity();
+        Email email = new Email();
         if(!paypal){
             payment.setName("COD");
             payment.setStatus(0);
+            email.getVars().put("payment", "COD");
         }else {
             payment.setName("PayPal");
             payment.setStatus(1);
+            email.getVars().put("payment", "PayPal");
         }
         payment.setOrder(order);
         paymentReponsitory.save(payment);
+        Long total = new Long(0);
         for (BookCart od: cart) {
             BookEntity book = bookReponsitory.getByDeletedAndId(false, od.getBook().getId());
             OrderDetailEntity ot = new OrderDetailEntity();
@@ -224,8 +228,18 @@ public class UserServiceImpl implements UserService {
             book.setQuantity(book.getQuantity() - od.getQuantity());
             order.getOrderDetails().add(ot);
             bookReponsitory.save(book);
+            total += (ot.getQuantity() * book.getPrice());
         }
-        orderReponsitory.save(order);
+        order = orderReponsitory.save(order);
+        email.setFrom("bookstore@gmail.com");
+        email.setSubject("Confirm Order");
+        email.setTo(currentUser.getEmail());
+        email.setType(MailConst.CreatAccount.toString());
+        String orderUrl = WebUtil.getBaseUrl(request) + "/order/" + order.getId();
+        email.getVars().put("orderUrl", orderUrl);
+        email.getVars().put("total", total);
+        email.setTemplate("/page/confirmOrder");
+        sender.send(email);
         return true;
     }
 

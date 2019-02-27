@@ -69,12 +69,12 @@ public class PaymentController extends BaseController{
     }
 
     @GetMapping("/success")
-    public String successPay(@RequestParam("paymentId") String paymentId, @RequestParam("PayerID") String payerId, HttpSession session){
+    public String successPay(@RequestParam("paymentId") String paymentId, @RequestParam("PayerID") String payerId, HttpSession session, HttpServletRequest request){
         try {
             Payment payment = paypalService.executePayment(paymentId, payerId);
             if(payment.getState().equals("approved")){
                 List<BookCart> cart = (List<BookCart>) session.getAttribute("cart");
-                if(userService.addOrder(cart, true)){
+                if(userService.addOrder(cart, true, request)){
                     session.setAttribute("totalPrice", new Long(0));
                     session.setAttribute("cart", null);
                     return "redirect:/cart";
@@ -88,13 +88,13 @@ public class PaymentController extends BaseController{
     }
 
     @GetMapping("/COD")
-    public String codPay(HttpSession session){
+    public String codPay(HttpSession session, HttpServletRequest request){
         Long money = (long) session.getAttribute("totalPrice");
         if (money == 0){
             return "redirect:/cart";
         }
         List<BookCart> cart = (List<BookCart>) session.getAttribute("cart");
-        if(userService.addOrder(cart, false)){
+        if(userService.addOrder(cart, false, request)){
             session.setAttribute("totalPrice", new Long(0));
             session.setAttribute("cart", null);
             return "redirect:/cart";
