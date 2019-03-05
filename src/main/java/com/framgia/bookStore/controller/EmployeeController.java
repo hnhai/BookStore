@@ -41,7 +41,7 @@ public class EmployeeController extends BaseController{
 
     @GetMapping("/books")
     public String showBooks(Model model, @SortDefault("id") Pageable pageable){
-        pageable = pageable = PageRequest.of(pageable.getPageNumber(), 10, pageable.getSort());
+        pageable = pageable = createPageRequest(pageable);
         Page<BookEntity> books = bookSerive.findBook(pageable, null, null, null, null);
         model.addAttribute("books", books);
         return "admin/employee/books";
@@ -71,7 +71,7 @@ public class EmployeeController extends BaseController{
 
     @GetMapping("/orders")
     public String orders(Model model, @SortDefault("id") Pageable pageable){
-        pageable = pageable = PageRequest.of(pageable.getPageNumber(), 10, pageable.getSort());
+        pageable = pageable = createPageRequest(pageable);
         model.addAttribute("orders", orderService.loadAll(pageable));
         return "admin/employee/orders";
     }

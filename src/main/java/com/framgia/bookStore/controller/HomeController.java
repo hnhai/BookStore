@@ -12,7 +12,6 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.SortDefault;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -57,7 +56,7 @@ public class HomeController extends BaseController{
                         @RequestParam(value = "author", required = false) String author,
                         @RequestParam(value = "price1", required = false) String price1,
                         @RequestParam(value = "price2", required = false) String price2){
-        pageable = PageRequest.of(pageable.getPageNumber(), 20, pageable.getSort());
+        pageable = createPageRequest(pageable);
         Page<BookEntity> books = bookSerive.findBook(pageable, name, author, price1, price2);
         model.addAttribute("books", books);
         return "user/books";
@@ -93,7 +92,7 @@ public class HomeController extends BaseController{
     @PreAuthorize("hasAnyRole('ROLE_USER')")
     public String goOrders(Model model, @SortDefault("id") Pageable pageable){
         UserEntity user = userService.findByUsername(SecurityUtil.getCurrentUser().getUsername());
-        pageable = PageRequest.of(pageable.getPageNumber(), 20, pageable.getSort());
+        pageable = createPageRequest(pageable);
         model.addAttribute("orders", orderService.loadAllByUser(pageable, user));
         return "user/orders";
     }
