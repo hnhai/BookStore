@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/admin/base.html}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="screen"
+          href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/base/jquery-ui.css">
+    <style>
+        .ui-datepicker-calendar {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<th:block layout:fragment="content">
+    <div class="input-group" style="margin-bottom: 50px;">
+        <label class="col-md-2" for="startDate">Select Month :</label> <br>
+        <input name="startDate" id="startDate" class="date-picker form-control col-md-2"/>
+    </div>
+
+    <div id="container" style="width: 1100px; height: 700px; margin: 0 auto"></div>
+</th:block>
+<th:block layout:fragment="scripts-customize">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+    <script th:src="@{/js/highcharts.js}"></script>
+    <script th:src="@{/js/admin/chart.js}"></script>
+</th:block>
+</body>
+</html>

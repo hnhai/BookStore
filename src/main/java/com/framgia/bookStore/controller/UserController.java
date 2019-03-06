@@ -50,4 +50,9 @@ public class UserController extends BaseController{
         }
         return new ResponseEntity(userService.saveUser(form, request), HttpStatus.OK);
     }
+
+    @GetMapping("/chart")
+    public String report(Model model){
+        return "/admin/admin/report";
+    }
 }
