@@ -51,6 +51,13 @@
                         <span class="menu-title">Users</span>
                     </a>
                 </li>
+
+                <li th:if="${@userPermissionServiceImpl.isAdmin(currentUser)}" class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/chart}">
+                        <i class="menu-icon mdi mdi-file-chart"></i>
+                        <span class="menu-title">Chart</span>
+                    </a>
+                </li>
                 <li th:if="${@userPermissionServiceImpl.isEmployee(currentUser)}" class="nav-item">
                     <a class="nav-link" th:href="@{/employee/books}">
                         <i class="menu-icon mdi mdi-book"></i>

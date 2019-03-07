@@ -7,7 +7,6 @@ import com.framgia.bookStore.form.EditBook;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public interface BookSerive {

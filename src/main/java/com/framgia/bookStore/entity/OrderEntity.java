@@ -3,6 +3,7 @@ package com.framgia.bookStore.entity;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -32,6 +33,10 @@ public class OrderEntity extends AbstractEntity{
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "order", cascade=CascadeType.ALL)
     private Set<OrderDetailEntity> orderDetails = new HashSet<>(0);
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "DATE", unique = true, length = 10)
+    private Date buyDay;
 
     public Long getId() {
         return id;
@@ -79,5 +84,13 @@ public class OrderEntity extends AbstractEntity{
 
     public void setOrderDetails(Set<OrderDetailEntity> orderDetails) {
         this.orderDetails = orderDetails;
+    }
+
+    public Date getBuyDay() {
+        return buyDay;
+    }
+
+    public void setBuyDay(Date buyDay) {
+        this.buyDay = buyDay;
     }
 }
