@@ -1,7 +1,6 @@
 package com.framgia.bookStore.service.impl;
 
 import com.framgia.bookStore.configuration.ResourceConfig;
-import com.framgia.bookStore.entity.AuthorEnity;
 import com.framgia.bookStore.entity.BookEntity;
 import com.framgia.bookStore.entity.CategoryEntity;
 import com.framgia.bookStore.entity.ImageEntity;
@@ -25,15 +24,12 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
-import org.apache.commons.io.FileUtils;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
