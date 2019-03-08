@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface AuthorRepository extends CustomJpaRepository<AuthorEnity, Long>{
     List<AuthorEnity> getAllByBooks(BookEntity bookEntity);
+
+    AuthorEnity getByNameAndDeleted(String name, Boolean deleted);
 }

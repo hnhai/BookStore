@@ -1,10 +1,7 @@
 package com.framgia.bookStore.service.impl;
 
 import com.framgia.bookStore.configuration.ResourceConfig;
-import com.framgia.bookStore.entity.BookEntity;
-import com.framgia.bookStore.entity.CategoryEntity;
-import com.framgia.bookStore.entity.ImageEntity;
-import com.framgia.bookStore.entity.PublisherEntity;
+import com.framgia.bookStore.entity.*;
 import com.framgia.bookStore.form.AddBook;
 import com.framgia.bookStore.form.BookCart;
 import com.framgia.bookStore.form.EditBook;
@@ -30,8 +27,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.Normalizer;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
+import java.util.Set;
+import java.util.regex.Pattern;
 
 @Service
 public class BookServiceImpl implements BookSerive {
@@ -52,6 +53,9 @@ public class BookServiceImpl implements BookSerive {
 
     @Autowired
     private AuthorRepository authorRepository;
+
+    private final Pattern NONLATIN = Pattern.compile("[^\\w-]");
+    private final Pattern WHITESPACE = Pattern.compile("[\\s]");
 
     @Override
     public List<BookEntity> loadAll() {
@@ -207,5 +211,64 @@ public class BookServiceImpl implements BookSerive {
     public Boolean deleteBookByIds(List<Long> ids) {
         ids.forEach(id -> bookReponsitory.updateDeletedById(id));
         return true;
+    }
+
+    @Override
+    public String importBook(List<BookEntity> books) {
+        try {
+            int i = 1;
+            for (BookEntity book: books) {
+                String alias = toSlug(book.getName());
+                BookEntity bookCheck = bookReponsitory.getByAliasName(alias);
+                if (bookCheck != null){
+                    return "Book existed: " + book.getName() + " - Line: " + i;
+                }
+                i++;
+                book.setAliasName(alias);
+                book.setPublisher(getOrSavePublisher(book.getPublisher().getName()));
+                book.setCategory(getOrSaveCategory(book.getCategory().getName()));
+                Set<AuthorEnity> authors = new HashSet<>();
+                authors.addAll(book.getAuthors());
+                book.getAuthors().clear();
+                for (AuthorEnity author: authors){
+                    book.getAuthors().add(getOrSaveAuthor(author.getName()));
+                }
+                bookReponsitory.save(book);
+            }
+        }catch (Exception e){
+            return e.getMessage();
+        }
+        return "Import Success";
+    }
+
+    private PublisherEntity getOrSavePublisher(String name){
+        PublisherEntity pub = publisherRepository.getByNameAndDeleted(name, false);
+        if(pub == null){
+            pub = publisherRepository.save(new PublisherEntity(name));
+        }
+        return pub;
+    }
+
+    private CategoryEntity getOrSaveCategory(String name){
+        CategoryEntity cate = categoryReponsitory.getByNameAndDeleted(name, false);
+        if (cate == null){
+            cate = categoryReponsitory.save(new CategoryEntity(name));
+        }
+        return cate;
+    }
+
+    private AuthorEnity getOrSaveAuthor(String name){
+        AuthorEnity author = authorRepository.getByNameAndDeleted(name, false);
+        if (author == null){
+            author = authorRepository.save(new AuthorEnity(name));
+        }
+        return author;
+    }
+
+    public String toSlug(String input) {
+        String nowhitespace = WHITESPACE.matcher(input).replaceAll("-");
+        String normalized = Normalizer.normalize(nowhitespace, Normalizer.Form.NFD);
+        String slug = NONLATIN.matcher(normalized).replaceAll("");
+        return slug.toLowerCase(Locale.ENGLISH);
     }
 }

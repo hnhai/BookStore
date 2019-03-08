@@ -28,6 +28,13 @@ public class AuthorEnity extends AbstractEntity{
     @Column(name = "ADDRESS")
     private String address;
 
+    public AuthorEnity(String name) {
+        this.name = name;
+    }
+
+    public AuthorEnity() {
+    }
+
     public Long getId() {
         return id;
     }

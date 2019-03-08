@@ -28,7 +28,6 @@ $(document).ready(function() {
                         json.title = title;
                         json.credits = credits
                         json.series = series;
-                        console.log(series);
                         $('#container').highcharts(json);
                     },
                     error: function (jqHR, textStatus, errorThrown) {

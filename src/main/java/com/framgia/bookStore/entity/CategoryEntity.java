@@ -23,6 +23,13 @@ public class CategoryEntity extends AbstractEntity{
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "category")
     private Set<BookEntity> books = new HashSet<>(0);
 
+    public CategoryEntity(String name) {
+        this.name = name;
+    }
+
+    public CategoryEntity() {
+    }
+
     public Long getId() {
         return id;
     }

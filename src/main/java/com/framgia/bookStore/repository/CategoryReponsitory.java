@@ -12,4 +12,6 @@ import java.util.List;
 public interface CategoryReponsitory extends CustomJpaRepository<CategoryEntity, Long> {
     @Query("SELECT distinct c FROM CategoryEntity c JOIN c.books b JOIN b.orderDetails od JOIN od.order o WHERE o.buyDay BETWEEN :startDate AND :endDate")
     List<CategoryEntity> getCategoryOfMonth(@Param("startDate") Date startDate, @Param("endDate") Date endDate);
+
+    CategoryEntity getByNameAndDeleted(String name, Boolean deleted);
 }
