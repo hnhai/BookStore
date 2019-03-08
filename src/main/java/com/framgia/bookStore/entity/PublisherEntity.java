@@ -29,6 +29,13 @@ public class PublisherEntity extends AbstractEntity{
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "publisher")
     private Set<BookEntity> books = new HashSet<>(0);
 
+    public PublisherEntity() {
+    }
+
+    public PublisherEntity(String name) {
+        this.name = name;
+    }
+
     public Long getId() {
         return id;
     }

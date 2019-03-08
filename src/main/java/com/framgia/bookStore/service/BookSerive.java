@@ -23,4 +23,5 @@ public interface BookSerive {
     BookEntity getById(Long id);
     Boolean editBook(EditBook editBook);
     Boolean deleteBookByIds(List<Long> ids);
+    String importBook(List<BookEntity> books);
 }

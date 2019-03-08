@@ -3,8 +3,8 @@
       layout:decorate="~{/admin/base.html}">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" media="screen"
-          href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/base/jquery-ui.css">
+    <link th:href="@{/css/jquery-ui.css}" rel="stylesheet" type="text/css"/>
+    <title>Chart</title>
     <style>
         .ui-datepicker-calendar {
             display: none;
@@ -21,8 +21,8 @@
     <div id="container" style="width: 1100px; height: 700px; margin: 0 auto"></div>
 </th:block>
 <th:block layout:fragment="scripts-customize">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+    <script th:src="@{/js/jquery.1.4.1.js}"></script>
+    <script th:src="@{/js/jquery-ui.min.js}"></script>
     <script th:src="@{/js/highcharts.js}"></script>
     <script th:src="@{/js/admin/chart.js}"></script>
 </th:block>

@@ -6,6 +6,8 @@ import com.framgia.bookStore.entity.CategoryEntity;
 import com.framgia.bookStore.entity.PublisherEntity;
 import com.framgia.bookStore.form.AddBook;
 import com.framgia.bookStore.form.EditBook;
+import com.framgia.bookStore.service.impl.ExportExcel;
+import com.framgia.bookStore.service.impl.ImportExcel;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -21,6 +23,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -92,5 +97,23 @@ public class EmployeeController extends BaseController{
     @ResponseBody
     public ResponseEntity deleteUsers(@RequestParam("ids[]") List<Long> ids){
         return new ResponseEntity(bookSerive.deleteBookByIds(ids), HttpStatus.OK);
+    }
+
+    @GetMapping("/exportBooks")
+    public ModelAndView exportBooks(){
+        List<BookEntity> books = bookSerive.loadAll();
+        return new ModelAndView(new ExportExcel(), "books", books);
+    }
+
+    @GetMapping("/excel")
+    public String excelView(){
+        return "/admin/admin/excel";
+    }
+
+    @PostMapping("/importBooks")
+    public String importExcel(RedirectAttributes model, @RequestParam("books") MultipartFile books){
+        List<BookEntity> listBook = ImportExcel.convertExcelToBook(books);
+        model.addFlashAttribute("msg", bookSerive.importBook(listBook));
+        return "redirect:/employee/excel";
     }
 }
