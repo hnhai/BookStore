@@ -231,7 +231,7 @@ public class BookServiceImpl implements BookSerive {
                 authors.addAll(book.getAuthors());
                 book.getAuthors().clear();
                 for (AuthorEnity author: authors){
-                    book.getAuthors().add(getOrSaveAuthor(author.getName()));
+                    book.getAuthors().add(getOrSaveAuthor(author.getName().trim()));
                 }
                 bookReponsitory.save(book);
             }
