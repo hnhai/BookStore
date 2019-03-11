@@ -13,5 +13,4 @@ public interface OrderService {
     Page<OrderDTO> loadAll(Pageable pageable);
     Boolean updateOrder(Long id, Integer startus);
     List<OrderDetailEntity> loadDetail(Long id);
-    Boolean canViewOrder(Long orderId);
 }

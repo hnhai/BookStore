@@ -8,4 +8,6 @@ public interface userPermissionService {
     Boolean isAdmin(UserEntity user);
 
     Boolean isEmployee(UserEntity user);
+
+    Boolean canViewOrder(Long orderId);
 }

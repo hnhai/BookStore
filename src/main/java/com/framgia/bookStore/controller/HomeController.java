@@ -105,12 +105,9 @@ public class HomeController extends BaseController{
         return "/user/profile";
     }
 
-    @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_EMPLOYEE')")
+    @PreAuthorize("@userPermissionServiceImpl.canViewOrder(#id)")
     @GetMapping("/order/{id}")
     public String orderDetail(@PathVariable("id") Long id, Model model){
-        if(!orderService.canViewOrder(id)){
-            return "redirect:/404";
-        }
         model.addAttribute("orderDetails", orderService.loadDetail(id));
         return "/user/order";
     }

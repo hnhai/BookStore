@@ -167,13 +167,6 @@ public class BookServiceImpl implements BookSerive {
     @Override
     @Transactional
     public Boolean editBook(EditBook editBook) {
-//        Delete images
-        if(!editBook.getRemoveImages().isEmpty()){
-            for (String img: editBook.getRemoveImages()){
-                File file = new File(ResourceConfig.FILE_PATH + img);
-                file.delete();
-            }
-        }
         BookEntity book = bookReponsitory.getOne(editBook.getId());
         book.setName(editBook.getBookName());
         book.setAliasName(editBook.getAliasName().toLowerCase());
@@ -186,7 +179,14 @@ public class BookServiceImpl implements BookSerive {
             book.setAuthors(new HashSet<>(editBook.getAuthors()));
         }
         book = bookReponsitory.save(book);
-        imageRepository.deleteAllByBook(book);
+        //Delete images
+        if(!editBook.getRemoveImages().isEmpty()){
+            for (String img: editBook.getRemoveImages()){
+                imageRepository.deleteByNameAndAndBook(img.trim(), book);
+                File file = new File(ResourceConfig.FILE_PATH + img);
+                file.delete();
+            }
+        }
 //        Add images
         for (MultipartFile image: editBook.getImages()) {
             if(image != null){
