@@ -26,3 +26,6 @@
 
 # File Log
 LOG_PATH_IS_UNDEFINED/
+
+# Log folder
+logs/
