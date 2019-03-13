@@ -14,6 +14,7 @@ public class EditBook {
     private CategoryEntity category;
     private PublisherEntity publisher;
     private Long price;
+    private Long discount;
     private Integer quantity;
     private String description;
     private List<AuthorEnity> authors;
@@ -107,5 +108,13 @@ public class EditBook {
 
     public void setRemoveImages(List<String> removeImages) {
         this.removeImages = removeImages;
+    }
+
+    public Long getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Long discount) {
+        this.discount = discount;
     }
 }

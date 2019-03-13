@@ -36,6 +36,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -201,7 +202,7 @@ public class UserServiceImpl implements UserService {
         UserEntity currentUser = userRepository.findByUsernameAndDeleted(SecurityUtil.getCurrentUser().getUsername(), false);
         OrderEntity order = new OrderEntity();
         order.setStatus(0);
-        order.setUser(currentUser);
+        order.setCustomer(currentUser);
         order = orderReponsitory.save(order);
         PaymentEntity payment = new PaymentEntity();
         Email email = new Email();
@@ -225,16 +226,26 @@ public class UserServiceImpl implements UserService {
             id.setOrderId(order.getId());
             ot.setId(id);
             ot.setQuantity(od.getQuantity());
+            if(book.getDiscount() != null && book.getDiscount() != 0){
+                ot.setFinalPrice(book.getPrice() - (book.getDiscount() * book.getPrice()/100));
+            }else {
+                ot.setFinalPrice(book.getPrice());
+            }
             book.setQuantity(book.getQuantity() - od.getQuantity());
             order.getOrderDetails().add(ot);
             bookReponsitory.save(book);
-            total += (ot.getQuantity() * book.getPrice());
+            if(book.getDiscount() != null && book.getDiscount() != 0){
+                total += (ot.getQuantity() * (book.getPrice() - (book.getPrice() * book.getDiscount()/100)));
+            }else {
+                total += (ot.getQuantity() * book.getPrice());
+            }
         }
+        order.setBuyDay(new Date());
         order = orderReponsitory.save(order);
         email.setFrom("bookstore@gmail.com");
         email.setSubject("Confirm Order");
         email.setTo(currentUser.getEmail());
-        email.setType(MailConst.CreatAccount.toString());
+        email.setType(MailConst.ConfirmOrder.toString());
         String orderUrl = WebUtil.getBaseUrl(request) + "/order/" + order.getId();
         email.getVars().put("orderUrl", orderUrl);
         email.getVars().put("total", total);

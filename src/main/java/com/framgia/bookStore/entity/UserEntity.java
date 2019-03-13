@@ -45,9 +45,6 @@ public class UserEntity extends AbstractEntity{
     @Column(name = "EMAIL", nullable = false, unique = true)
     private String email;
 
-    @Column(name = "AVATAR", columnDefinition = "TEXT")
-    private String avatar;
-
     @Column(name = "GENDER")
     @Enumerated(EnumType.STRING)
     private Gender gender;
@@ -66,9 +63,13 @@ public class UserEntity extends AbstractEntity{
     @OrderBy("id.roleId")
     private Set<UserRoleEntity> userRoleEntities = new HashSet<>(0);
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
     @Where(clause = "DELETED = 0")
     private Set<OrderEntity> orders = new HashSet<>(0);
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
+    @Where(clause = "DELETED = 0")
+    private Set<OrderEntity> emOrders = new HashSet<>(0);
 
     public Long getId() {
         return id;
@@ -100,14 +101,6 @@ public class UserEntity extends AbstractEntity{
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
     }
 
     public Gender getGender() {
@@ -180,5 +173,13 @@ public class UserEntity extends AbstractEntity{
 
     public void setOrders(Set<OrderEntity> orders) {
         this.orders = orders;
+    }
+
+    public Set<OrderEntity> getEmOrders() {
+        return emOrders;
+    }
+
+    public void setEmOrders(Set<OrderEntity> emOrders) {
+        this.emOrders = emOrders;
     }
 }

@@ -7,6 +7,9 @@ public class OrderDTO {
     private Long totalPrice;
     private Integer status;
     private UserEntity user;
+    private UserEntity employee;
+    private String payment;
+    private String orderDate;
 
     public Long getId() {
         return id;
@@ -38,5 +41,29 @@ public class OrderDTO {
 
     public void setUser(UserEntity user) {
         this.user = user;
+    }
+
+    public UserEntity getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(UserEntity employee) {
+        this.employee = employee;
+    }
+
+    public String getPayment() {
+        return payment;
+    }
+
+    public void setPayment(String payment) {
+        this.payment = payment;
+    }
+
+    public String getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
     }
 }

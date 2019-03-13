@@ -30,6 +30,8 @@
                         <a class="sorted" sd:pagination-sort="status">Status</a>
                     </p>
                 </th>
+                <th>Order Date</th>
+                <th th:text="#{cart.payment}"></th>
                 <th width="40%" th:text="#{orders.total-price}">
                 </th>
                 <th width="10%">
@@ -45,6 +47,8 @@
                         <button th:if="${order.status == 1}" class="btn" th:text="#{orders.handle}"></button>
                         <button th:if="${order.status == 2}" class="btn" th:text="#{orders.done}"></button>
                     </td>
+                    <td th:text="${order.orderDate}"></td>
+                    <td th:text="${order.payment}"></td>
                     <td>
                         <span class="removeChar"> $ [[${#numbers.formatDecimal(order.totalPrice, 0, 'POINT', 0, 'POINT')}]] </span> VNĐ
                     </td>

@@ -20,13 +20,18 @@ public class OrderEntity extends AbstractEntity{
     @Column(name = "DESCRIPTION")
     private String description;
 
-    @Column(name = "STATUS")
+    @Column(name = "STATUS", nullable = false)
     private Integer status;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "USER_ID", nullable = false, updatable = false)
+    @JoinColumn(name = "CUSTOMER_ID", nullable = false, updatable = false)
     @Where(clause = "DELETED_FLAG=0")
-    private UserEntity user;
+    private UserEntity customer;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "EMPLOYEE_ID")
+    @Where(clause = "DELETED_FLAG=0")
+    private UserEntity employee;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "order")
     private Set<PaymentEntity> payments = new HashSet<>(0);
@@ -62,14 +67,6 @@ public class OrderEntity extends AbstractEntity{
         this.status = status;
     }
 
-    public UserEntity getUser() {
-        return user;
-    }
-
-    public void setUser(UserEntity user) {
-        this.user = user;
-    }
-
     public Set<PaymentEntity> getPayments() {
         return payments;
     }
@@ -92,5 +89,21 @@ public class OrderEntity extends AbstractEntity{
 
     public void setBuyDay(Date buyDay) {
         this.buyDay = buyDay;
+    }
+
+    public UserEntity getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(UserEntity customer) {
+        this.customer = customer;
+    }
+
+    public UserEntity getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(UserEntity employee) {
+        this.employee = employee;
     }
 }

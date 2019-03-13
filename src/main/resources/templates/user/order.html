@@ -23,12 +23,14 @@
             <tr>
                 <th th:text="#{books.name}"></th>
                 <th th:text="#{book.quantity}"></th>
+                <th th:text="#{books.price}"></th>
             </tr>
             </thead>
             <tbody th:each="od : ${orderDetails}">
             <tr>
-                <td th:text="${od.book.name}"></td>
+                <td><a th:href="@{'/book/' + ${od.book.aliasName}}" th:text="${od.book.name}"></a></td>
                 <td th:text="${od.quantity}"></td>
+                <td th:text="${od.finalPrice}"></td>
             </tr>
             </tbody>
         </table>
