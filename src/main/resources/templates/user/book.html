@@ -51,7 +51,13 @@
                     </th:block>
                     <p><span th:text="#{book.description}"></span><span th:utext="${book.description}"></span></p>
                     <p><span th:text="#{book.quantity}"></span><span th:text="${book.quantity}"></span></p>
-                    <p th:inline="text"><span class="name" th:text="#{book.final-price}"></span><span class="removeChar"> $ [[${#numbers.formatDecimal(book.price, 0, 'POINT', 0, 'POINT')}]] </span> VNĐ</p>
+                    <p th:if="${book.discount != 0 && book.discount != null}" th:inline="text">
+                        <strike><span class="name" th:text="#{book.final-price}"></span><span class="removeChar"> $ [[${#numbers.formatDecimal(book.price, 0, 'POINT', 0, 'POINT')}]] </span> VNĐ</strike><br>
+                        <span class="name" th:text="#{book.final-price}"></span><span class="removeChar"> $ [[${#numbers.formatDecimal((book.price - (book.price * book.discount/100)), 0, 'POINT', 0, 'POINT')}]] </span> VNĐ
+                    </p>
+                    <p th:if="${book.discount == 0 || book.discount == null}" th:inline="text">
+                        <span class="name" th:text="#{book.final-price}"></span><span class="removeChar"> $ [[${#numbers.formatDecimal(book.price, 0, 'POINT', 0, 'POINT')}]] </span> VNĐ
+                    </p>
                     <div class="btn-sec">
                         <a th:href="@{'/book/add-to-card/' + ${book.id}}"><button class="btn" th:text="#{book.add-to-card}"></button></a>
                     </div>

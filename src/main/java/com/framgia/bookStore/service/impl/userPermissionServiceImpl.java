@@ -49,7 +49,7 @@ public class userPermissionServiceImpl implements userPermissionService {
         CustomUserDetail userDetail = SecurityUtil.getCurrentUser();
         UserEntity userEntity = userRepository.findByUsername(userDetail.getUsername());
         OrderEntity orderEntity = orderReponsitory.getOne(orderId);
-        if(!orderEntity.getUser().getUsername().equalsIgnoreCase(userEntity.getUsername())
+        if(!orderEntity.getCustomer().getUsername().equalsIgnoreCase(userEntity.getUsername())
                 && !isEmployee(userEntity)){
             return false;
         }

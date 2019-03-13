@@ -105,6 +105,9 @@ public class BookServiceImpl implements BookSerive {
     @Override
     public BookCart getBook(Long id) {
         BookEntity bookEntity = bookReponsitory.getByDeletedAndId(false, id);
+        if (bookEntity.getDiscount() != 0 && bookEntity.getDiscount() != null){
+            bookEntity.setPrice(bookEntity.getPrice() - (bookEntity.getPrice() * bookEntity.getDiscount()/100));
+        }
         BookCart bookCart = new BookCart(bookEntity, 1);
         return bookCart;
     }
@@ -129,6 +132,9 @@ public class BookServiceImpl implements BookSerive {
         book.setName(addBook.getBookName());
         book.setAliasName(addBook.getAliasName().toLowerCase());
         book.setDescription(addBook.getDescription());
+        if(addBook.getDiscount() != null && addBook.getDiscount() > 0 && addBook.getDiscount() < 100){
+            book.setDiscount(addBook.getDiscount());
+        }
         book = bookReponsitory.save(book);
 //         String UPLOADED_FOLDER = "file://" + System.getProperty("user.dir") + "/src/main/upload/";
         for (MultipartFile image: addBook.getImages()) {
@@ -175,8 +181,8 @@ public class BookServiceImpl implements BookSerive {
         book.setPrice(editBook.getPrice());
         book.setQuantity(editBook.getQuantity());
         book.setDescription(editBook.getDescription());
-        if(editBook.getAuthors() != null){
-            book.setAuthors(new HashSet<>(editBook.getAuthors()));
+        if(editBook.getDiscount() != null && editBook.getDiscount() > 0 && editBook.getDiscount() < 100){
+            book.setDiscount(editBook.getDiscount());
         }
         book = bookReponsitory.save(book);
         //Delete images

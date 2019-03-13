@@ -16,20 +16,23 @@ public class BookEntity extends AbstractEntity{
     @Column(name = "ID")
     private Long id;
 
-    @Column(name = "NAME")
+    @Column(name = "NAME", nullable = false)
     private String name;
 
-    @Column(name = "ALIAS_NAME", unique = true)
+    @Column(name = "ALIAS_NAME", unique = true, nullable = false)
     private String aliasName;
 
     @Column(name = "DESCRIPTION",  columnDefinition="TEXT")
     private String description;
 
-    @Column(name = "PRICE")
+    @Column(name = "PRICE", nullable = false)
     private Long price;
 
-    @Column(name = "QUANTITY")
+    @Column(name = "QUANTITY", nullable = false)
     private Integer quantity;
+
+    @Column(name = "DISCOUNT")
+    private Long discount;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "CATEGORY_ID", nullable = false, updatable = false)
@@ -142,5 +145,13 @@ public class BookEntity extends AbstractEntity{
 
     public void setOrderDetails(Set<OrderDetailEntity> orderDetails) {
         this.orderDetails = orderDetails;
+    }
+
+    public Long getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Long discount) {
+        this.discount = discount;
     }
 }

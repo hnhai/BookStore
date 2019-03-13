@@ -30,6 +30,9 @@ public class OrderDetailEntity extends AbstractEntity{
     @Column(name = "QUANTITY", nullable = false)
     private Integer quantity;
 
+    @Column(name = "FINAL_PRICE", nullable = false)
+    private Long finalPrice;
+
     public OrderDetailEntity(){}
 
     public OrderDetailEntity(BookEntity book, OrderEntity order){
@@ -67,6 +70,14 @@ public class OrderDetailEntity extends AbstractEntity{
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public Long getFinalPrice() {
+        return finalPrice;
+    }
+
+    public void setFinalPrice(Long finalPrice) {
+        this.finalPrice = finalPrice;
     }
 
     @Override

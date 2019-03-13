@@ -14,7 +14,7 @@ public class PaymentEntity extends AbstractEntity{
     @Column(name = "ID")
     private Long id;
 
-    @Column(name = "NAME")
+    @Column(name = "NAME", nullable = false)
     private String name;
 
     @Column(name = "DESCRIPTION")
@@ -66,5 +66,10 @@ public class PaymentEntity extends AbstractEntity{
 
     public void setOrder(OrderEntity order) {
         this.order = order;
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
     }
 }

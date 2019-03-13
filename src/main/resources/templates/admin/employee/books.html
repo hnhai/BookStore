@@ -109,8 +109,15 @@
                 <div class="form-group col-md-12 form-group__height">
                     <input id="price" class="form-control form-group__input" th:name="price"
                            th:placeholder="#{books.price}"
-                           type="number"
+                           type="number" min="0" max="1000000"
                            data-parsley-required data-parsley-trigger="keyup">
+                </div>
+            </div>
+            <div class="form-row">
+                <label>Discount</label>
+                <div class="form-group col-md-12 form-group__height">
+                    <input id="discount" class="form-control form-group__input" th:name="discount"
+                           placeholder="Discount" type="number" min="0" max="100" data-parsley-trigger="keyup">
                 </div>
             </div>
 

@@ -6,7 +6,9 @@ import com.framgia.bookStore.entity.UserEntity;
 import com.framgia.bookStore.form.OrderDTO;
 import com.framgia.bookStore.repository.OrderDetailReponsitory;
 import com.framgia.bookStore.repository.OrderReponsitory;
+import com.framgia.bookStore.repository.UserRepository;
 import com.framgia.bookStore.service.OrderService;
+import com.framgia.bookStore.util.SecurityUtil;
 import com.framgia.bookStore.util.TranferUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -27,9 +29,12 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private OrderDetailReponsitory orderDetailReponsitory;
 
+    @Autowired
+    private UserRepository userRepository;
+
     @Override
     public Page<OrderDTO> loadAllByUser(Pageable pageable, UserEntity user) {
-        List<OrderEntity> orders = orderReponsitory.findByUserAndDeleted(pageable, user, false).getContent();
+        List<OrderEntity> orders = orderReponsitory.findByCustomerAndDeleted(pageable, user, false).getContent();
         return convert(orders, pageable);
     }
 
@@ -46,6 +51,8 @@ public class OrderServiceImpl implements OrderService {
             return false;
         }
         order.setStatus(startus);
+        UserEntity employee = userRepository.findByUsernameAndDeleted(SecurityUtil.getCurrentUser().getUsername(), false);
+        order.setEmployee(employee);
         orderReponsitory.save(order);
         return true;
     }

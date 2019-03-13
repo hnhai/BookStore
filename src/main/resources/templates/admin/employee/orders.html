@@ -32,14 +32,20 @@
                     <a class="sorted" sd:pagination-sort="status" th:text="#{orders.status}"></a>
                 </p>
             </th>
-            <th width="40%" th:text="#{orders.total-price}"></th>
+            <th>Order Date</th>
+            <th th:text="#{cart.payment}"></th>
+            <th width="20%" th:text="#{orders.total-price}"></th>
             <th>
                 <p class="sort">
-                    <a class="sorted" sd:pagination-sort="user" th:text="#{orders.buyer}"></a>
+                    <a class="sorted" sd:pagination-sort="employee">Update By</a>
+                </p>
+            </th>
+            <th>
+                <p class="sort">
+                    <a class="sorted" sd:pagination-sort="customer" th:text="#{orders.buyer}"></a>
                 </p>
             </th>
             <th width="10%">
-
             </th>
         </tr>
         </thead>
@@ -54,8 +60,13 @@
                     <option value="2" th:selected="${order.status == 2}" th:text="#{orders.done}"></option>
                 </select>
             </td>
+            <td th:text="${order.orderDate}"></td>
+            <td th:text="${order.payment}"></td>
             <td>
                 <span class="removeChar"> $ [[${#numbers.formatDecimal(order.totalPrice, 0, 'POINT', 0, 'POINT')}]] </span> VNĐ
+            </td>
+            <td>
+                <p th:if="${order.employee != null}" th:text="${order.employee.fullname}"></p>
             </td>
             <td>
                 <a href="#" th:text="${order.user.fullname}"></a>

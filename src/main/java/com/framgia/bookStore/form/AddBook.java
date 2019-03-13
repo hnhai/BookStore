@@ -13,6 +13,7 @@ public class AddBook {
     private CategoryEntity category;
     private PublisherEntity publisher;
     private Long price;
+    private Long discount;
     private Integer quantity;
     private String description;
     private List<AuthorEnity> authors;
@@ -101,5 +102,13 @@ public class AddBook {
 
     public void setAuthors(List<AuthorEnity> authors) {
         this.authors = authors;
+    }
+
+    public Long getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Long discount) {
+        this.discount = discount;
     }
 }
