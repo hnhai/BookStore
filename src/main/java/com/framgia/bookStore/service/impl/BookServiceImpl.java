@@ -104,7 +104,7 @@ public class BookServiceImpl implements BookSerive {
 
     @Override
     public BookCart getBook(Long id) {
-        BookEntity bookEntity = bookReponsitory.getByDeletedAndId(false, id);
+        BookEntity bookEntity = bookReponsitory.getByIdAndDeleted(id, false);
         if (bookEntity.getDiscount() != 0 && bookEntity.getDiscount() != null){
             bookEntity.setPrice(bookEntity.getPrice() - (bookEntity.getPrice() * bookEntity.getDiscount()/100));
         }
@@ -114,7 +114,7 @@ public class BookServiceImpl implements BookSerive {
 
     @Override
     public BookEntity getBookById(Long id) {
-        return bookReponsitory.getByDeletedAndId(false, id);
+        return bookReponsitory.getByIdAndDeleted(id, false);
     }
 
     @Override
@@ -134,6 +134,8 @@ public class BookServiceImpl implements BookSerive {
         book.setDescription(addBook.getDescription());
         if(addBook.getDiscount() != null && addBook.getDiscount() > 0 && addBook.getDiscount() < 100){
             book.setDiscount(addBook.getDiscount());
+        }else{
+            book.setDiscount(Long.valueOf(0));
         }
         book = bookReponsitory.save(book);
 //         String UPLOADED_FOLDER = "file://" + System.getProperty("user.dir") + "/src/main/upload/";

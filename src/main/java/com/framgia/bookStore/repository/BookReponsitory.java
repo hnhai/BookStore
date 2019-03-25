@@ -14,7 +14,7 @@ import java.util.List;
 @Repository
 public interface BookReponsitory extends CustomJpaRepository<BookEntity, Long>{
 
-    BookEntity getByDeletedAndId(Boolean deleted, Long id);
+    BookEntity getByIdAndDeleted(Long id, Boolean deleted);
 
     BookEntity getByAliasNameAndDeleted(String aliasName, Boolean deleted);
 

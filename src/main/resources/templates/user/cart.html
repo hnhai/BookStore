@@ -4,7 +4,7 @@
       layout:decorate="~{/user/base.html}" xmlns:sd="">
 <head>
     <meta charset="UTF-8">
-    <title>Card</title>
+    <title>Cart</title>
     <link th:href="@{/user/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -87,6 +87,7 @@
         </div>
     </div>
     <div th:if="${cart == null}" style="min-height: 300px;">
+        <div th:if="${param.success != null}" class="text-center alert-success margin-bottom-20">Success, check your order</div>
         <h2 style="margin-top: 110px;" class="text-center text-danger" th:text="#{book.not-found}"></h2>
         <p class="text-center"><a th:href="@{/books}" th:text="#{book.come-back-store}"></a></p>
     </div>
