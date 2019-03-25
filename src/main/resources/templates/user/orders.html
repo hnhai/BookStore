@@ -22,7 +22,7 @@
             <tr>
                 <th>
                     <p class="sort">
-                        <a class="sorted" sd:pagination-sort="id">ID</a>
+                        <a class="sorted" sd:pagination-sort="id">STT</a>
                     </p>
                 </th>
                 <th>
@@ -39,9 +39,9 @@
                 </th>
             </tr>
             </thead>
-            <tbody th:each="order : ${orders}">
+            <tbody th:each="order, iter : ${orders}">
                 <tr>
-                    <td th:text="${order.id}"></td>
+                    <td th:text="${iter.index + 1}"></td>
                     <td>
                         <button th:if="${order.status == 0}" class="btn" th:text="#{orders.wait}"></button>
                         <button th:if="${order.status == 1}" class="btn" th:text="#{orders.handle}"></button>

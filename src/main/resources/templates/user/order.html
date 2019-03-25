@@ -30,7 +30,7 @@
             <tr>
                 <td><a th:href="@{'/book/' + ${od.book.aliasName}}" th:text="${od.book.name}"></a></td>
                 <td th:text="${od.quantity}"></td>
-                <td th:text="${od.finalPrice}"></td>
+                <td th:inline="text"><span class="removeChar"> $ [[${#numbers.formatDecimal(od.finalPrice, 0, 'POINT', 0, 'POINT')}]] </span> VNĐ</td>
             </tr>
             </tbody>
         </table>

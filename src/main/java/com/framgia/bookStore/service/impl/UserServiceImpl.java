@@ -219,7 +219,7 @@ public class UserServiceImpl implements UserService {
         paymentReponsitory.save(payment);
         Long total = new Long(0);
         for (BookCart od: cart) {
-            BookEntity book = bookReponsitory.getByDeletedAndId(false, od.getBook().getId());
+            BookEntity book = bookReponsitory.getByIdAndDeleted(od.getBook().getId(), false);
             OrderDetailEntity ot = new OrderDetailEntity();
             OrderDetailID id = new OrderDetailID();
             id.setBookId(book.getId());

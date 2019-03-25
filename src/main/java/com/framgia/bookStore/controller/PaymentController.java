@@ -77,7 +77,7 @@ public class PaymentController extends BaseController{
                 if(userService.addOrder(cart, true, request)){
                     session.setAttribute("totalPrice", new Long(0));
                     session.setAttribute("cart", null);
-                    return "redirect:/cart";
+                    return "redirect:/cart?success";
                 }
                 return "redirect:/";
             }
@@ -97,7 +97,7 @@ public class PaymentController extends BaseController{
         if(userService.addOrder(cart, false, request)){
             session.setAttribute("totalPrice", new Long(0));
             session.setAttribute("cart", null);
-            return "redirect:/cart";
+            return "redirect:/cart?success";
         }
         return "redirect:/";
     }

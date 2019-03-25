@@ -40,7 +40,7 @@ public class OrderEntity extends AbstractEntity{
     private Set<OrderDetailEntity> orderDetails = new HashSet<>(0);
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "DATE", unique = true, length = 10)
+    @Column(name = "DATE", length = 10)
     private Date buyDay;
 
     public Long getId() {
