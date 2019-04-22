@@ -1,6 +1,8 @@
 package com.framgia.bookStore.repository;
 
 import com.framgia.bookStore.entity.CategoryEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -14,4 +16,6 @@ public interface CategoryReponsitory extends CustomJpaRepository<CategoryEntity,
     List<CategoryEntity> getCategoryOfMonth(@Param("startDate") Date startDate, @Param("endDate") Date endDate);
 
     CategoryEntity getByNameAndDeleted(String name, Boolean deleted);
+
+    Page<CategoryEntity> getByDeleted(Boolean deleted, Pageable pageable);
 }

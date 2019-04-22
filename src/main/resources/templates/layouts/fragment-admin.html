@@ -76,6 +76,24 @@
                         <span class="menu-title">Excel</span>
                     </a>
                 </li>
+                <li th:if="${@userPermissionServiceImpl.isEmployee(currentUser)}" class="nav-item">
+                    <a class="nav-link" th:href="@{/employee/authors}">
+                        <i class="menu-icon mdi mdi-nature-people"></i>
+                        <span class="menu-title">Authors</span>
+                    </a>
+                </li>
+                <li th:if="${@userPermissionServiceImpl.isEmployee(currentUser)}" class="nav-item">
+                    <a class="nav-link" th:href="@{/employee/publishers}">
+                        <i class="menu-icon mdi mdi-factory"></i>
+                        <span class="menu-title">Publishers</span>
+                    </a>
+                </li>
+                <li th:if="${@userPermissionServiceImpl.isEmployee(currentUser)}" class="nav-item">
+                    <a class="nav-link" th:href="@{/employee/categories}">
+                        <i class="menu-icon mdi mdi-view-list"></i>
+                        <span class="menu-title">Categories</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </th:block>

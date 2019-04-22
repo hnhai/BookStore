@@ -5,7 +5,9 @@ import com.framgia.bookStore.entity.BookEntity;
 import com.framgia.bookStore.entity.CategoryEntity;
 import com.framgia.bookStore.entity.PublisherEntity;
 import com.framgia.bookStore.form.AddBook;
+import com.framgia.bookStore.form.AuthorDTO;
 import com.framgia.bookStore.form.EditBook;
+import com.framgia.bookStore.form.PublisherDTO;
 import com.framgia.bookStore.service.impl.ExportExcel;
 import com.framgia.bookStore.service.impl.ImportExcel;
 import org.springframework.data.domain.Page;
@@ -115,5 +117,54 @@ public class EmployeeController extends BaseController{
         List<BookEntity> listBook = ImportExcel.convertExcelToBook(books);
         model.addFlashAttribute("msg", bookSerive.importBook(listBook));
         return "redirect:/employee/excel";
+    }
+
+    @GetMapping("/authors")
+    public String authors(Model model, @SortDefault("id") Pageable pageable) {
+        pageable = pageable = createPageRequest(pageable);
+        model.addAttribute("authors", authorService.loadAllAuthors(pageable));
+        return "admin/employee/authors";
+    }
+
+    @PostMapping("/author")
+    public String addAuthor(@Valid AuthorDTO author){
+        if (authorService.addAuthor(author)){
+            return "redirect:/employee/authors?addSucces";
+        }
+        return "redirect:/employee/authors?addError";
+    }
+
+    @PostMapping("/deleteAuthor")
+    @ResponseBody
+    public ResponseEntity deleteAuthors(@RequestParam("ids[]") List<Long> ids){
+        return new ResponseEntity(authorService.deleteAuthors(ids), HttpStatus.OK);
+    }
+
+    @GetMapping("/publishers")
+    public String publishers(Model model, @SortDefault("id") Pageable pageable) {
+        pageable = pageable = createPageRequest(pageable);
+        model.addAttribute("publishers", publisherService.loadAllPublisher(pageable));
+        return "admin/employee/publisher";
+    }
+
+    @PostMapping("/publisher")
+    public String addPublisher(@Valid PublisherDTO publisherDTO){
+        if (publisherService.addPublisher(publisherDTO)){
+            return "redirect:/employee/publishers?addSucces";
+        }
+        return "redirect:/employee/publishers?addError";
+    }
+
+    @PostMapping("/deletePublisher")
+    @ResponseBody
+    public ResponseEntity deletePublishers(@RequestParam("ids[]") List<Long> ids){
+        return new ResponseEntity(publisherService.deletePublishers(ids), HttpStatus.OK);
+    }
+
+    @GetMapping("/categories")
+    public String categories(Model model, @SortDefault("id") Pageable pageable) {
+        pageable = pageable = createPageRequest(pageable);
+        model.addAttribute("categories", categoryService.loadAll(pageable));
+        return "admin/employee/category";
     }
 }

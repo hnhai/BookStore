@@ -6,6 +6,8 @@ import com.framgia.bookStore.form.CategoryChart;
 import com.framgia.bookStore.repository.CategoryReponsitory;
 import com.framgia.bookStore.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
@@ -43,6 +45,11 @@ public class CategoryImpl implements CategoryService {
             charts.add(cate);
         }
         return charts;
+    }
+
+    @Override
+    public Page<CategoryEntity> loadAll(Pageable pageable) {
+        return categoryReponsitory.getByDeleted(Boolean.FALSE, pageable);
     }
 
     private Date convertToDateViaSqlDate(LocalDate dateToConvert) {
