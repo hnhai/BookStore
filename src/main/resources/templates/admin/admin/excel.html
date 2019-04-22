@@ -2,7 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{/admin/base.html}">
 <head>
-
+    <meta charset="UTF-8">
+    <title>Excel</title>
 </head>
 <body>
 <th:block layout:fragment="content">
@@ -30,7 +31,14 @@
     </div>
 </th:block>
 <th:block layout:fragment="scripts-customize">
-
+    <link th:href="@{/css/parsley.css}" rel="stylesheet" type="text/css"/>
+    <script th:src="@{/js/admin/author.js}"></script>
+    <script th:src="@{/js/parsley/parsley.min.js}"></script>
+    <script th:src="@{/js/parsley/en.js}"></script>
+    <script th:src="@{/js/parsley/vi.js}"></script>
+    <script type="text/javascript">
+        window.Parsley.setLocale($('#lang').attr('content'));
+    </script>
 </th:block>
 </body>
 </html>

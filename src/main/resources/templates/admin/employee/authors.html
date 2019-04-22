@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/admin/base.html}" xmlns:sd="">
+<head>
+    <meta charset="UTF-8">
+    <title>Author</title>
+</head>
+<body>
+<th:block layout:fragment="content">
+    <input id="msg-duplicate" hidden th:value="#{book.duplicate}">
+    <h3 class="text-center">Author Manage</h3>
+
+    <div class="float-right">
+        <div class="selectbox">
+            <p th:text="#{users.size}"></p>
+            <div sd:page-size-selector="javascript">
+                <select class="form-control" id="selectbox">
+
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="float-left" id="btn-delete-user">
+        <p>Delete <i class="menu-icon mdi mdi-delete"></i></p>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th width="2%">
+                <input type="checkbox" id="getAll">
+            </th>
+            <th>
+                <p class="sort">
+                    <a class="sorted" sd:pagination-sort="id">ID</a>
+                </p>
+            </th>
+            <th>
+                <p class="sort">
+                    <a class="sorted" sd:pagination-sort="name">Author name</a>
+                </p>
+            </th>
+            <th>
+                <p class="sort">
+                    <a class="sorted" sd:pagination-sort="phoneNumber">Phone Number</a>
+                </p>
+            </th>
+            <th>
+                <p class="sort">
+                    <a class="sorted" sd:pagination-sort="address">Address</a>
+                </p>
+            </th>
+            <th>
+
+            </th>
+        </tr>
+        </thead>
+        <tbody th:each="author: ${authors}">
+        <tr>
+            <td width="2%">
+                <input type="checkbox" th:attr="data-id=${author.id}" class="getIDs">
+            </td>
+            <td th:text="${author.id}"></td>
+            <td th:text="${author.name}"></td>
+            <td th:text="${author.phoneNumber}"></td>
+            <td th:text="${author.address}"></td>
+            <td>
+                <button class="btn btn-info updateAuthor" th:attr="data-id=${author.id}" th:text="#{orders.update}"></button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <nav class="paging float-right">
+        <ul class="pagination" sd:pagination="full">
+            <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+        </ul>
+    </nav>
+
+    <div class="container" style="min-height: 1200px;">
+        <h2 class="text-center" style="margin-top: 80px;" >Add author</h2>
+        <form id="formBook" modelAttribute="author" method="POST" th:action="@{/employee/author}"
+              enctype="multipart/form-data" data-parsley-validate="">
+            <div class="form-row">
+                <label> Author name</label><span> &nbsp;*</span>
+                <div class="form-group col-md-12 form-group__height">
+                    <input class="form-control form-group__input" th:name="name"
+                           placeholder="Author name"
+                           data-parsley-required data-parsley-trigger="keyup">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <label>Phone Number</label><span> &nbsp;*</span>
+                <div class="form-group col-md-12 form-group__height">
+                    <input class="form-control form-group__input" th:name="phoneNumber"
+                           placeholder="Phone number"
+                           data-parsley-required data-parsley-trigger="keyup">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <label>Address</label><span> &nbsp;*</span>
+                <div class="form-group col-md-12 form-group__height">
+                    <input class="form-control form-group__input" th:name="address"
+                           placeholder="Address"
+                           data-parsley-required data-parsley-trigger="keyup">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <label th:text="Description"></label>
+                <div class="form-group col-md-12 form-group__height">
+                <textarea th:name="description" id="description" rows="10" class="form-control form-group__input"
+                          th:placeholder="Description"
+                          type="number"></textarea>
+                </div>
+            </div>
+            <button type="submit" id="btn-addBook" class="btn-success btn btn-block" style="margin-top: 270px;">Add
+            </button>
+        </form>
+
+    </div>
+
+</th:block>
+<th:block layout:fragment="scripts-customize">
+    <link th:href="@{/css/parsley.css}" rel="stylesheet" type="text/css"/>
+    <script th:src="@{/js/admin/author.js}"></script>
+    <script th:src="@{/js/parsley/parsley.min.js}"></script>
+    <script th:src="@{/js/parsley/en.js}"></script>
+    <script th:src="@{/js/parsley/vi.js}"></script>
+    <script type="text/javascript">
+        window.Parsley.setLocale($('#lang').attr('content'));
+    </script>
+    <script th:src="@{/js/BsMultiSelect.js}"></script>
+    <script th:src="@{/ckeditor/ckeditor.js}"></script>
+    <script th:inline="javascript">
+        $("#authors").bsMultiSelect();
+        CKEDITOR.replace('description');
+    </script>
+</th:block>
+</body>
+</html>
