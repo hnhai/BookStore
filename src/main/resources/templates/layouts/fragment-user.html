@@ -41,7 +41,9 @@
                                     <div class="dropdown">
                                         <i class="fa fa-user" aria-hidden="true" data-toggle="dropdown"></i>
                                         <ul class="dropdown-menu">
-                                            <li><a th:href="@{/orders}" th:text="#{home.orders}"></a></li>
+                                            <li><a sec:authorize="hasRole('USER')"  th:href="@{/orders}" th:text="#{home.orders}"></a></li>
+                                            <li><a sec:authorize="hasRole('EMPLOYEE')" th:href="@{/employee/books}" th:text="#{home.employee-page}"></a></li>
+                                            <li><a sec:authorize="hasRole('ADMIN')" th:href="@{/admin/users}" th:text="#{home.admin-page}"></a></li>
                                             <li><a th:href="@{/profile}" th:text="#{home.profile}"></a></li>
                                             <li><a th:href="@{/logout}" th:text="#{home.logout}"></a></li>
                                         </ul>
@@ -49,7 +51,7 @@
                                 </div>
                             </li>
                         </ul>
-                        <div class="cart my-2 my-lg-0">
+                        <div sec:authorize="hasRole('USER') || isAnonymous()" class="cart my-2 my-lg-0">
                             <a th:href="@{/cart}"><span>
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
                         </div>

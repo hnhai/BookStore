@@ -8,7 +8,7 @@
 <body>
 <th:block layout:fragment="content">
     <input id="msg-duplicate" hidden th:value="#{book.duplicate}">
-    <h3 class="text-center">Category Manage</h3>
+    <h3 class="text-center" th:text="#{category.manage}"></h3>
 
     <div class="float-right">
         <div class="selectbox">
@@ -36,7 +36,7 @@
             </th>
             <th>
                 <p class="sort">
-                    <a class="sorted" sd:pagination-sort="name"> Category name</a>
+                    <a class="sorted" sd:pagination-sort="name" th:text="#{category.name}"></a>
                 </p>
             </th>
             <th>
@@ -65,27 +65,27 @@
     </nav>
 
     <div class="container" style="min-height: 1200px;">
-        <h2 class="text-center" style="margin-top: 80px;" >Add category</h2>
+        <h2 class="text-center" style="margin-top: 80px;" th:text="#{category.add}"></h2>
         <form id="formBook" modelAttribute="author" method="POST" th:action="@{/employee/author}"
               enctype="multipart/form-data" data-parsley-validate="">
             <div class="form-row">
-                <label> Category name</label><span> &nbsp;*</span>
+                <label th:text="#{category.name}"></label><span> &nbsp;*</span>
                 <div class="form-group col-md-12 form-group__height">
                     <input class="form-control form-group__input" th:name="name"
-                           placeholder="Author name"
+                           th:placeholder="#{category.name}"
                            data-parsley-required data-parsley-trigger="keyup">
                 </div>
             </div>
 
             <div class="form-row">
-                <label th:text="Description"></label>
+                <label th:text="#{book.description}"></label>
                 <div class="form-group col-md-12 form-group__height">
                 <textarea th:name="description" id="description" rows="10" class="form-control form-group__input"
                           th:placeholder="Description"
                           type="number"></textarea>
                 </div>
             </div>
-            <button type="submit" id="btn-addBook" class="btn-success btn btn-block" style="margin-top: 270px;">Add
+            <button type="submit" id="btn-addBook" class="btn-success btn btn-block" style="margin-top: 270px;" th:text="#{category.add}">
             </button>
         </form>
 

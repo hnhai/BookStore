@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    const text = $('#chart-description').val();
     $(function() {
         $('.date-picker').datepicker( {
             changeMonth: true,
@@ -18,7 +19,7 @@ $(document).ready(function() {
                             type : 'column'
                         };
                         var title = {
-                            text : 'Category have Books sell in a month'
+                            text : text
                         };
                         var credits = {
                             enabled : false

@@ -79,19 +79,19 @@
                 <li th:if="${@userPermissionServiceImpl.isEmployee(currentUser)}" class="nav-item">
                     <a class="nav-link" th:href="@{/employee/authors}">
                         <i class="menu-icon mdi mdi-nature-people"></i>
-                        <span class="menu-title">Authors</span>
+                        <span class="menu-title" th:text="#{employee.authors}"></span>
                     </a>
                 </li>
                 <li th:if="${@userPermissionServiceImpl.isEmployee(currentUser)}" class="nav-item">
                     <a class="nav-link" th:href="@{/employee/publishers}">
                         <i class="menu-icon mdi mdi-factory"></i>
-                        <span class="menu-title">Publishers</span>
+                        <span class="menu-title" th:text="#{employee.publishers}"></span>
                     </a>
                 </li>
                 <li th:if="${@userPermissionServiceImpl.isEmployee(currentUser)}" class="nav-item">
                     <a class="nav-link" th:href="@{/employee/categories}">
                         <i class="menu-icon mdi mdi-view-list"></i>
-                        <span class="menu-title">Categories</span>
+                        <span class="menu-title" th:text="#{employee.categories}"></span>
                     </a>
                 </li>
             </ul>
