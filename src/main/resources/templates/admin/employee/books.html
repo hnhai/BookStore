@@ -166,19 +166,19 @@
             <div id="block-images">
                 <div class="form-row" style="margin: 15px 0;">
                     <input class="form-control col-md-9" th:name="images" type="file" accept="image/*"/>
-                    <button class="btn btn-success btn-add-image" style="margin-left: 85px;">Add</button>
-                    <button class="btn btn-danger btn-delete-image" style="margin-left: 20px;">Delete</button>
+                    <button class="btn btn-success btn-add-image" style="margin-left: 85px;" th:text="#{common.add}"></button>
+                    <button class="btn btn-danger btn-delete-image" style="margin-left: 20px;" th:text="#{common.delete}"></button>
                 </div>
             </div>
             <div class="form-row">
-                <label th:text="Description"></label>
+                <label th:text="#{book.description}"></label>
                 <div class="form-group col-md-12 form-group__height">
                 <textarea th:name="description" id="description" rows="10" class="form-control form-group__input"
                           th:placeholder="Description"
                           type="number"></textarea>
                 </div>
             </div>
-            <button type="submit" id="btn-addBook" class="btn-success btn btn-block" style="margin-top: 270px;">Add</button>
+            <button type="submit" id="btn-addBook" class="btn-success btn btn-block" style="margin-top: 270px;" th:text="#{common.add}"></button>
         </form>
 
     </div>

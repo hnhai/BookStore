@@ -77,7 +77,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/")
             .and().exceptionHandling()
             .and().rememberMe()
-                .key(env.getProperty("security.remember-me.key"))
+                .key("remember-me")
                 .rememberMeCookieName("remember-me")
                 .tokenValiditySeconds(tokenValiditySeconds);
     }

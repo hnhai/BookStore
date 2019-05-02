@@ -3,6 +3,7 @@ package com.framgia.bookStore.service;
 import com.framgia.bookStore.entity.BookEntity;
 import com.framgia.bookStore.form.AddBook;
 import com.framgia.bookStore.form.BookCart;
+import com.framgia.bookStore.form.BookSearch;
 import com.framgia.bookStore.form.EditBook;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -24,4 +25,5 @@ public interface BookSerive {
     Boolean editBook(EditBook editBook);
     Boolean deleteBookByIds(List<Long> ids);
     String importBook(List<BookEntity> books);
+    Page<BookSearch> searcBook(String name, Pageable pageable);
 }

@@ -13,8 +13,9 @@
 </head>
 <body>
 <th:block layout:fragment="content">
+    <input hidden id="chart-description" th:value="#{chart.description}">
     <div class="input-group" style="margin-bottom: 50px;">
-        <label class="col-md-2" for="startDate">Select Month :</label> <br>
+        <label class="col-md-2" for="startDate" th:text="#{chart.select-month}"></label> <br>
         <input name="startDate" id="startDate" autocomplete="off" class="date-picker form-control col-md-2"/>
     </div>
 

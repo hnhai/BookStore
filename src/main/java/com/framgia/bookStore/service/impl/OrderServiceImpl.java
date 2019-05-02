@@ -73,6 +73,6 @@ public class OrderServiceImpl implements OrderService {
         }
         Long start = pageable.getOffset();
         Long end = (start + pageable.getPageSize()) > orderDTOs.size() ? orderDTOs.size() : (start + pageable.getPageSize());
-        return new PageImpl<OrderDTO>(orderDTOs.subList(start.intValue(), end.intValue()), pageable, orderDTOs.size());
+        return new PageImpl<>(orderDTOs.subList(start.intValue(), end.intValue()), pageable, orderDTOs.size());
     }
 }

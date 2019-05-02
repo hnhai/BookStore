@@ -4,6 +4,7 @@ import com.framgia.bookStore.auth.CustomUserDetail;
 import com.framgia.bookStore.entity.BookEntity;
 import com.framgia.bookStore.entity.UserEntity;
 import com.framgia.bookStore.form.BookCart;
+import com.framgia.bookStore.form.BookSearch;
 import com.framgia.bookStore.util.GooglePojo;
 import com.framgia.bookStore.util.GoogleUtils;
 import com.framgia.bookStore.util.SecurityUtil;
@@ -57,7 +58,7 @@ public class HomeController extends BaseController{
                         @RequestParam(value = "price1", required = false) String price1,
                         @RequestParam(value = "price2", required = false) String price2){
         pageable = createPageRequest(pageable);
-        Page<BookEntity> books = bookSerive.findBook(pageable, name, author, price1, price2);
+        Page<BookSearch> books = bookSerive.searcBook(name, pageable);
         model.addAttribute("books", books);
         return "user/books";
     }

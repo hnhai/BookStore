@@ -1,9 +1,11 @@
 package com.framgia.bookStore.service.impl;
 
 import com.framgia.bookStore.configuration.ResourceConfig;
+import com.framgia.bookStore.dao.BookDAO;
 import com.framgia.bookStore.entity.*;
 import com.framgia.bookStore.form.AddBook;
 import com.framgia.bookStore.form.BookCart;
+import com.framgia.bookStore.form.BookSearch;
 import com.framgia.bookStore.form.EditBook;
 import com.framgia.bookStore.repository.AuthorRepository;
 import com.framgia.bookStore.repository.BookReponsitory;
@@ -53,6 +55,9 @@ public class BookServiceImpl implements BookSerive {
 
     @Autowired
     private AuthorRepository authorRepository;
+
+    @Autowired
+    private BookDAO bookDAO;
 
     private final Pattern NONLATIN = Pattern.compile("[^\\w-]");
     private final Pattern WHITESPACE = Pattern.compile("[\\s]");
@@ -247,6 +252,11 @@ public class BookServiceImpl implements BookSerive {
             return e.getMessage();
         }
         return "Import Success";
+    }
+
+    @Override
+    public Page<BookSearch> searcBook(String name, Pageable pageable) {
+        return bookDAO.getBookByName(name, pageable);
     }
 
     private PublisherEntity getOrSavePublisher(String name){
