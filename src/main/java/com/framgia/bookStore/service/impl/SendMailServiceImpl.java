@@ -6,6 +6,7 @@ import com.framgia.bookStore.service.SendMailService;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
 import javax.mail.internet.MimeMessage;
+import java.util.List;
 
 @Service
 public class SendMailServiceImpl implements SendMailService {
@@ -23,6 +25,29 @@ public class SendMailServiceImpl implements SendMailService {
 
     @Autowired
     private TemplateEngine templateEngine;
+
+    @Value("#{'${book-store.admin.mail}'.split(',')}")
+    private List<String> adminMails;
+
+    private final String from = "book-store@gmail.com";
+    private final String setSubject = "System Error";
+
+    @Override
+    public void sendExceptionMail() {
+        MimeMessage mimeMessage = mailSender.createMimeMessage();
+        adminMails.forEach(mail -> {
+            MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, "UTF-8");
+           try {
+               mimeMessageHelper.setFrom(from);
+               mimeMessageHelper.setSubject(setSubject);
+               mimeMessageHelper.setTo(mail);
+               mimeMessageHelper.setText("System Error");
+               mailSender.send(mimeMessage);
+           }catch (Exception e){
+               LOGGER.error(e);
+           }
+        });
+    }
 
     @Override
     public void send(Email email) {
