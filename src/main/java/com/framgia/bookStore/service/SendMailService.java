@@ -4,4 +4,5 @@ import com.framgia.bookStore.activemq.Email;
 
 public interface SendMailService {
     void send(Email email);
+    void sendExceptionMail();
 }
